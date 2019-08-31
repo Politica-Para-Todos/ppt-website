@@ -1,0 +1,31 @@
+---
+version: "3"
+
+services:
+  postgres:
+    image: postgres:11.4
+    environment:
+      POSTGRES_USER: comentar
+      POSTGRES_PASSWORD: comentar
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  dev:
+    image: politica-para-todos/comentar:latest
+    build: .
+    environment:
+      - RAILS_ENV=development
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app:cached
+    depends_on:
+      - postgres
+    command:
+      - sleep
+      - infinity
+
+volumes:
+  postgres-data:
