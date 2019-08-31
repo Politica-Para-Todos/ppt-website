@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Manifesto:</strong>
+  <%= @manifesto_section.manifesto_id %>
+</p>
+
+<p>
+  <strong>Manifesto section:</strong>
+  <%= @manifesto_section.manifesto_section_id %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @manifesto_section.kind %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @manifesto_section.position %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @manifesto_section.text %>
+</p>
+
+<%= link_to 'Edit', edit_manifesto_section_path(@manifesto_section) %> |
+<%= link_to 'Back', manifesto_sections_path %>

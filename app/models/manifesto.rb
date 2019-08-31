@@ -1,0 +1,2 @@
+class Manifesto < ApplicationRecord
+end

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Manifesto Sections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Manifesto</th>
+      <th>Manifesto section</th>
+      <th>Kind</th>
+      <th>Position</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manifesto_sections.each do |manifesto_section| %>
+      <tr>
+        <td><%= manifesto_section.manifesto_id %></td>
+        <td><%= manifesto_section.manifesto_section_id %></td>
+        <td><%= manifesto_section.kind %></td>
+        <td><%= manifesto_section.position %></td>
+        <td><%= manifesto_section.text %></td>
+        <td><%= link_to 'Show', manifesto_section %></td>
+        <td><%= link_to 'Edit', edit_manifesto_section_path(manifesto_section) %></td>
+        <td><%= link_to 'Destroy', manifesto_section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manifesto Section', new_manifesto_section_path %>

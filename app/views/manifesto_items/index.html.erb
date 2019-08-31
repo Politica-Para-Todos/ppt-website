@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Manifesto Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Manifesto section</th>
+      <th>Kind</th>
+      <th>Position</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @manifesto_items.each do |manifesto_item| %>
+      <tr>
+        <td><%= manifesto_item.manifesto_section_id %></td>
+        <td><%= manifesto_item.kind %></td>
+        <td><%= manifesto_item.position %></td>
+        <td><%= manifesto_item.text %></td>
+        <td><%= link_to 'Show', manifesto_item %></td>
+        <td><%= link_to 'Edit', edit_manifesto_item_path(manifesto_item) %></td>
+        <td><%= link_to 'Destroy', manifesto_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Manifesto Item', new_manifesto_item_path %>
