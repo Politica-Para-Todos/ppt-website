@@ -16,8 +16,9 @@ services:
     image: politica-para-todos/comentar:latest
     build: .
     environment:
-      - RAILS_ENV=development
+      - BINDING=0.0.0.0
       - DATABASE_URL=postgres://comentar:comentar@postgres/comentar
+      - RAILS_ENV=development
     ports:
       - 3000:3000
     volumes:
