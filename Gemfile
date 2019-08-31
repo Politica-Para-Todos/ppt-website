@@ -24,6 +24,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Redcarpet markdown parser
 gem 'redcarpet', '~> 3.5.0'
+# Install devise
+gem 'devise', '~> 4.7.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
