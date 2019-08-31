@@ -51,6 +51,9 @@ group :development, :test do
 
   # Install factory bot
   gem 'factory_bot'
+
+  # Install database cleaner
+  gem 'database_cleaner'
 end
 
 group :development do
