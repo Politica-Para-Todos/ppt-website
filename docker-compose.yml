@@ -17,6 +17,7 @@ services:
     build: .
     environment:
       - RAILS_ENV=development
+      - DATABASE_URL=postgres://comentar:comentar@postgres/comentar
     ports:
       - 3000:3000
     volumes:
