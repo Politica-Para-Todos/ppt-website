@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ManifestosController < ApplicationController
-  before_action :set_manifesto, only: [:show, :edit, :update, :destroy]
+  before_action :set_manifesto, only: %i[show edit update destroy]
 
   # GET /manifestos
   # GET /manifestos.json
@@ -9,8 +11,7 @@ class ManifestosController < ApplicationController
 
   # GET /manifestos/1
   # GET /manifestos/1.json
-  def show
-  end
+  def show; end
 
   # GET /manifestos/new
   def new
@@ -18,8 +19,7 @@ class ManifestosController < ApplicationController
   end
 
   # GET /manifestos/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /manifestos
   # POST /manifestos.json
@@ -62,13 +62,14 @@ class ManifestosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_manifesto
-      @manifesto = Manifesto.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def manifesto_params
-      params.require(:manifesto).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_manifesto
+    @manifesto = Manifesto.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def manifesto_params
+    params.require(:manifesto).permit(:title)
+  end
 end

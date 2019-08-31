@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ManifestoSectionsController < ApplicationController
-  before_action :set_manifesto_section, only: [:show, :edit, :update, :destroy]
+  before_action :set_manifesto_section, only: %i[show edit update destroy]
 
   # GET /manifesto_sections
   # GET /manifesto_sections.json
@@ -9,8 +11,7 @@ class ManifestoSectionsController < ApplicationController
 
   # GET /manifesto_sections/1
   # GET /manifesto_sections/1.json
-  def show
-  end
+  def show; end
 
   # GET /manifesto_sections/new
   def new
@@ -18,8 +19,7 @@ class ManifestoSectionsController < ApplicationController
   end
 
   # GET /manifesto_sections/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /manifesto_sections
   # POST /manifesto_sections.json
@@ -62,13 +62,14 @@ class ManifestoSectionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_manifesto_section
-      @manifesto_section = ManifestoSection.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def manifesto_section_params
-      params.require(:manifesto_section).permit(:manifesto_id, :manifesto_section_id, :kind, :position, :text)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_manifesto_section
+    @manifesto_section = ManifestoSection.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def manifesto_section_params
+    params.require(:manifesto_section).permit(:manifesto_id, :manifesto_section_id, :kind, :position, :text)
+  end
 end

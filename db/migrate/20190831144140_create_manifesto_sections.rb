@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateManifestoSections < ActiveRecord::Migration[6.0]
   def change
     create_table :manifesto_sections do |t|
