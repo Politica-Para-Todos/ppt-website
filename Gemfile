@@ -48,6 +48,9 @@ group :development, :test do
   # Install test suite
   gem 'rspec'
   gem 'rspec-rails'
+
+  # Install factory bot
+  gem 'factory_bot'
 end
 
 group :development do
