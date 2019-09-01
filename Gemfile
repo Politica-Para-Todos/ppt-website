@@ -27,6 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Markdown parser
 gem 'redcarpet', '~> 3.5.0'
 
+gem 'kramdown'
+
 # Authentication
 gem 'devise', '~> 4.7.0'
 
@@ -43,14 +45,16 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 
   # Install test suite
   gem 'rspec'
   gem 'rspec-rails'
 
   # Install factory bot
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
 
   # Install database cleaner
   gem 'database_cleaner'
