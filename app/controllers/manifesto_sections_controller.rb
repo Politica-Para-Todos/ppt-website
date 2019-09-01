@@ -11,7 +11,8 @@ class ManifestoSectionsController < ApplicationController
 
   # GET /manifesto_sections/1
   # GET /manifesto_sections/1.json
-  def show; end
+  def show
+  end
 
   # GET /manifesto_sections/new
   def new
