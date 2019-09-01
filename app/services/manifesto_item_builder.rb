@@ -46,12 +46,16 @@ class ManifestoItemBuilder
 
     item = klass.find_or_create_by!(
       manifesto_section: manifesto_section,
-      position: index,
-      text: inner_text,
       digest: digest
     )
 
-    item.update!(parent: parent, version: new_version)
+    item.update!(
+      parent: parent,
+      version: new_version,
+      position: index,
+      text: inner_text,
+    )
+
     item
   end
 
