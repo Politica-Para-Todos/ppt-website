@@ -31,6 +31,10 @@ gem 'kramdown'
 
 # Authentication
 gem 'devise', '~> 4.7.0'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
 
 # ActiveAdmin and authorization
 gem 'activeadmin'
