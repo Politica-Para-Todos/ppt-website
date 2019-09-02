@@ -53,7 +53,7 @@ class ManifestoItemBuilder
       parent: parent,
       version: new_version,
       position: index,
-      text: inner_text
+      content: inner_text
     )
 
     item

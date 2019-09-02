@@ -2,6 +2,6 @@
 
 class ParagraphManifestoItem < ManifestoItem
   def render
-    "<p id='#{digest}'>#{text}</p>"
+    "<p id='#{digest}'>#{content}</p>"
   end
 end

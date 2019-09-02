@@ -2,6 +2,6 @@
 
 class ListItemManifestoItem < ManifestoItem
   def render
-    "<li id='#{digest}'>#{text}</li>"
+    "<li id='#{digest}'>#{content}</li>"
   end
 end

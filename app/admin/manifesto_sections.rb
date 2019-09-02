@@ -9,7 +9,7 @@ ActiveAdmin.register ManifestoSection do
         f.input :manifesto
         f.input :manifesto_section
         f.input :position
-        f.input :text, label: 'Title'
+        f.input :content, label: 'Title'
       end
 
       f.input :markdown_document, as: :text

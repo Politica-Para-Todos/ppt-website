@@ -2,6 +2,6 @@
 
 class HeaderManifestoItem < ManifestoItem
   def render
-    "<h2 id='#{digest}'>#{text}</h2>"
+    "<h2 id='#{digest}'>#{content}</h2>"
   end
 end
