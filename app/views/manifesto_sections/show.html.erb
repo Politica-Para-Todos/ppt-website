@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @manifesto_section.text %></h1>
+<h1><%= @manifesto_section.content %></h1>
 
 <% @manifesto_section.manifesto_items.printable(@manifesto_section.version).each do |item| %>
   <%= item.render.html_safe %>

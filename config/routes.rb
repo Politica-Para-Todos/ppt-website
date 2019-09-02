@@ -4,9 +4,13 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
-  resources :manifesto_items
-  resources :manifesto_sections
-  resources :manifestos
+
+  resources :manifesto_items, only: [:show]
+  resources :manifesto_sections, only: [:show]
+  resources :manifestos, only: [:index, :show]
+
+  resources :comments, only: [:create, :update, :delete]
+  resources :annotations, only: [:create, :update, :delete]
 
   root to: 'home#index'
 end
