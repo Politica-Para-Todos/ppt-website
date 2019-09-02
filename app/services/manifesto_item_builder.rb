@@ -42,11 +42,9 @@ class ManifestoItemBuilder
   end
 
   def build_simple_manifesto_item(klass)
-    digest = Digest::MD5.hexdigest(inner_text) if inner_text
-
     item = klass.find_or_create_by!(
       manifesto_section: manifesto_section,
-      digest: digest
+      digest: Digest::MD5.hexdigest(content_for_digest)
     )
 
     item.update!(
@@ -75,5 +73,14 @@ class ManifestoItemBuilder
 
   def new_version
     @version + 1
+  end
+
+  def content_for_digest
+    digestible = if inner_text
+                   inner_text
+                 else
+                   element.options[:location]
+                 end
+    "#{manifesto_section.id}:#{digestible}"
   end
 end
