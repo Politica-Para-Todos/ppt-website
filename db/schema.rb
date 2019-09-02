@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_215456) do
+ActiveRecord::Schema.define(version: 2019_09_02_223626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,11 +41,39 @@ ActiveRecord::Schema.define(version: 2019_09_02_215456) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "annotations", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "manifesto_item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_annotations_on_category_id"
+    t.index ["manifesto_item_id"], name: "index_annotations_on_manifesto_item_id"
+    t.index ["user_id"], name: "index_annotations_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "label"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "manifesto_item_id", null: false
+    t.bigint "user_id", null: false
+    t.text "content"
+    t.boolean "hidden"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["manifesto_item_id"], name: "index_comments_on_manifesto_item_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "manifesto_items", force: :cascade do |t|
     t.bigint "manifesto_section_id", null: false
     t.string "kind"
     t.integer "position"
-    t.string "text"
+    t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "type"
@@ -61,7 +89,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_215456) do
     t.bigint "manifesto_section_id"
     t.string "kind"
     t.integer "position"
-    t.string "text"
+    t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "version", default: 1
@@ -89,6 +117,11 @@ ActiveRecord::Schema.define(version: 2019_09_02_215456) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "annotations", "categories"
+  add_foreign_key "annotations", "manifesto_items"
+  add_foreign_key "annotations", "users"
+  add_foreign_key "comments", "manifesto_items"
+  add_foreign_key "comments", "users"
   add_foreign_key "manifesto_items", "manifesto_items"
   add_foreign_key "manifesto_items", "manifesto_sections"
   add_foreign_key "manifesto_sections", "manifesto_sections"
