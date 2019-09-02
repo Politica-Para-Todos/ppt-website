@@ -6,12 +6,14 @@ class ManifestoSection < ApplicationRecord
 
   has_many :manifesto_items
 
-  def markdown_document
-    ''
-  end
+  after_save :generate_manifesto_items
 
-  def markdown_document=(text)
-    document = Kramdown::Document.new(text)
-    ManifestoSectionBuilder.new(document: document, manifesto_section: self).build
+  def generate_manifesto_items
+    return unless document_source && document_source_previously_changed?
+
+    ManifestoSectionBuilder.new(
+      document: Kramdown::Document.new(document_source),
+      manifesto_section: self
+    ).build
   end
 end
