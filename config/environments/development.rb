@@ -64,4 +64,7 @@ Rails.application.configure do
 
   # Domain for mail sending
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Web console
+  config.web_console.permissions = '192.168.128.0/24'
 end
