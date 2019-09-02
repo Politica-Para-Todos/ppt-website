@@ -7,10 +7,11 @@ class ManifestoItem < ApplicationRecord
   has_many :annotations
   has_many :comments
 
-  scope :printable, lambda {
-                      where(type: %w[ParagraphManifestoItem HeaderManifestoItem OrderedListManifestoItem UnorderedListManifestoItem])
-                        .order('position ASC')
-                    }
+  scope :printable, lambda { |version|
+    where(type: %w[ParagraphManifestoItem HeaderManifestoItem OrderedListManifestoItem UnorderedListManifestoItem],
+          version: version)
+      .order('position ASC')
+  }
 
   def render
     ''
