@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :update, :delete]
   resources :annotations, only: [:create, :update, :delete]
 
-  root to: 'home#index'
+  root 'pages#index'
+
+  # IMPORTANT #
+  # This `match` must be the *last* route in routes.rb
+  match '*path', to: 'pages#index', via: :all
 end

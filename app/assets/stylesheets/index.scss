@@ -1,0 +1,54 @@
+// External libs
+@import 'antd/dist/antd.css';
+
+// General styles
+.ant-layout {
+    background-color: #fff;
+}
+
+// Home page
+.ant-layout-content section {
+    padding: 20px 10%;
+}
+
+.ant-layout-content section:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.ant-layout-header {
+    height: auto;
+    padding: 0 10%;
+    background-color: #798184;
+}
+
+.ant-layout-header .ant-menu {
+    background-color: #798184;
+}
+
+.ant-layout-header .ant-menu .ant-menu-item {
+    color: #fff;
+    border: none;
+}
+
+.ant-layout-header .ant-menu .ant-menu-item:hover {
+    color: #fff;
+    border: none;
+}
+
+.ant-layout-footer {
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #798184;
+}
+
+.comentar-css-our-mission {
+    border-bottom: solid 1px black;
+}
+
+.comentar-css-join {
+    display: flex;
+}
+
+.comentar-css-join-container ~ .comentar-css-join-container {
+    margin-left: 20px;
+}
