@@ -15,6 +15,10 @@
     background-color: #f5f5f5;
 }
 
+.comentar-css-header {
+    display: flex;
+}
+
 .ant-layout-header {
     height: auto;
     padding: 0 10%;
@@ -23,6 +27,7 @@
 
 .ant-layout-header .ant-menu {
     background-color: #798184;
+    flex-grow: 1;
 }
 
 .ant-layout-header .ant-menu .ant-menu-item {
@@ -35,14 +40,19 @@
     border: none;
 }
 
+.ant-layout-header .ant-menu-horizontal {
+    border: none;
+}
+
 .ant-layout-footer {
     padding-left: 10%;
     padding-right: 10%;
     background-color: #798184;
+    color: white;
 }
 
-.comentar-css-our-mission {
-    border-bottom: solid 1px black;
+.ant-layout-footer h2 {
+    color: white;
 }
 
 .comentar-css-join {
@@ -51,4 +61,34 @@
 
 .comentar-css-join-container ~ .comentar-css-join-container {
     margin-left: 20px;
+}
+
+.comentar-css-social-media {
+    display: flex;
+    align-items: center;
+}
+
+.comentar-css-social-media__icon {
+    width: 1em;
+    height: 1em;
+}
+
+.comentar-css-social-media-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+.comentar-css-social-media-list a:hover {
+    background-color: transparent;
+}
+
+.comentar-css-social-media-list svg {
+    fill: white;
+}
+
+.comentar-css-voting-countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
