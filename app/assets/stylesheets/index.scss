@@ -17,6 +17,7 @@
 
 .comentar-css-header {
     display: flex;
+    background-color: red;
 }
 
 .ant-layout-header {
@@ -59,7 +60,7 @@
     display: flex;
 }
 
-.comentar-css-join-container ~ .comentar-css-join-container {
+.comentar-css-join-container~.comentar-css-join-container {
     margin-left: 20px;
 }
 
