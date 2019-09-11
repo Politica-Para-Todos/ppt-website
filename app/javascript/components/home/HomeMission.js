@@ -5,9 +5,9 @@ class HomeMission extends PureComponent {
     render() {
         return (
             <section>
-                <div className="comentar-css-our-mission">
+                <div className="home-our-mission">
                     <h2>A nossa missão</h2>
-                    <ol className="comentar-css-our-mission-list">
+                    <ol className="home-our-mission-list">
                         <li>
                             Acreditamos que um sistema governativo melhora quando a participação dos cidadãos aumenta. A nossa missão é aumentar a participação dos cidadãos.
                         </li>
@@ -37,7 +37,7 @@ class HomeMission extends PureComponent {
                         </li>
                     </ol>
                 </div>
-                <div className="comentar-css-voting-countdown">
+                <div className="home-voting-countdown">
                     <div>Counter here</div>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet efficitur ipsum. Sed dapibus nibh eu ex pretium scelerisque.

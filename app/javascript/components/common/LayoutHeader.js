@@ -32,15 +32,15 @@ class LayoutHeader extends PureComponent {
         const { socialItems } = this.state;
 
         return (
-            <Layout.Header className="comentar-css-header">
-                <div className="logo" />
+            <Layout.Header className="header">
+                <div className="header-logo" />
                 <Menu
                     mode="horizontal"
                 >
                     <Menu.Item key="1">Home</Menu.Item>
                     <Menu.Item key="2">Partidos</Menu.Item>
                 </Menu>
-                <div className="comentar-css-social-media">
+                <div className="header-social-media">
                     <SocialSharing socialMedia={socialItems} />
                 </div>
             </Layout.Header>

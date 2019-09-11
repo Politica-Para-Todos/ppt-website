@@ -1,0 +1,28 @@
+// Styles for the header component
+.header {
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 0 10%;
+    background-color: #798184;
+}
+
+.ant-layout-header .ant-menu {
+    background-color: #798184;
+    flex-grow: 1;
+    border: none;
+
+    .ant-menu-item {
+        color: #fff;
+        border: none;
+
+        &:hover {
+            color: #fff;
+            border: none;
+        }
+    }
+
+    .ant-menu-horizontal {
+        border: none;
+    }
+}

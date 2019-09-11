@@ -6,7 +6,7 @@ const SocialSharing = (props) => {
     const { socialMedia } = props;
 
     return (
-        <ul className="comentar-css-social-media-list">
+        <ul className="social-media-list">
             {socialMedia && socialMedia.map((social, index) => (
                 <li key={index}>
                     <a href={social.url}>

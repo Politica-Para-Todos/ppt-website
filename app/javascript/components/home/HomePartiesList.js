@@ -10,7 +10,7 @@ class HomePartiesList extends PureComponent {
         const { items } = this.props;
 
         return (
-            <section>
+            <section className="section-parties-list section--grey">
                 <h2>Lista de Partidos</h2>
                 <AvatarList items={items} />
             </section>
