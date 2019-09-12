@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
 import Menu from 'antd/es/menu';
 import SocialSharing from './SocialSharing';
+const Header = Layout.Header;
 
 class LayoutHeader extends PureComponent {
     constructor() {
@@ -32,7 +33,7 @@ class LayoutHeader extends PureComponent {
         const { socialItems } = this.state;
 
         return (
-            <Layout.Header className="header">
+            <Header className="header">
                 <div className="header-logo" />
                 <Menu
                     mode="horizontal"
@@ -43,7 +44,7 @@ class LayoutHeader extends PureComponent {
                 <div className="header-social-media">
                     <SocialSharing socialMedia={socialItems} />
                 </div>
-            </Layout.Header>
+            </Header>
         );
     }
 }

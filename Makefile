@@ -5,8 +5,9 @@ help:
 	@echo "Commands:"
 	@echo "  start                    Start docker in daemon mode"
 	@echo "  stop                     Stop docker"
-	@echo "  shell                  	Enter shell"
-	@echo "  rake-migrate             Generate certificates"
+	@echo "  shell                    Enter docker shell with bash"
+	@echo "  rake-migrate             Do database migrations"
+	@echo "  server             	  Start server"
 
 #Start/Build Containers
 start:
@@ -26,7 +27,3 @@ rake-migrate:
 
 server:
 	@rails server
-
-start-server:
-	@docker-compose up -d
-	@docker-compose exec dev bash | rails server

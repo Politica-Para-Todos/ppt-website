@@ -1,10 +1,11 @@
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
+const Footer = Layout.Footer;
 
 class LayoutFooter extends PureComponent {
     render() {
         return (
-            <Layout.Footer>
+            <Footer>
                 <div></div>
                 <div>
                     <h2>Quem Somos</h2>
@@ -12,7 +13,7 @@ class LayoutFooter extends PureComponent {
                         ...
                     </p>
                 </div>
-            </Layout.Footer>
+            </Footer>
         );
     }
 }
