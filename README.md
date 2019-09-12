@@ -15,6 +15,7 @@ After booting the environment with `docker-compose up -d` a container named `dev
 docker-compose exec dev bash
 
 # Run database migrations
+rake db:create
 rake db:migrate
 
 # Boot up a rails console
@@ -56,6 +57,7 @@ bundle install
 yarn install
 
 # Run database migrations
+bundle exec rake db:create
 bundle exec rake db:migrate
 
 # Boot up a rails console
