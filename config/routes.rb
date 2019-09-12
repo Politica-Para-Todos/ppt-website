@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
 
-  resources :manifesto_items, only: [:show]
+  resources :manifesto_items, only: [:show] do
+    resources :comments, only: [:index]
+  end
+
   resources :manifesto_sections, only: [:show]
   resources :manifestos, only: [:index, :show]
   resources :parties, only: [:index, :show]
