@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :manifesto_items, only: [:show]
   resources :manifesto_sections, only: [:show]
   resources :manifestos, only: [:index, :show]
+  resources :parties, only: [:index, :show]
 
   resources :comments, only: [:create, :update, :delete]
   resources :annotations, only: [:create, :update, :delete]

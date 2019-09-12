@@ -107,6 +107,22 @@ ActiveRecord::Schema.define(version: 2019_09_02_225312) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "parties", force: :cascade do |t|
+    t.string "acronym"
+    t.string "logo"
+    t.string "name"
+    t.string "website"
+    t.string "email"
+    t.text "description"
+    t.string "description_source"
+    t.date "description_updated_at"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "instagram"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
