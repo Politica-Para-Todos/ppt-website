@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 2019_09_02_225312) do
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "party_id"
+    t.index ["party_id"], name: "index_manifestos_on_party_id"
   end
 
   create_table "parties", force: :cascade do |t|
@@ -147,4 +149,5 @@ ActiveRecord::Schema.define(version: 2019_09_02_225312) do
   add_foreign_key "manifesto_items", "manifesto_sections"
   add_foreign_key "manifesto_sections", "manifesto_sections"
   add_foreign_key "manifesto_sections", "manifestos"
+  add_foreign_key "manifestos", "parties"
 end
