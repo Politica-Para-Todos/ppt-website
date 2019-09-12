@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_225312) do
+ActiveRecord::Schema.define(version: 2019_09_12_225047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,9 +90,8 @@ ActiveRecord::Schema.define(version: 2019_09_02_225312) do
   create_table "manifesto_sections", force: :cascade do |t|
     t.bigint "manifesto_id", null: false
     t.bigint "manifesto_section_id"
-    t.string "kind"
     t.integer "position"
-    t.string "content"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "version", default: 1
