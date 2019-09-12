@@ -77,6 +77,10 @@ There is an admin console available at http://localhost:3000/admin to aid in the
 
 The application implements the following data model.
 
+### Party
+
+The entity that represents a political party. Has many Manifestos.
+
 ### Manifesto
 
 This is the entity that represents a political manifesto. Just holds a title attribute. It is composed by Manifesto Sections.
