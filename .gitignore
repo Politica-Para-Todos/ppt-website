@@ -20,7 +20,7 @@
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
-
+/.vscode/*
 /public/assets
 .byebug_history
 
