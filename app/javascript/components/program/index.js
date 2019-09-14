@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
+const Sider = Layout.Sider;
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import MenuBar from "./MenuBar";
@@ -78,9 +79,8 @@ class Program extends PureComponent {
         return (
           <Layout>
             <LayoutHeader />
-            <Layout.Content>
-              <div>
-                <div>{this.state.title}</div>
+            <Layout>
+              <Sider width={200}>
                 <MenuBar
                   sections={sections}
                   party_acronym={this.props.match.params.party_acronym}
@@ -88,9 +88,12 @@ class Program extends PureComponent {
                   selectedKey={this.getSelectedKey(sections, section_id)}
                   openKey={this.getOpenKey(sections, section_id)}
                 />
-              </div>
-              {this.getSectionContent()}
-            </Layout.Content>
+              </Sider>
+              <Layout.Content>
+                <div>{this.state.title}</div>
+                <div>{this.getSectionContent()}</div>
+              </Layout.Content>
+            </Layout>
             <LayoutFooter />
           </Layout>
         );

@@ -25,7 +25,7 @@ class MenuBar extends PureComponent {
           mode="inline"
           defaultSelectedKeys={selectedKey}
           defaultOpenKeys={openKey}
-          style={{ width: 256 }}
+          style={{ height: '100%', borderRight: 0 }}
         >
           {sections.map( (section, idx) => {
             if (section.subsections.length > 0) {
