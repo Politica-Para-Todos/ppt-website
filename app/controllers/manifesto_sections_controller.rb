@@ -6,14 +6,14 @@ class ManifestoSectionsController < ApplicationController
   # GET /manifesto_sections/1
   # GET /manifesto_sections/1.json
   def show
-    @manifesto_items = @manifesto_section.manifesto_items.printable(@manifesto_section.version)
+    @manifesto_items = @manifesto_section.manifesto_items
   end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_manifesto_section
-    @manifesto_section = ManifestoSection.find(params[:id])
+    @manifesto_section = ManifestoSection.find(params[:id]).sort_by { |section| section.position }
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

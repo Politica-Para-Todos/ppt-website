@@ -5,13 +5,16 @@ class ManifestosController < ApplicationController
 
   # GET /manifestos
   # GET /manifestos.json
-  def index
-    @manifestos = Manifesto.all
-  end
+  #def index
+  #  @manifestos = Manifesto.all
+  #end
 
   # GET /manifestos/1
   # GET /manifestos/1.json
-  def show; end
+  def show;
+    # only first level sections
+    @manifesto_sections = @manifesto.manifesto_sections.where(manifesto_section_id: nil).sort_by { |section| section.position }
+  end
 
   private
 

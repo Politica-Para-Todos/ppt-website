@@ -29,11 +29,7 @@ export default class Program extends PureComponent {
         return (
           <div>
             <div>{this.state.title}</div>
-            <MenuBar
-              sections={this.state.sections}
-              selectedSection={}
-              selectedSubSection={}
-            />
+            <MenuBar sections={this.state.sections} />
           </div>
         );
     }
