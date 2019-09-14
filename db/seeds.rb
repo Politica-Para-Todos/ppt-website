@@ -9,11 +9,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 AdminUser.destroy_all
-Party.destroy_all
 ManifestoItem.destroy_all
 ManifestoSection.where.not(manifesto_section_id: nil).destroy_all
 ManifestoSection.destroy_all
 Manifesto.destroy_all
+Party.destroy_all
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
@@ -40,7 +40,7 @@ p = Party.create(
         manifesto_section_id: s.id,
         position: i,
         content: "texto e texto",
-        item_type: "paragrafo"
+        item_type: "ParagraphManifestoItem"
       )
     end
 
@@ -57,7 +57,7 @@ p = Party.create(
           manifesto_section_id: i_s.id,
           position: i,
           content: "texto e texto",
-          item_type: "paragrafo"
+          item_type: "ParagraphManifestoItem"
         )
       end
     end

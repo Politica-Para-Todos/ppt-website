@@ -3,15 +3,9 @@
 class ManifestosController < ApplicationController
   before_action :set_manifesto, only: [:show]
 
-  # GET /manifestos
-  # GET /manifestos.json
-  #def index
-  #  @manifestos = Manifesto.all
-  #end
-
   # GET /manifestos/1
   # GET /manifestos/1.json
-  def show;
+  def show
     # only first level sections
     @manifesto_sections = @manifesto.manifesto_sections.where(manifesto_section_id: nil).sort_by { |section| section.position }
   end

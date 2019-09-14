@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :manifestos, only: [:show]
   resources :parties, only: [:index, :show]
 
+  get '/parties/:acronym/manifesto', to: 'parties#manifesto'
+
   resources :comments, only: [:create, :update, :delete]
   resources :annotations, only: [:create, :update, :delete]
 

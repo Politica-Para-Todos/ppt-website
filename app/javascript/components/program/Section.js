@@ -1,36 +1,26 @@
 import React, { PureComponent } from "react";
 import { Link } from 'react-router-dom'
-import MenuBar from "./MenuBar";
 
-class Program extends PureComponent {
+class Section extends PureComponent {
 
     constructor() {
       super()
       this.state = {
-          title: "",
-          sections: []
+
       }
     }
 
-    componentDidMount() {
-        fetch("/manifestos/" + this.props.match.params.id + ".json")
-        .then(res => res.json())
-        .then((data) => {
-          this.setState({
-            ...this.state,
-            title: data.title,
-            sections: data.sections
-          })
-        })
-        .catch(console.log)
-    }
-
     render() {
+        const { items } = this.props;
+
         return (
           <div>
-            <div>{this.state.title}</div>
-            <MenuBar sections={this.state.sections} />
+            {items.map( (item, idx) => {
+                return <p key={item.id}>{item.content}</p>
+            })}
           </div>
         );
     }
 }
+
+export default Section;
