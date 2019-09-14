@@ -9,6 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 AdminUser.destroy_all
+Party.destroy_all
 ManifestoItem.destroy_all
 ManifestoSection.where.not(manifesto_section_id: nil).destroy_all
 ManifestoSection.destroy_all
@@ -16,14 +17,22 @@ Manifesto.destroy_all
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
+p = Party.create(
+  acronym: 'PPT',
+  name: 'Politica para Todos'
+)
+
 3.times do |m_index|
-  m = Manifesto.create(title: "Manifesto #{m_index}")
+  m = Manifesto.create(
+    title: "Manifesto #{m_index}",
+    party_id: p.id
+  )
 
   for i in 1..rand(2..5) do
     s = ManifestoSection.create(
       manifesto_id: m.id,
       position: i,
-      content: "Section #{i}"
+      title: "Section #{i}"
     )
 
     for i in 1..rand(2..10) do
@@ -40,7 +49,7 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
         manifesto_section_id: s.id,
         manifesto_id: m.id,
         position: 1,
-        content: "Inner Section of #{s.id}"
+        title: "Sub Section of #{s.id}"
       )
 
       for i in 1..rand(2..10) do

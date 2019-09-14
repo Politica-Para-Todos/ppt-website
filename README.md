@@ -15,6 +15,7 @@ After booting the environment with `docker-compose up -d` a container named `dev
 docker-compose exec dev bash
 
 # Run database migrations
+rake db:create
 rake db:migrate
 
 # Boot up a rails console
@@ -56,6 +57,7 @@ bundle install
 yarn install
 
 # Run database migrations
+bundle exec rake db:create
 bundle exec rake db:migrate
 
 # Boot up a rails console
@@ -74,6 +76,10 @@ There is an admin console available at http://localhost:3000/admin to aid in the
 ## Current data model
 
 The application implements the following data model.
+
+### Party
+
+The entity that represents a political party. Has many Manifestos.
 
 ### Manifesto
 

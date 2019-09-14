@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_225312) do
+ActiveRecord::Schema.define(version: 2019_09_12_225047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,9 +90,8 @@ ActiveRecord::Schema.define(version: 2019_09_11_225312) do
   create_table "manifesto_sections", force: :cascade do |t|
     t.bigint "manifesto_id", null: false
     t.bigint "manifesto_section_id"
-    t.string "kind"
     t.integer "position"
-    t.string "content"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "version", default: 1
@@ -103,6 +102,24 @@ ActiveRecord::Schema.define(version: 2019_09_11_225312) do
 
   create_table "manifestos", force: :cascade do |t|
     t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "party_id"
+    t.index ["party_id"], name: "index_manifestos_on_party_id"
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.string "acronym"
+    t.string "logo"
+    t.string "name"
+    t.string "website"
+    t.string "email"
+    t.text "description"
+    t.string "description_source"
+    t.date "description_updated_at"
+    t.string "facebook"
+    t.string "twitter"
+    t.string "instagram"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -131,4 +148,5 @@ ActiveRecord::Schema.define(version: 2019_09_11_225312) do
   add_foreign_key "manifesto_items", "manifesto_sections"
   add_foreign_key "manifesto_sections", "manifesto_sections"
   add_foreign_key "manifesto_sections", "manifestos"
+  add_foreign_key "manifestos", "parties"
 end

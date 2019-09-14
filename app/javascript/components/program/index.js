@@ -1,8 +1,10 @@
 import React, { PureComponent } from "react";
-import { Link } from 'react-router-dom'
+import Layout from 'antd/es/layout';
+import LayoutHeader from "../common/LayoutHeader";
+import LayoutFooter from "../common/LayoutFooter";
 import MenuBar from "./MenuBar";
 
-export default class Program extends PureComponent {
+class Program extends PureComponent {
 
     constructor() {
       super()
@@ -27,14 +29,20 @@ export default class Program extends PureComponent {
 
     render() {
         return (
-          <div>
-            <div>{this.state.title}</div>
-            <MenuBar
-              sections={this.state.sections}
-              selectedSection={}
-              selectedSubSection={}
-            />
-          </div>
+          <Layout>
+              <LayoutHeader />
+              <Layout.Content>
+                  <div>
+                    <div>{this.state.title}</div>
+                    <MenuBar
+                      sections={this.state.sections}
+                    />
+                  </div>
+          </Layout.Content>
+          <LayoutFooter />
+      </Layout>
         );
     }
 }
+
+export default Program;

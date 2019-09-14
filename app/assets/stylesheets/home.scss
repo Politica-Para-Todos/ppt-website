@@ -1,3 +1,17 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-join {
+    display: flex;
+}
+
+.home-join-container~.home-join-container {
+    margin-left: 20px;
+}
+
+.home-voting-countdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

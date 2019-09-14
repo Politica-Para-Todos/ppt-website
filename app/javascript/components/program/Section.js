@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import { Link } from 'react-router-dom'
 import MenuBar from "./MenuBar";
 
-export default class Program extends PureComponent {
+class Program extends PureComponent {
 
     constructor() {
       super()

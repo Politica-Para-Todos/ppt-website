@@ -1,9 +1,10 @@
 import React, { PureComponent } from "react";
 import { Link } from 'react-router-dom'
 import { Menu, Icon } from 'antd';
+
 const { SubMenu } = Menu;
 
-export default class MenuBar extends PureComponent {
+class MenuBar extends PureComponent {
 
     constructor() {
       super()
@@ -14,14 +15,10 @@ export default class MenuBar extends PureComponent {
 
     render() {
       const { sections } = this.props;
-      const { selectedSection } = this.props;
-      const { selectedSubSection } = this.props;
 
       return (
         <Menu
           mode="inline"
-          defaultSelectedKeys={[selectedSection]}
-          defaultOpenKeys={[selectedSubSection]}
           style={{ width: 256 }}
         >
           {sections.map( (section, idx) => {
@@ -46,3 +43,5 @@ export default class MenuBar extends PureComponent {
       );
     }
 }
+
+export default MenuBar;

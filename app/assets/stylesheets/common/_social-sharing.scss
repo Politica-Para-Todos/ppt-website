@@ -1,0 +1,24 @@
+// Styles for the Social media component
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.social-media__icon {
+    width: 1em;
+    height: 1em;
+}
+
+.social-media-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
+
+.social-media-list a:hover {
+    background-color: transparent;
+}
+
+.social-media-list svg {
+    fill: white;
+}
