@@ -69,6 +69,7 @@ class Program extends PureComponent {
         }
       })
 
+      console.log(openKey)
       return openKey
     }
 
@@ -86,7 +87,7 @@ class Program extends PureComponent {
                   party_acronym={this.props.match.params.party_acronym}
                   section_id={section_id}
                   selectedKey={this.getSelectedKey(sections, section_id)}
-                  openKey={this.getOpenKey(sections, section_id)}
+                  openKey={this.getOpenKey(sections, section_id)}//{["71"]}
                 />
               </Sider>
               <Layout.Content>

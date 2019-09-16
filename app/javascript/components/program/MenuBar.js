@@ -14,11 +14,7 @@ class MenuBar extends PureComponent {
     }
 
     render() {
-      const { sections } = this.props;
-      const { party_acronym } = this.props;
-      const { section_id } = this.props;
-      const { selectedKey } = this.props;
-      const { openKey } = this.props;
+      const { sections, party_acronym, section_id, selectedKey, openKey, ...props } = this.props;
 
       return (
         <Menu
@@ -35,13 +31,13 @@ class MenuBar extends PureComponent {
                 >
                 {section.subsections.map( (subsection, idx) => {
                     return <Menu.Item key={subsection.id}>
-                      <Link to={"/program/" + party_acronym + "/" + subsection.id}>{subsection.title}</Link>
+                      <Link to={`/program/${party_acronym}/${subsection.id}`}>{subsection.title}</Link>
                     </Menu.Item>
                 })}
               </SubMenu>
             } else {
               return <Menu.Item key={section.id}>
-                <Link to={"/program/" + party_acronym + "/" + section.id}>{section.title}</Link>
+                <Link to={`/program/${party_acronym}/${section.id}`}>{section.title}</Link>
               </Menu.Item>
             }
           })}
