@@ -18,6 +18,30 @@ class Home extends PureComponent {
                 {
                     title: "SDP2",
                     subtitle: "Sigla do Partido 2"
+                },
+                {
+                    title: "SDP3",
+                    subtitle: "Sigla do Partido 2"
+                },
+                {
+                    title: "SDP4",
+                    subtitle: "Sigla do Partido 2"
+                },
+                {
+                    title: "SDP5",
+                    subtitle: "Sigla do Partido 2"
+                },
+                {
+                    title: "SDP6",
+                    subtitle: "Sigla do Partido 2"
+                },
+                {
+                    title: "SDP7",
+                    subtitle: "Sigla do Partido 2"
+                },
+                {
+                    title: "SDP8",
+                    subtitle: "Sigla do Partido 2"
                 }
             ]
         }
@@ -31,7 +55,7 @@ class Home extends PureComponent {
                 <Layout.Content>
                     <HomeMission />
                     <HomePartiesList items={items} />
-                    <HomeMovement items={items} />
+                    <HomeMovement />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>

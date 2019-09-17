@@ -3,7 +3,7 @@ import RoundAvatar from "./RoundAvatar";
 
 export default function AvatarList({ items }) {
     return (
-        <div>
+        <div className="avatar-list-container">
             {items.map(data => <RoundAvatar key={data.title.replace(" ", "_")} {...data} />)}
         </div>
     )
