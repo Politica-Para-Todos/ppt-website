@@ -1,11 +1,16 @@
 import React, { PureComponent } from "react";
 import Button from "antd/es/button";
+import Countdown from 'react-countdown-now';
+import CountdownRenderer from "./CountdownRenderer";
+import infographic from "../../../assets/images/infographic.svg";
+import voting from "../../../assets/images/voting.svg";
 
 class HomeMission extends PureComponent {
     render() {
         return (
             <section>
                 <div className="home-our-mission">
+                <div>
                     <h2>A nossa missão</h2>
                     <ol className="home-our-mission-list">
                         <li>
@@ -36,13 +41,15 @@ class HomeMission extends PureComponent {
                             Aplicamos a nossa preferência pelo espírito crítico ao nosso próprio trabalho, e recebemos de bom grado sugestões e críticas para melhorar.
                         </li>
                     </ol>
+                    </div>
+                    <div className="home-our-mission-img">
+                        <img src={infographic} />
+                    </div>
                 </div>
                 <div className="home-voting-countdown">
-                    <div>Counter here</div>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet efficitur ipsum. Sed dapibus nibh eu ex pretium scelerisque.
-                    </p>
-                    <Button type="primary">Como Votar?</Button>
+                    <img src={voting} />
+                    <Countdown date="2019-10-06T09:00:00" renderer={CountdownRenderer}/>
+                    <Button>Como Votar?</Button>
                 </div>
             </section>
         );

@@ -8,7 +8,7 @@ class ManifestoItem < ApplicationRecord
   has_many :comments
 
   scope :printable, lambda { |version|
-    where(type: %w[ParagraphManifestoItem HeaderManifestoItem OrderedListManifestoItem UnorderedListManifestoItem],
+    where(item_type: %w[ParagraphManifestoItem HeaderManifestoItem OrderedListManifestoItem UnorderedListManifestoItem],
           version: version)
       .order('position ASC')
   }

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-json.(@manifesto, :title)
+json.title @manifesto.title
 
 json.sections @manifesto_sections do |section|
   json.id section.id

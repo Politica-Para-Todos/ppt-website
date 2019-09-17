@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_225047) do
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "type"
+    t.string "item_type"
     t.bigint "manifesto_item_id"
     t.string "digest"
     t.integer "version"
