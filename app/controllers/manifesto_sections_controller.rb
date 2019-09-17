@@ -6,7 +6,7 @@ class ManifestoSectionsController < ApplicationController
   # GET /manifesto_sections/1
   # GET /manifesto_sections/1.json
   def show
-    @manifesto_items = @manifesto_section.manifesto_items.printable(@manifesto_section.version)
+    @manifesto_items = @manifesto_section.manifesto_items.sort_by { |section| section.position }
   end
 
   private
