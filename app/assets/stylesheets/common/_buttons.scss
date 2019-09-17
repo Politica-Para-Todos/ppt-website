@@ -1,0 +1,28 @@
+.button {
+    padding: 5px 30px;
+    border-radius: 3px;
+}
+
+.button-white {
+    background-color: $washedWhite;
+    color: black;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $lightGrey;
+        color: black;
+    }
+}
+
+.button-grey {
+    background-color: $darkGrey;
+    color: black;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $lightGrey;
+        color: black;
+    }
+}
