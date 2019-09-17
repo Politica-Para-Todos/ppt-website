@@ -17,29 +17,36 @@ class Program extends PureComponent {
       }
     }
 
-    componentDidMount() {
-        var items = []
-
-        if (this.props.match.params.section_id) {
-          fetch("/manifesto_sections/" + this.props.match.params.section_id + ".json")
-          .then(res => res.json())
-          .then((data) => {
-              items = data.items
-          })
-          .catch(console.log)
-        }
-
-        fetch("/parties/" + this.props.match.params.party_acronym + "/manifesto.json")
+    getItems() {
+      if (this.props.match.params.section_id) {
+        return fetch("/manifesto_sections/" + this.props.match.params.section_id + ".json")
         .then(res => res.json())
-        .then(data => {
+        .then(data => data.items)
+        .catch(console.log)
+      }
+
+      return []
+    }
+
+    getProgramData() {
+      return fetch("/parties/" + this.props.match.params.party_acronym + "/manifesto.json")
+      .then(res => res.json())
+      .catch(console.log)
+    }
+
+    componentDidMount() {
+        var promise1 = this.getItems()
+        var promise2 = this.getProgramData()
+
+        Promise.all([promise1, promise2]).then((results) => {
+          const [ items, data ] = results;
+
           this.setState({
-            ...this.state,
             title: data.title,
             sections: data.sections,
             items: items
-          })
-        })
-        .catch(console.log)
+          });
+        });
     }
 
     getSectionContent() {
