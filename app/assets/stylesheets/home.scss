@@ -10,8 +10,48 @@
     margin-left: 20px;
 }
 
+.home-our-mission {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.home-our-mission-img {
+    margin-left: 10px;
+}
+
 .home-voting-countdown {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-top: 1px solid;
+    padding: 30px 0;
+}
+
+.countdown-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.countdown-unit {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.countdown-unit ~ .countdown-unit {
+}
+
+.countdown-unit-value {
+    font-size: 50px;
+}
+
+.countdown-unit-label {
+    font-size: 15px;
+}
+
+.countdown-unit-separator {
+    font-size: 30px;
+    margin: 0 20px;
 }

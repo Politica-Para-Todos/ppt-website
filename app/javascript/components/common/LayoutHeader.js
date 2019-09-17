@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
 import Menu from 'antd/es/menu';
+import Button from 'antd/es/button';
 import SocialSharing from './SocialSharing';
 const Header = Layout.Header;
 
@@ -41,6 +42,7 @@ class LayoutHeader extends PureComponent {
                     <Menu.Item key="1">Home</Menu.Item>
                     <Menu.Item key="2">Partidos</Menu.Item>
                 </Menu>
+                <a className="header-join-us" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">Junta-te a Nós!</a>
                 <div className="header-social-media">
                     <SocialSharing socialMedia={socialItems} />
                 </div>
