@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import PartiesList from "../common/PartiesList";
+import AvatarList from "../common/AvatarList";
 
 class HomePartiesList extends PureComponent {
     constructor(props) {
@@ -12,7 +12,7 @@ class HomePartiesList extends PureComponent {
         return (
             <section className="section-home-parties-list section--grey">
                 <h2>Lista de Partidos</h2>
-                <PartiesList theme="row" parties={parties} />
+                <AvatarList items={parties} theme={"4x3"} />
             </section>
         );
     }

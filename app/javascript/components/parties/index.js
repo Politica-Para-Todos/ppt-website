@@ -9,16 +9,22 @@ import PARTIES_LIST from '../../dummy-parties';
 class Parties extends PureComponent {
     constructor() {
         super();
+
+        this.state = {
+            parties: shuffleArray(PARTIES_LIST)
+        }
     }
 
     render() {
+        const { parties } = this.state;
+
         return (
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
                     <section className="section-parties">
                         <PartiesFilter />
-                        <PartiesList theme="column" parties={PARTIES_LIST} />
+                        <AvatarList items={parties} theme={"column"} />
                     </section>
                 </Layout.Content>
                 <LayoutFooter />

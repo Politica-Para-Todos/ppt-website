@@ -6,19 +6,26 @@ import HomeMission from "./HomeMission";
 import HomePartiesList from "./HomePartiesList";
 import HomeMovement from "./HomeMovement";
 import PARTIES_LIST from '../../dummy-parties';
+import { shuffleArray } from '../../utils';
 
 class Home extends PureComponent {
     constructor() {
         super();
+
+        this.state = {
+            parties: shuffleArray(PARTIES_LIST)
+        }
     }
 
     render() {
+        const { parties } = this.state;
+
         return (
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
                     <HomeMission />
-                    <HomePartiesList parties={PARTIES_LIST} />
+                    <HomePartiesList parties={parties} />
                     <HomeMovement />
                 </Layout.Content>
                 <LayoutFooter />
