@@ -7,6 +7,7 @@ import HomePartiesList from "./HomePartiesList";
 import HomeMovement from "./HomeMovement";
 import PARTIES_LIST from '../../dummy-parties';
 import { shuffleArray } from '../../utils';
+import HomeInitialWarning from "./HomeInitialWarning";
 
 class Home extends PureComponent {
     constructor() {
@@ -24,6 +25,7 @@ class Home extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
+                    <HomeInitialWarning />
                     <HomeMission />
                     <HomePartiesList parties={parties} />
                     <HomeMovement />
