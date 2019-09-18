@@ -1,6 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import './common/colors';
 
 .home-join {
     display: flex;
@@ -61,7 +62,7 @@
 }
 
 .home-warning-close-icon {
-    color: lightGray !important;
+    color: $darkGrey !important;
     font-size: 25px;
     font-weight: bold;
 }

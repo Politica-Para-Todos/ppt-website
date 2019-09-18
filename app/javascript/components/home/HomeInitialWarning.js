@@ -24,7 +24,7 @@ export default function HomeInitialWarning() {
                 <p>Estamos a processar alguns dos programas eleitorais e à espera que as restantes candidaturas disponibilizem a respectiva informação.</p>
             </div>
             <div className="home-warning-footer-wrapper">
-                <Button onClick={() => setFirstTime(false)} style={{backgroundColor: 'lightGray', color: 'white', fontWeight: 'bold'}}>Compreendi!</Button>
+                <Button onClick={() => setFirstTime(false)} className="button--grey">Compreendi!</Button>
             </div>
         </Modal>
     )
