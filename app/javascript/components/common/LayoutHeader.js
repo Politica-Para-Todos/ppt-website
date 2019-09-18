@@ -43,7 +43,7 @@ class LayoutHeader extends PureComponent {
                         <Link to="/">Home</Link>
                     </Menu.Item>
                     <Menu.Item key="2">
-                        <Link to="/partidos">Partidos</Link>
+                        Partidos
                     </Menu.Item>
                 </Menu>
                 <a className="header-join-us" target="_blank" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">Junta-te a Nós!</a>
