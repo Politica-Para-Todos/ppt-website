@@ -13,6 +13,25 @@
     display: flex;
     list-style-type: none;
     margin: 0;
+    padding-left: 0;
+
+    li {
+        margin-right: 3px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        a {
+            display: inline-block;
+
+            svg {
+                width: auto;
+                height: 20px;
+                vertical-align: top;
+            }
+        }
+    }
 }
 
 .social-media-list a:hover {
