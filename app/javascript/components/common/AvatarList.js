@@ -4,8 +4,6 @@ import RoundAvatar from "./RoundAvatar";
 import { slugify } from "../../utils";
 
 function AvatarList({ items, theme }) {
-    let offset = 0;
-
     return (
         <div className="avatar-list-container" className={`avatar-list-container avatar-list-container--${theme}`}>
             {items.map((data) => (
