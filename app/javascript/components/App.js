@@ -14,7 +14,6 @@ class App extends React.Component {
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/partidos" component={Parties} />
                 <Route exact path="/programa/:party_acronym/:section_id?" component={withRouter(Program)} />
             </Switch>
         )
