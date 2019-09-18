@@ -31,6 +31,7 @@
 .countdown-container {
     display: flex;
     align-items: baseline;
+    margin-bottom: 15px;
 }
 
 .countdown-unit {
@@ -40,8 +41,7 @@
     font-weight: bold;
 }
 
-.countdown-unit ~ .countdown-unit {
-}
+.countdown-unit~.countdown-unit {}
 
 .countdown-unit-value {
     font-size: 50px;

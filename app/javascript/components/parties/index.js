@@ -2,13 +2,11 @@ import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
-import HomeMission from "./HomeMission";
-import HomePartiesList from "./HomePartiesList";
-import HomeMovement from "./HomeMovement";
+import PartiesFilter from "./PartiesFilter";
+import PartiesList from "../common/PartiesList";
 import PARTIES_LIST from '../../dummy-parties';
-import { shuffleArray } from '../../utils';
 
-class Home extends PureComponent {
+class Parties extends PureComponent {
     constructor() {
         super();
 
@@ -24,9 +22,10 @@ class Home extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
-                    <HomeMission />
-                    <HomePartiesList parties={parties} />
-                    <HomeMovement />
+                    <section className="section-parties">
+                        <PartiesFilter />
+                        <AvatarList items={parties} theme={"column"} />
+                    </section>
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>
@@ -34,4 +33,4 @@ class Home extends PureComponent {
     }
 }
 
-export default Home;
+export default Parties;
