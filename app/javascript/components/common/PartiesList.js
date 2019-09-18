@@ -7,14 +7,14 @@ class PartiesList extends PureComponent {
     }
 
     render() {
-        const { parties } = this.props;
+        const { parties, theme } = this.props;
 
         return (
-            <section className="section-parties-list">
-                {parties.map((data, index) => (
-                    <PartyElement key={index} data={data} />
+            <div className={`parties-list parties-list--${theme}`}>
+                {parties.map((party, index) => (
+                    <PartyElement key={index} party={party} theme={theme} />
                 ))}
-            </section>
+            </div>
         );
     }
 }

@@ -1,27 +1,61 @@
-.button {
-    padding: 5px 30px;
+@import './colors';
+
+.button,
+.ant-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: $darkGrey;
     border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    transition: background-color .15s ease-in-out, color .15s ease-in-out;
+
+    a {
+        border: none;
+        border-color: transparent;
+        background-color: $lightGrey;
+        color: white;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: none;
+            border-color: transparent;
+            background-color: $lightGrey;
+            color: white;
+            text-decoration: none;
+        }
+    }
 }
 
-.button-white {
+.button--white {
     background-color: $washedWhite;
+    border: none;
+    border-color: transparent;
     color: black;
 
     &:hover,
     &:focus,
     &:active {
+        border: none;
+        border-color: transparent;
         background-color: $lightGrey;
         color: black;
     }
 }
 
-.button-grey {
+.button--grey {
     background-color: $darkGrey;
-    color: black;
+    border: none;
+    border-color: transparent;
+    color: white;
 
     &:hover,
     &:focus,
     &:active {
+        border: none;
+        border-color: transparent;
         background-color: $lightGrey;
         color: black;
     }

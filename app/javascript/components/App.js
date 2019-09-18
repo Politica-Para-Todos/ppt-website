@@ -6,6 +6,10 @@ import Parties from "./parties";
 import Program from "./program";
 
 class App extends React.Component {
+    constructor() {
+        super();
+    }
+
     render() {
         return (
             <Switch>

@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import AvatarList from "../common/AvatarList";
+import PartiesList from "../common/PartiesList";
 
 class HomePartiesList extends PureComponent {
     constructor(props) {
@@ -7,12 +7,12 @@ class HomePartiesList extends PureComponent {
     }
 
     render() {
-        const { items } = this.props;
+        const { parties } = this.props;
 
         return (
-            <section className="section-parties-list section--grey">
+            <section className="section-home-parties-list section--grey">
                 <h2>Lista de Partidos</h2>
-                <AvatarList items={items} />
+                <PartiesList theme="row" parties={parties} />
             </section>
         );
     }

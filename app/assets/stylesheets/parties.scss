@@ -1,34 +1,81 @@
 // Place all the styles related to the Parties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.section-parties-filter form {
+
+.section-parties .parties-filter {
+    padding: 30px 0;
+}
+
+.section-parties .parties-filter form {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+
+    input {
+        min-width: 250px;
+    }
 }
 
-.party-element {
+.ant-avatar img {
+    object-fit: cover;
+}
+
+.parties-list--column {
+    padding-bottom: 100px;
+
+    .party-element {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        padding: 30px 0;
+        border-top: 1px solid #d3d3d3;
+
+        &:last-of-type {
+            border-bottom: 1px solid #d3d3d3;
+        }
+
+        .party-element__avatar {
+            flex: 0 1 140px;
+        }
+
+        .party-element__title {
+            flex: 1 0 auto;
+            padding-left: 50px;
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .party-element__cta {
+            flex: 0 1 auto;
+            max-width: 250px;
+            margin-right: 0;
+        }
+    }
+}
+
+.parties-list--row {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    padding: 30px 0;
-    border-top: 1px solid #d3d3d3;
+    text-align: center;
 
-    &:last-of-type {
-        border-bottom: 1px solid #d3d3d3;
-    }
+    .party-element {
+        flex: 1 0 20%;
+        padding: 30px;
 
-    .party-element__avatar {
-        flex: 0 1 140px;
-    }
+        .party-element__avatar {
+            flex: 0 1 64px;
+            margin-bottom: 10px;
+        }
 
-    .party-element__title {
-        flex: 1 0 auto;
-        padding-left: 50px;
-    }
+        .party-element__subtitle {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
 
-    .party-element__cta {
-        max-width: 250px;
-        flex: 1 0 auto;
+        .party-element__title {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
     }
 }

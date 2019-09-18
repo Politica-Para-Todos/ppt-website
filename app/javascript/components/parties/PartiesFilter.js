@@ -7,7 +7,7 @@ class PartiesFilter extends PureComponent {
 
     render() {
         return (
-            <section className="section-parties-filter">
+            <div className="parties-filter">
                 <form action="">
                     <div className="field">
                         <input type="text" placeholder="Procure aqui por um partido" />
@@ -19,7 +19,7 @@ class PartiesFilter extends PureComponent {
                         </select>
                     </div>
                 </form>
-            </section>
+            </div>
         );
     }
 }
