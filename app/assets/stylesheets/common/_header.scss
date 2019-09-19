@@ -7,6 +7,12 @@
     height: auto;
     padding: 0 10%;
     background-color: $darkGrey;
+    min-height: 80px;
+}
+
+.header_logo {
+    width: 200px;
+    height: auto;
 }
 
 .ant-layout-header .ant-menu {
@@ -55,27 +61,5 @@
         background-color: $washedWhite;
         color: black;
         opacity: 1;
-    }
-}
-
-.header-social-media ul {
-    padding-left: 0;
-
-    li {
-        margin-right: 3px;
-
-        &:last-of-type {
-            margin-right: 0;
-        }
-
-        a {
-            display: inline-block;
-
-            svg {
-                width: auto;
-                height: 20px;
-                vertical-align: top;
-            }
-        }
     }
 }
