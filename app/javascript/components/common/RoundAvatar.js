@@ -6,7 +6,7 @@ import Avatar from 'antd/es/avatar';
 function RoundAvatar({ imageUrl, title, subtitle }) {
     return (
         <div className="avatar-list-item">
-            <Avatar size={180} src={imageUrl} icon="user" />
+            <Avatar size={120} src={imageUrl} icon="user" />
             <h3 className="avatar-list-item__title">{title}</h3>
             <h4 className="avatar-list-item__subtitle">{subtitle}</h4>
         </div>
