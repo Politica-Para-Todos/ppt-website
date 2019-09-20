@@ -46,8 +46,6 @@
     font-weight: bold;
 }
 
-.countdown-unit~.countdown-unit {}
-
 .countdown-unit-value {
     font-size: 50px;
 }
@@ -79,4 +77,9 @@
 
 .home-warning-footer-wrapper {
     padding-bottom: 40px;
+}
+
+.home-parties-list_disclaimer {
+    text-align: center;
+    font-style: italic;
 }
