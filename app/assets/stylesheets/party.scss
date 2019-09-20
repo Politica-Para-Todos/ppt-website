@@ -2,12 +2,10 @@
     
     
     .ant-layout-content {
-        padding: 0 32px;
-        margin-top: 32px;
+        padding: 32px;
         
         @media only screen and (min-width: 992px) {
-            padding: 0 64px;
-            margin-top: 64px;  
+            padding: 64px;
         }
     }
 

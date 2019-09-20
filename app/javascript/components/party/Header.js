@@ -19,11 +19,11 @@ const Header = ({ party }) => (
           <Avatar size={250} icon="user" />
         </Col>
       </Row>
-      <Row type="flex" justify="center">
+      {/* <Row type="flex" justify="center">
         <Col>
           <Button className="button--grey">Ver Programa</Button>
         </Col>
-      </Row>
+</Row> */}
       <Row type="flex" justify="end" align="middle">
         <Col>
             <a href={party.url}>{party.url}</a>
