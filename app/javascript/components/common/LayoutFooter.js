@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
 import SocialSharing from "./SocialSharing";
 import ContributorsList from "./ContributorsList";
+import socialSharing from "../../social-sharing";
 import horizontal_logo from "../../../assets/images/horizontal_logo.svg";
 
 const Footer = Layout.Footer;
@@ -11,7 +12,7 @@ class LayoutFooter extends PureComponent {
         return (
             <Footer className="footer">
                 <div>
-                    <SocialSharing />
+                    <SocialSharing socialMediaList={socialSharing} />
                     <img className="footer_logo" src={horizontal_logo} />
                 </div>
                 <div className="footer-info">
