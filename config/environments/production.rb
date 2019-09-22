@@ -127,6 +127,6 @@ Rails.application.configure do
     address: 'smtp.sendgrid.net',
     port: 587,
     authentication: :plain,
-    enable_starttls_auto: rue
+    enable_starttls_auto: true
   }
 end
