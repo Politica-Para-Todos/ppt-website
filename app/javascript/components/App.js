@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import Home from "./home";
 import Program from "./program";
+import Party from "./party";
 
 class App extends React.Component {
     constructor() {
@@ -14,6 +15,7 @@ class App extends React.Component {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/manifesto/:party_acronym/:section_id?" component={withRouter(Program)} />
+                <Route exact path="/party/:id" component={withRouter(Party)} />
             </Switch>
         )
     }
