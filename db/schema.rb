@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_225047) do
+ActiveRecord::Schema.define(version: 2019_09_21_235047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,21 @@ ActiveRecord::Schema.define(version: 2019_09_12_225047) do
     t.index ["category_id"], name: "index_annotations_on_category_id"
     t.index ["manifesto_item_id"], name: "index_annotations_on_manifesto_item_id"
     t.index ["user_id"], name: "index_annotations_on_user_id"
+  end
+
+  create_table "candidates", force: :cascade do |t|
+    t.string "name"
+    t.string "district"
+    t.string "photo"
+    t.text "description"
+    t.string "description_source"
+    t.boolean "is_lead_candidate"
+    t.string "candidate_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "position"
+    t.bigint "party_id"
+    t.index ["party_id"], name: "index_candidates_on_party_id"
   end
 
   create_table "categories", force: :cascade do |t|
