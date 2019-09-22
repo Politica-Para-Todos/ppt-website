@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_21_235047) do
+ActiveRecord::Schema.define(version: 2019_09_22_182418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(version: 2019_09_21_235047) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "position"
     t.bigint "party_id"
+    t.text "biography"
+    t.string "biography_source"
+    t.string "link_parlamento"
+    t.string "photo_source"
     t.index ["party_id"], name: "index_candidates_on_party_id"
   end
 
