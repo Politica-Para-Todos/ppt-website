@@ -74,12 +74,13 @@ end
   Candidate.create(
     name: "Lead candidate #{district_index}",
     district: "district #{district_index}",
-    description: "description",
-    description_source: "source",
+    description: 'description',
+    photo: 'https://i.pinimg.com/originals/6c/66/5e/6c665e615a635c6219bb30a7d04771e0.jpg',
+    description_source: 'source',
     is_lead_candidate: true,
-    candidate_type: "main" ,
+    candidate_type: 'main',
     position: 1,
-    party_id: p
+    party_id: p.id
   )
 
   for i in 1..rand(3..6) do
@@ -91,7 +92,7 @@ end
       is_lead_candidate: false,
       candidate_type: "main" ,
       position: i + 1,
-      party_id: p
+      party_id: p.id
     )
   end
 
@@ -104,7 +105,7 @@ end
       is_lead_candidate: false,
       candidate_type: "secundary" ,
       position: i,
-      party_id: p
+      party_id: p.id
     )
   end
 end
