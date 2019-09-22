@@ -19,7 +19,7 @@ namespace :data do
       p.instagram = party.fetch('instagram')
       p.twitter = party.fetch('twitter')
       p.website = party.fetch('website')
-      p.logo = party.fetch('logo')
+      p.logo = "/images/party_logos/#{party.fetch('logo')}"
       p.name = party.fetch('name')
 
       puts "Party #{p.acronym} updated!" if p.save
