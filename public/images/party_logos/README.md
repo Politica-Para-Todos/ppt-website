@@ -1,1 +1,0 @@
-Estes logótipos foram copiados do site público de cada partido. Estão neste repositório com o objectivo de serem colocados na página www.politicaparatodos.pt para que qualquer pessoa possa saber quais as candidaturas às eleições legislativas de 6 de Outubro de 2019.
