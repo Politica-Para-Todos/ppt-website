@@ -1,13 +1,26 @@
 import React, { PureComponent } from "react";
+import PropTypes from 'prop-types';
 import Avatar from 'antd/es/avatar';
 
 
-export default function RoundAvatar({ picURL, title, subtitle }) {
+function RoundAvatar({ imageUrl, title, subtitle }) {
     return (
         <div className="avatar-list-item">
-            <Avatar size={64} icon="user"/>
-            <h3>{title}</h3>
-            <h4>{subtitle}</h4>
+            <Avatar size={120} src={imageUrl} icon="user" />
+            <h3 className="avatar-list-item__title">{title}</h3>
+            <h4 className="avatar-list-item__subtitle">{subtitle}</h4>
         </div>
     )
 }
+
+RoundAvatar.propTypes = {
+    imageUrl: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string,
+}
+
+RoundAvatar.defaultProps = {
+    imageUrl: null,
+    subtitle: null,
+};
+export default RoundAvatar;

@@ -5,11 +5,15 @@ import Home from "./home";
 import Program from "./program";
 
 class App extends React.Component {
+    constructor() {
+        super();
+    }
+
     render() {
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/program/:party_acronym/:section_id?" component={withRouter(Program)} />
+                <Route exact path="/manifesto/:party_acronym/:section_id?" component={withRouter(Program)} />
             </Switch>
         )
     }

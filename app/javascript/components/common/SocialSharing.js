@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import SocialIcon from "./SocialIcon";
+import socialSharing from "../../social-sharing";
 
-const SocialSharing = (props) => {
-    const { socialMedia } = props;
-
+const SocialSharing = () => {
     return (
         <ul className="social-media-list">
-            {socialMedia && socialMedia.map((social, index) => (
+            {socialSharing.map((social, index) => (
                 <li key={index}>
                     <a href={social.url}>
                         <SocialIcon icon={social.type} />
@@ -16,10 +15,6 @@ const SocialSharing = (props) => {
             ))}
         </ul >
     );
-}
-
-SocialSharing.propTypes = {
-    socialMedia: PropTypes.array.isRequired
 }
 
 export default SocialSharing;

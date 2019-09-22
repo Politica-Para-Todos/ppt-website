@@ -1,23 +1,40 @@
+@import './colors';
+
 // Styles for the header component
 .header {
     display: flex;
     align-items: center;
     height: auto;
     padding: 0 10%;
-    background-color: #798184;
+    background-color: $darkGrey;
+    min-height: 80px;
+}
+
+.header_logo {
+    width: 200px;
+    height: auto;
 }
 
 .ant-layout-header .ant-menu {
-    background-color: #798184;
+    background-color: $darkGrey;
     flex-grow: 1;
     border: none;
 
     .ant-menu-item {
-        color: #fff;
         border: none;
 
         &:hover {
-            color: #fff;
+            border: none;
+        }
+    }
+
+    .ant-menu-item a {
+        color: white;
+        border: none;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
             border: none;
         }
     }
@@ -28,8 +45,21 @@
 }
 
 .header-join-us {
-    background-color: white;
+    margin-right: 30px;
+    background-color: $lightGrey;
+    border-radius: 3px;
+    color: black;
+    text-decoration: none;
     height: 32px;
     line-height: 32px;
     padding: 0 6px;
+    transition: background-color .15s ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $washedWhite;
+        color: black;
+        opacity: 1;
+    }
 }

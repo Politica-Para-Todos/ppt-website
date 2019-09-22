@@ -1,3 +1,21 @@
 // Place all the styles related to the Parties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.section-parties .parties-filter {
+    padding: 30px 0;
+}
+
+.section-parties .parties-filter form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    input {
+        min-width: 250px;
+    }
+}
+
+.ant-avatar img {
+    object-fit: cover;
+}

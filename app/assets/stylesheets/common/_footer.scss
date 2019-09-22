@@ -1,4 +1,38 @@
 // Styles for the footer component
+.footer {
+    min-height: 150px;
+    display: flex;
+
+    a {
+        color: white;
+
+        &:hover {
+            color: #eeeeee;
+        }
+
+        &:visited {
+            color: white;
+        }
+    }
+}
+
+.footer_logo {
+    width: 300px;
+    height: auto;
+}
+
+.footer .social-media-list {
+    padding-left: 0;
+}
+
+.footer-info {
+    margin-left: 80px;
+}
+
+.footer .social-media-list {
+    margin-bottom: 10px;
+}
+
 .ant-layout-footer {
     padding-left: 10%;
     padding-right: 10%;

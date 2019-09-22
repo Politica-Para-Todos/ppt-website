@@ -1,6 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import './common/colors';
 
 .home-join {
     display: flex;
@@ -18,6 +19,10 @@
 
 .home-our-mission-img {
     margin-left: 10px;
+
+    img {
+        width: 300px,
+    }
 }
 
 .home-voting-countdown {
@@ -31,6 +36,7 @@
 .countdown-container {
     display: flex;
     align-items: baseline;
+    margin-bottom: 15px;
 }
 
 .countdown-unit {
@@ -40,8 +46,7 @@
     font-weight: bold;
 }
 
-.countdown-unit ~ .countdown-unit {
-}
+.countdown-unit~.countdown-unit {}
 
 .countdown-unit-value {
     font-size: 50px;
@@ -54,4 +59,24 @@
 .countdown-unit-separator {
     font-size: 30px;
     margin: 0 20px;
+}
+
+.home-warning-container {
+    text-align: center;
+}
+
+.home-warning-close-icon {
+    color: $darkGrey !important;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.home-warning-content-wrapper {
+    padding: 30px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.home-warning-footer-wrapper {
+    padding-bottom: 40px;
 }

@@ -7,12 +7,12 @@ class HomePartiesList extends PureComponent {
     }
 
     render() {
-        const { items } = this.props;
+        const { parties } = this.props;
 
         return (
-            <section className="section-parties-list section--grey">
+            <section id="parties-section" className="section-home-parties-list section--grey">
                 <h2>Lista de Partidos</h2>
-                <AvatarList items={items} />
+                <AvatarList items={parties} theme={"4x3"} />
             </section>
         );
     }

@@ -1,9 +1,63 @@
 .avatar-list-container {
     display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 50px -15px 0;
+    text-align: center;
+
+    .avatar-list-item {
+        display: block;
+        flex: 0 1 16%;
+        padding: 0 15px;
+        margin-bottom: 60px;
+        text-align: center;
+
+        .ant-avatar {
+            margin-bottom: 10px;
+        }
+
+        .avatar-list-item__title {
+            font-size: 20px;
+            margin-bottom: 0;
+        }
+
+        .avatar-list-item__subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+    }
 }
 
-.avatar-list-item {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.avatar-list-container--column {
+    padding-bottom: 100px;
+
+    .avatar-list-item {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        padding: 30px 0;
+        border-top: 1px solid #d3d3d3;
+
+        &:last-of-type {
+            border-bottom: 1px solid #d3d3d3;
+        }
+
+        .ant-avatar {
+            flex: 0 1 140px;
+        }
+
+        .avatar-list-item__title {
+            flex: 1 0 auto;
+            padding-left: 50px;
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .avatar-list-item__cta {
+            flex: 0 1 auto;
+            max-width: 250px;
+            margin-right: 0;
+        }
+    }
 }

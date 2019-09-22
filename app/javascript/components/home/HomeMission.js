@@ -10,37 +10,15 @@ class HomeMission extends PureComponent {
         return (
             <section>
                 <div className="home-our-mission">
-                <div>
-                    <h2>A nossa missão</h2>
-                    <ol className="home-our-mission-list">
-                        <li>
-                            Acreditamos que um sistema governativo melhora quando a participação dos cidadãos aumenta. A nossa missão é aumentar a participação dos cidadãos.
-                        </li>
-                        <li>
-                            Acreditamos que uma cidadania mais informada tem uma maior capacidade de contribuir no processo e desenvolvimento democrático.
-                        </li>
-                        <li>
-                            Acreditamos que um sistema governativo melhora quando é transparente em todos os níveis, desde o indivíduo até ao governo, passando pelas iniciativas de cidadãos e pelos partidos.
-                        </li>
-                        <li>
-                            Acreditamos que é importante que este projecto seja politicamente neutro, para evitar que não seja apropriado por forças políticas e porque acreditamos que deve ser estimulado o debate de ideias. Este projecto não é iniciativa de nenhum partido político.
-                        </li>
-                        <li>
-                            Acreditamos que o cidadão informado permite um maior escrutínio das ideias dos vários partidos, permitindo assim a criação de programas eleitorais mais esclarecedores para o cidadão.
-                        </li>
-                        <li>
-                            O acto de escrutínio político leva não só a melhores decisões políticas como a um aumento do espiríto crítico dos cidadãos.
-                        </li>
-                        <li>
-                            Acreditamos que para informar não precisamos de estar dependentes de pressões externas, sejam elas económicas, financeiras, partidárias, religiosas ou culturais. Informar é um dever e um direito do cidadão, participamos neste projecto voluntariamente.
-                        </li>
-                        <li>
-                            Enquanto voluntários desta iniciativa, reconhecemos que somos pessoas, e que todas as pessoas têm as suas próprias inclinações. Devemos garantir que estas inclinações têm o menor impacto possível e, em caso de existência destas, que sejam geridas de forma totalmente responsável e transparente.
-                        </li>
-                        <li>
-                            Aplicamos a nossa preferência pelo espírito crítico ao nosso próprio trabalho, e recebemos de bom grado sugestões e críticas para melhorar.
-                        </li>
-                    </ol>
+                    <div>
+                        <h2>A nossa missão</h2>
+                        <p>Missão: promover a participação activa dos cidadãos nos processos eleitorais em Portugal.</p>
+                        <br />
+                        <p>As eleições legislativas de 6 de Outubro de 2019 aproximam-se. Como um grupo de cidadãos independentes, decidimos criar esta página para agregar toda a informação relevante para estas eleições.</p>
+                        <br />
+                        <p>Para cada candidatura, e nos casos em que os programas eleitorais estejam disponíveis, é apresentada informação para ajudar a perceber as diferentes propostas, tais como: nomes dos cabeças de lista, contato de email da candidatura, programa eleitoral, e lista de candidatos.</p>
+                        <br />
+                        <p>Para além de listar as candidaturas, está ser desenvolvida a funcionalidade de comentar os programas eleitorais. Esta funcionalidade permitirá discutir medidas ou fazer perguntas para esclarecimento por parte dos partidos políticos. Permitirá ainda um envolvimento direto da comunidade com cada parágrafo de cada programa apresentado, o que facilita um maior esclarecimento e literacia na hora da decisão.</p>
                     </div>
                     <div className="home-our-mission-img">
                         <img src={infographic} />
@@ -48,8 +26,8 @@ class HomeMission extends PureComponent {
                 </div>
                 <div className="home-voting-countdown">
                     <img src={voting} />
-                    <Countdown date="2019-10-06T09:00:00" renderer={CountdownRenderer}/>
-                    <Button>Como Votar?</Button>
+                    <Countdown date="2019-10-06T09:00:00" renderer={CountdownRenderer} />
+                    <Button className="button--grey">Como Votar?</Button>
                 </div>
             </section>
         );
