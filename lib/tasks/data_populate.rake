@@ -20,6 +20,7 @@ namespace :data do
       p.twitter = party.fetch('twitter')
       p.website = party.fetch('website')
       p.logo = party.fetch('logo')
+      p.name = party.fetch('name')
 
       puts "Party #{p.acronym} updated!" if p.save
 
