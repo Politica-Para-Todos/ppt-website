@@ -108,3 +108,31 @@ A user that signs up in the platform. May have email credentials or authenticate
 ### AdminUser
 
 A user that manages the platform. _This is not a User, nor has anything to do with the User entity._ 
+
+## Populating the database
+
+There is a handy rake task that populates the database from a JSON file with a given format. You can run it by evoking:
+
+```bash
+bundle exec rake data:populate
+```
+
+By default it will use the file available at `db/seeds.json` as input, but you can point it to any URL. For example, if you want it to populate the database from a JSON you uploaded to GitHub Gists, just give it its URL. Make sure to point to the _raw_ link.
+
+```bash
+bundle exec rake 'data:populate[https://gist.githubusercontent.com/punnie/a119b9138ceed7a1d63a22a5fb3c0bab/raw/e9f8735950423a690f190789023e558c71c045a5/candidates.json]'
+```
+
+Observe the single quotes around the rake task specification and the URL. You must use it or else your shell will complain.
+
+If you want to run it in the context of an environment, such as staging or production, you must have `heroku` tools installed and configured, and run it as such:
+
+```bash
+heroku run bundle exec rake data:populate --app politica-para-todos-staging
+```
+
+### Idempotency
+
+The rake task will match existing Parties by their _acronym_, which means that if there is an acronym change, a new Party will be created.
+
+Likewise, it will match existing Candidates by their Party ID, district and position. The name might be a good candidate, but with so many corrections at boot I wasn't sure it would be a good idea.
