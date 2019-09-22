@@ -7,6 +7,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
 
 AdminUser.destroy_all
 Candidate.destroy_all
@@ -121,3 +122,5 @@ end
     description_source: 'source'
   )
 end
+=======
+>>>>>>> party-apis
