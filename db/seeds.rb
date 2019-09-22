@@ -9,6 +9,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 AdminUser.destroy_all
+Candidate.destroy_all
 ManifestoItem.destroy_all
 ManifestoSection.where.not(manifesto_section_id: nil).destroy_all
 ManifestoSection.destroy_all
@@ -19,7 +20,12 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 
 p = Party.create(
   acronym: 'PPT',
-  name: 'Politica para Todos'
+  logo: 'https://cdn0.iconfinder.com/data/icons/finance-and-politics-1-1/128/vote_politics_political_campaign-512.png',
+  name: 'Politica para Todos',
+  website: 'https://www.politicaparatodos.pt/',
+  email: 'email@domain.com',
+  description: 'description',
+  description_source: 'source'
 )
 
 3.times do |m_index|
@@ -61,5 +67,44 @@ p = Party.create(
         )
       end
     end
+  end
+end
+
+10.times do |district_index|
+  Candidate.create(
+    name: "Lead candidate #{district_index}",
+    district: "district #{district_index}",
+    description: "description",
+    description_source: "source",
+    is_lead_candidate: true,
+    candidate_type: "main" ,
+    position: 1,
+    party_id: p
+  )
+
+  for i in 1..rand(3..6) do
+    Candidate.create(
+      name: "Main candidate #{i+1}",
+      district: "district #{district_index}",
+      description: "description",
+      description_source: "source",
+      is_lead_candidate: false,
+      candidate_type: "main" ,
+      position: i + 1,
+      party_id: p
+    )
+  end
+
+  for i in 1..rand(2..4) do
+    Candidate.create(
+      name: "Secundary candidate #{i}",
+      district: "district #{district_index}",
+      description: "description",
+      description_source: "source",
+      is_lead_candidate: false,
+      candidate_type: "secundary" ,
+      position: i,
+      party_id: p
+    )
   end
 end
