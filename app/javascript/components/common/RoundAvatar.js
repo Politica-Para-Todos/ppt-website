@@ -3,24 +3,26 @@ import PropTypes from 'prop-types';
 import Avatar from 'antd/es/avatar';
 
 
-function RoundAvatar({ imageUrl, title, subtitle }) {
+function RoundAvatar({ logo, title, acronym }) {
     return (
+      <a href={`parties/${acronym}.json`}>
         <div className="avatar-list-item">
-            <Avatar size={120} src={imageUrl} icon="user" />
+            <Avatar size={120} src={logo} icon="user" />
             <h3 className="avatar-list-item__title">{title}</h3>
-            <h4 className="avatar-list-item__subtitle">{subtitle}</h4>
+            <h4 className="avatar-list-item__subtitle">{acronym}</h4>
         </div>
+      </a>
     )
 }
 
 RoundAvatar.propTypes = {
-    imageUrl: PropTypes.string,
+    logo: PropTypes.string,
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
+    acronym: PropTypes.string,
 }
 
 RoundAvatar.defaultProps = {
-    imageUrl: null,
-    subtitle: null,
+    logo: null,
+    acronym: null,
 };
 export default RoundAvatar;

@@ -5,7 +5,6 @@ import LayoutFooter from "../common/LayoutFooter";
 import HomeMission from "./HomeMission";
 import HomePartiesList from "./HomePartiesList";
 import HomeMovement from "./HomeMovement";
-import PARTIES_LIST from '../../dummy-parties';
 import { shuffleArray } from '../../utils';
 import HomeInitialWarning from "./HomeInitialWarning";
 
@@ -14,8 +13,19 @@ class Home extends PureComponent {
         super();
 
         this.state = {
-            parties: shuffleArray(PARTIES_LIST)
+            parties: []
         }
+    }
+
+    componentDidMount() {
+      fetch("parties.json")
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          parties: shuffleArray(data)
+        })
+      )
+      .catch(console.log)
     }
 
     render() {

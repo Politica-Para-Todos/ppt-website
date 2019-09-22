@@ -109,3 +109,15 @@ end
     )
   end
 end
+
+14.times do |p_index|
+  Party.create(
+    acronym: "PPT #{p_index}",
+    logo: 'https://cdn0.iconfinder.com/data/icons/finance-and-politics-1-1/128/vote_politics_political_campaign-512.png',
+    name: "Politica para Todos #{p_index}",
+    website: 'https://www.politicaparatodos.pt/',
+    email: 'email@domain.com',
+    description: 'description',
+    description_source: 'source'
+  )
+end

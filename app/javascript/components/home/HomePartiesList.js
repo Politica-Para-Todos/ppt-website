@@ -11,6 +11,7 @@ class HomePartiesList extends PureComponent {
 
         return (
             <section id="parties-section" className="section-home-parties-list section--grey">
+                <h4 style={{ width: '600px', marginLeft: 'auto', marginRight: 'auto', fontWeight: 'lighter'}}>De forma a evitar enviesamentos, a lista de partidos aparece de forma aleatória.</h4>
                 <h2>Lista de Partidos</h2>
                 <AvatarList items={parties} theme={"4x3"} />
             </section>
