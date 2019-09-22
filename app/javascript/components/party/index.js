@@ -8,7 +8,30 @@ import Metrics from "./metrics";
 import Candidates from "./Candidates";
 
 export default class Party extends PureComponent {
+    constructor() {
+        super();
+
+        this.state = {
+            party: {},
+            candidates: []
+        }
+    }
+
+    componentDidMount() {
+      fetch("/parties/" + this.props.match.params.id + ".json")
+      .then(res => res.json())
+      .then(data =>
+        this.setState({
+          party: data,
+          candidates: data.candidates
+        })
+      )
+      .catch(console.log)
+    }
+
     render() {
+        const { party, candidates } = this.state;
+
         return (
             <Layout>
                 <LayoutHeader />
@@ -16,6 +39,7 @@ export default class Party extends PureComponent {
                     <div className="party-section">
                         <Header party={party} />
                         <Intro party={party} />
+                        <Candidates candidates={candidates} circles={circles} />
                     </div>
                 </Layout.Content>
                 <LayoutFooter />
@@ -23,33 +47,7 @@ export default class Party extends PureComponent {
         )
     }
 }
-  
-  const party = {
-    name: "Partido Fictício Português",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis eros sit amet lorem tincidunt, a bibendum elit eleifend. Quisque gravida odio ac eros varius dictum. Donec lectus mauris, congue id placerat et, commodo ac sem. Curabitur consectetur ut ipsum ut placerat. Cras dictum gravida nisi, eu gravida dolor semper in. Vestibulum ultricies libero sit amet porta auctor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis scelerisque lobortis cursus. Aenean eleifend pharetra tempor. Praesent quis odio ipsum.",
-    acronym: "PFP",
-    url: "https://www.partido.pt",
-    spokesperson: "Carlos Manuel",
-    socialMedia: [
-        {
-            type: 'twitter',
-            url: 'https://twitter.com/politicaparatds'
-        },
-        {
-            type: 'facebook',
-            url: 'http://fb.me/politicaparatodos.pt'
-        },
-        {
-            type: 'medium',
-            url: 'https://medium.com/politica-para-todos'
-        },
-        {
-            type: 'email',
-            url: 'mailto:contacto@politicaparatodos.pt'
-        }
-    ]
-  };
-  
+
   const thematics = [
     {
       value: 10,
@@ -77,14 +75,14 @@ export default class Party extends PureComponent {
       color: "gray"
     }
   ];
-  
+
   const analytics = {
     words: "310K",
     views: "310K",
     reading: "302 min",
     comments: "3.5K"
   };
-  
+
   const circles = [
     {
       value: "acores",
@@ -119,8 +117,16 @@ export default class Party extends PureComponent {
       label: "Évora"
     },
     {
+      value: "europa",
+      label: "Europa"
+    },
+    {
       value: "faro",
       label: "Faro"
+    },
+    {
+      value: "fora-da-europa",
+      label: "Fora da europa"
     },
     {
       value: "guarda",
@@ -165,64 +171,5 @@ export default class Party extends PureComponent {
     {
       value: "viseu",
       label: "Viseu"
-    }
-  ];
-  
-  const candidates = [
-    {
-      name: "Rui Macedo",
-      circle: {
-        id: "lisboa",
-        name: "Lisboa"
-      },
-      biography: "Lorem Ipsum"
-    },
-    {
-      name: "Rui Macedo",
-      circle: {
-        id: "acores",
-        name: "Açores"
-      },
-      biography: "Lorem Ipsum"
-    },
-    {
-      name: "Rui Macedo",
-      circle: {
-        id: "leiria",
-        name: "Leiria"
-      },
-      biography: "Lorem Ipsum"
-    },
-    {
-      name: "Rui Macedo",
-      circle: {
-        id: "lisboa",
-        name: "Lisboa"
-      },
-      biography: "Lorem Ipsum"
-    },
-    {
-      name: "Rui Macedo",
-      circle: {
-        id: "leiria",
-        name: "Leiria"
-      },
-      biography: "Lorem Ipsum"
-    },
-    {
-      name: "Rui Macedo",
-      circle: {
-        id: "lisboa",
-        name: "Lisboa"
-      },
-      biography: "Lorem Ipsum"
-    },
-    {
-      name: "Rui Macedo",
-      circle: {
-        id: "lisboa",
-        name: "Lisboa"
-      },
-      biography: "Lorem Ipsum"
     }
   ];

@@ -16,7 +16,7 @@ const Header = ({ party }) => (
       </Row>
       <Row type="flex" justify="center">
         <Col>
-          <Avatar size={250} icon="user" />
+          <Avatar size={120} src={party.logo} icon="user" />
         </Col>
       </Row>
       {/* <Row type="flex" justify="center">
@@ -26,7 +26,7 @@ const Header = ({ party }) => (
 </Row> */}
       <Row type="flex" justify="end" align="middle">
         <Col>
-            <a href={party.url}>{party.url}</a>
+            <a href={party.website} target="_blank">{party.website}</a>
         </Col>
         <Col>
           <SocialSharing socialMediaList={party.socialMedia} theme={"#c4c4c4"}/>

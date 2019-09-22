@@ -5,7 +5,7 @@ import Avatar from 'antd/es/avatar';
 
 function RoundAvatar({ logo, title, acronym }) {
     return (
-      <a href={`parties/${acronym}.json`}>
+      <a href={`party/${acronym}`}>
         <div className="avatar-list-item">
             <Avatar size={120} src={logo} icon="user" />
             <h3 className="avatar-list-item__title">{title}</h3>

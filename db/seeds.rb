@@ -73,7 +73,7 @@ end
 10.times do |district_index|
   Candidate.create(
     name: "Lead candidate #{district_index}",
-    district: "district #{district_index}",
+    district: "Vila Real",
     description: 'description',
     photo: 'https://i.pinimg.com/originals/6c/66/5e/6c665e615a635c6219bb30a7d04771e0.jpg',
     description_source: 'source',
@@ -86,7 +86,7 @@ end
   for i in 1..rand(3..6) do
     Candidate.create(
       name: "Main candidate #{i+1}",
-      district: "district #{district_index}",
+      district: "Vila Real",
       description: "description",
       description_source: "source",
       is_lead_candidate: false,
@@ -99,7 +99,7 @@ end
   for i in 1..rand(2..4) do
     Candidate.create(
       name: "Secundary candidate #{i}",
-      district: "district #{district_index}",
+      district: "Vila Real",
       description: "description",
       description_source: "source",
       is_lead_candidate: false,
