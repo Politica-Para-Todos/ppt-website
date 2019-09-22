@@ -29,17 +29,17 @@ namespace :data do
           candidates.each do |candidate|
             c = Candidate.find_or_initialize_by(
               party_id: p.id,
-              name: candidate.fetch('name')
+              district: district,
+              position: candidate.fetch('position')
             )
 
-            c.district = district
+            c.name = candidate.fetch('name')
             c.biography = candidate.fetch('biography', nil)
             c.biography_source = candidate.fetch('biography_source', nil)
             c.is_lead_candidate = candidate.fetch('is_lead_candidate')
             c.link_parlamento = candidate.fetch('link_parlamento', nil)
             c.photo = candidate.fetch('photo', nil)
             c.photo_source = candidate.fetch('photo_source', nil)
-            c.position = candidate.fetch('position')
             c.candidate_type = candidate.fetch('type')
 
             puts "Candidate #{c.name} updated!" if c.save
