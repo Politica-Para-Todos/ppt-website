@@ -24,7 +24,14 @@ class LayoutHeader extends PureComponent {
                         <HashLink to="/#parties-section">Partidos</HashLink>
                     </Menu.Item>
                 </Menu>
-                <a className="header-join-us" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">Junta-te a Nós!</a>
+                <a
+                    className="header-join-us"
+                    href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Junta-te a Nós!
+                </a>
                 <div className="header-social-media">
                     <SocialSharing socialMediaList={socialSharing} />
                 </div>
