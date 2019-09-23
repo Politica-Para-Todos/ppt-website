@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import SocialIcon from "./SocialIcon";
-import socialSharing from "../../social-sharing";
 
-const SocialSharing = () => {
+const SocialSharing = ({ socialMediaList = [], theme }) => {
     return (
         <ul className="social-media-list">
-            {socialSharing.map((social, index) => (
+            {socialMediaList.map((social, index) => (
                 <li key={index}>
                     <a href={social.url} target="_blank" rel="noopener">
-                        <SocialIcon icon={social.type} />
+                        <SocialIcon icon={social.type} theme={theme} />
                     </a>
                 </li>
             ))}

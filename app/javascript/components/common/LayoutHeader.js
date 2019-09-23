@@ -4,6 +4,7 @@ import Menu from 'antd/es/menu';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import SocialSharing from './SocialSharing';
+import socialSharing from "../../social-sharing";
 import horizontal_logo from "../../../assets/images/horizontal_logo.svg";
 
 const Header = Layout.Header;
@@ -32,7 +33,7 @@ class LayoutHeader extends PureComponent {
                     Junta-te a Nós!
                 </a>
                 <div className="header-social-media">
-                    <SocialSharing />
+                    <SocialSharing socialMediaList={socialSharing} />
                 </div>
             </Header>
         );
