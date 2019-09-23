@@ -8,7 +8,7 @@ const SocialSharing = () => {
         <ul className="social-media-list">
             {socialSharing.map((social, index) => (
                 <li key={index}>
-                    <a href={social.url}>
+                    <a href={social.url} target="_blank" rel="noopener">
                         <SocialIcon icon={social.type} />
                     </a>
                 </li>
