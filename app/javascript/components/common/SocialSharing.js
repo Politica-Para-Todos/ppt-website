@@ -7,7 +7,7 @@ const SocialSharing = ({ socialMediaList = [], theme }) => {
         <ul className="social-media-list">
             {socialMediaList.map((social, index) => (
                 <li key={index}>
-                    <a href={social.url}>
+                    <a href={social.url} target="_blank" rel="noopener">
                         <SocialIcon icon={social.type} theme={theme} />
                     </a>
                 </li>
