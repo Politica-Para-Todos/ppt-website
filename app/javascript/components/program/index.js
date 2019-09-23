@@ -29,7 +29,7 @@ class Program extends PureComponent {
     }
 
     getProgramData() {
-      return fetch("/parties/" + this.props.match.params.party_acronym + "/manifesto.json")
+      return fetch("/parties/" + encodeURIComponent(this.props.match.params.party_acronym) + "/manifesto.json")
       .then(res => res.json())
       .catch(console.log)
     }
