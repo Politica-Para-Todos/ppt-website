@@ -28,7 +28,6 @@ class Candidates extends React.Component {
             </Col>
             <Col lg={7} span={24} className="candidates__circles">
               <Select
-                allowClear={true}
                 style={{ width: "100%" }}
                 placeholder="Escolha o Círculo Eleitoral"
                 onChange={this.updateCircle}
