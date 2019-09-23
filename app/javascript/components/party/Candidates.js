@@ -44,13 +44,12 @@ class Candidates extends React.Component {
             </Col>
             <Col lg={7} span={24} className="candidates__circles">
               <Select
-                allowClear={true}
                 style={{ width: "100%" }}
                 placeholder="Escolha o Círculo Eleitoral"
                 onChange={this.updateCircle}
               >
                 {circles.map((circle, index) => (
-                  <Option value={circle.value}>{circle.label}</Option>
+                  <Option key={circle.value} value={circle.value}>{circle.label}</Option>
                 ))}
               </Select>
             </Col>
@@ -72,7 +71,7 @@ class Candidates extends React.Component {
                     xl={4}
                     className="candidate"
                   >
-                    <Avatar size={160} icon="user" />
+                    <Avatar size={160} src={candidate.photo} icon="user" />
                     <Title level={3}>{candidate.name}</Title>
                     <Paragraph>{candidate.circle.name}</Paragraph>
                     <Paragraph>{candidate.biography}</Paragraph>

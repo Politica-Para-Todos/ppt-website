@@ -47,13 +47,13 @@ class MenuBar extends PureComponent {
                 >
                 {section.subsections.map( (subsection, idx) => {
                     return <Menu.Item key={subsection.id}>
-                      <Link to={`/program/${party_acronym}/${subsection.id}`}>{subsection.title}</Link>
+                      <Link to={`/manifesto/${ encodeURIComponent(party_acronym) }/${subsection.id}`}>{subsection.title}</Link>
                     </Menu.Item>
                 })}
               </SubMenu>
             } else {
               return <Menu.Item key={section.id}>
-                <Link to={`/program/${party_acronym}/${section.id}`}>{section.title}</Link>
+                <Link to={`/manifesto/${ encodeURIComponent(party_acronym) }/${section.id}`}>{section.title}</Link>
               </Menu.Item>
             }
           })}

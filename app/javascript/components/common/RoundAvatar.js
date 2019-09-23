@@ -19,13 +19,15 @@ import PropTypes from 'prop-types';
 import Avatar from 'antd/es/avatar';
 
 
-function RoundAvatar({ imageUrl, title, subtitle }) {
+function RoundAvatar({ imageUrl, title, subtitle, link }) {
     return (
-        <div className="avatar-list-item">
-            <Avatar size={120} src={imageUrl} icon="user" />
-            <h3 className="avatar-list-item__title">{title}</h3>
-            <h4 className="avatar-list-item__subtitle">{subtitle}</h4>
-        </div>
+        <a href={link}>
+            <div className="avatar-list-item">
+                <Avatar size={120} src={imageUrl} icon="user" />
+                <h3 className="avatar-list-item__title">{title}</h3>
+                <h4 className="avatar-list-item__subtitle">{subtitle}</h4>
+            </div>
+        </a>
     )
 }
 
