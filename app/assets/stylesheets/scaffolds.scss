@@ -1,7 +1,7 @@
 @import './common/colors';
 
 body {
-    background-color: white;
+    background-color: red;
     color: #333;
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
@@ -34,6 +34,15 @@ body {
             color: rgba(#666, .7);
         }
     }
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 p a {

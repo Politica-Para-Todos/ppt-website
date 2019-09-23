@@ -18,7 +18,7 @@ class LayoutFooter extends PureComponent {
                 <div className="footer-info">
                     <h2>Quem Somos</h2>
                     <p>Podes consultar <a target="_blank"
-                    rel="noopener" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">aqui</a> todo o histórico do projecto.</p>
+                        rel="noopener" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">aqui</a> todo o histórico do projecto.</p>
                     <br />
                     <ContributorsList />
                 </div>

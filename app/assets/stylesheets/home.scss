@@ -22,6 +22,10 @@
 .home-our-mission-text {
     flex: 1;
     max-width: 600px;
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 .home-our-mission-img {
