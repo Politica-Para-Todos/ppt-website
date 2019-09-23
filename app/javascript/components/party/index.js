@@ -12,8 +12,9 @@ export default class Party extends PureComponent {
         super();
 
         this.state = {
-            party: {},
-            candidates: []
+            party: {
+              candidates: []
+            }
         }
     }
 
@@ -22,15 +23,14 @@ export default class Party extends PureComponent {
       .then(res => res.json())
       .then(data =>
         this.setState({
-          party: data,
-          candidates: data.candidates
+          party: data
         })
       )
       .catch(console.log)
     }
 
     render() {
-        const { party, candidates } = this.state;
+        const { party } = this.state;
 
         return (
             <Layout>
@@ -39,7 +39,7 @@ export default class Party extends PureComponent {
                     <div className="party-section">
                         <Header party={party} />
                         <Intro party={party} />
-                        <Candidates candidates={candidates} circles={circles} />
+                        <Candidates candidates={party.candidates} circles={circles} />
                     </div>
                 </Layout.Content>
                 <LayoutFooter />

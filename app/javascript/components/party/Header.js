@@ -26,7 +26,7 @@ const Header = ({ party }) => (
 </Row> */}
       <Row type="flex" justify="end" align="middle">
         <Col>
-            <a href={party.website} target="_blank">{party.website}</a>
+            <a href={party.website} rel="noopener" target="_blank">{party.website}</a>
         </Col>
         <Col>
           <SocialSharing socialMediaList={party.socialMedia} theme={"#c4c4c4"}/>
