@@ -4,15 +4,23 @@ json.acronym @party.acronym
 json.logo @party.logo
 json.name @party.name
 json.description @party.description
-json.website @party.website
-json.email @party.email
 json.description_source @party.description_source
-json.facebook @party.facebook
-json.twitter @party.twitter
-json.instagram @party.instagram
+json.website @party.website
+
+json.socialMedia do
+  json.array! [
+    {'type': 'email', 'url': @party.email},
+    {'type': 'facebook', 'url': @party.facebook},
+    {'type': 'twitter', 'url': @party.twitter},
+    {'type': 'instagram', 'url': @party.instagram}
+  ]
+end
 
 json.candidates @candidates do |candidate|
   json.name candidate.name
-  json.district candidate.district
+  json.circle do
+    json.id candidate.district.downcase.gsub! ' ', '-'
+    json.name candidate.district
+  end
   json.photo candidate.photo
 end
