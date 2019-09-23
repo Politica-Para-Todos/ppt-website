@@ -1,3 +1,19 @@
+/*
+Copyright 2019 Politica para Todos
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
 import LayoutHeader from "../common/LayoutHeader";
@@ -23,7 +39,7 @@ export default class Party extends PureComponent {
         )
     }
 }
-  
+
   const party = {
     name: "Partido Fictício Português",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lobortis eros sit amet lorem tincidunt, a bibendum elit eleifend. Quisque gravida odio ac eros varius dictum. Donec lectus mauris, congue id placerat et, commodo ac sem. Curabitur consectetur ut ipsum ut placerat. Cras dictum gravida nisi, eu gravida dolor semper in. Vestibulum ultricies libero sit amet porta auctor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis scelerisque lobortis cursus. Aenean eleifend pharetra tempor. Praesent quis odio ipsum.",
@@ -49,7 +65,7 @@ export default class Party extends PureComponent {
         }
     ]
   };
-  
+
   const thematics = [
     {
       value: 10,
@@ -77,14 +93,14 @@ export default class Party extends PureComponent {
       color: "gray"
     }
   ];
-  
+
   const analytics = {
     words: "310K",
     views: "310K",
     reading: "302 min",
     comments: "3.5K"
   };
-  
+
   const circles = [
     {
       value: "acores",
@@ -167,7 +183,7 @@ export default class Party extends PureComponent {
       label: "Viseu"
     }
   ];
-  
+
   const candidates = [
     {
       name: "Rui Macedo",
