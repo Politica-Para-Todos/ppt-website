@@ -85,6 +85,10 @@ export default class Party extends PureComponent {
 
   const circles = [
     {
+      value: "all",
+      label: "All"
+    },
+    {
       value: "acores",
       label: "Açores"
     },
