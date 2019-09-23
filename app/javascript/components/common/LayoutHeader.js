@@ -13,7 +13,9 @@ class LayoutHeader extends PureComponent {
     render() {
         return (
             <Header className="header">
-                <img className="header_logo" src={horizontal_logo} />
+                <Link to="/">
+                    <img className="header_logo" src={horizontal_logo} />
+                </Link>
                 <Menu
                     mode="horizontal"
                 >

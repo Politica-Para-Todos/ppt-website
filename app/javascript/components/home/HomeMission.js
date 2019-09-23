@@ -10,7 +10,7 @@ class HomeMission extends PureComponent {
         return (
             <section>
                 <div className="home-our-mission">
-                    <div>
+                    <div className="home-our-mission-text">
                         <h2>A nossa missão</h2>
                         <p>Missão: promover a participação activa dos cidadãos nos processos eleitorais em Portugal.</p>
                         <br />

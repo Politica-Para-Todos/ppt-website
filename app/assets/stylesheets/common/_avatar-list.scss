@@ -11,20 +11,31 @@
         padding: 0 15px;
         margin-bottom: 60px;
         text-align: center;
+        text-decoration: none;
+
+        .avatar-list-item__content {
+            max-width: 220px;
+            margin: 0 auto;
+        }
 
         .ant-avatar {
             margin-bottom: 10px;
         }
 
-        .avatar-list-item__title {
-            font-size: 20px;
+        .avatar-list-item__content-title {
             margin-bottom: 0;
+            font-size: 20px;
+            line-height: 1.3em;
+            text-decoration: none;
         }
 
-        .avatar-list-item__subtitle {
-            font-size: 18px;
-            font-weight: 400;
+        .avatar-list-item__content-subtitle {
+            margin-top: 10px;
             margin-bottom: 0;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.3em;
+            text-decoration: none;
         }
     }
 }
@@ -47,14 +58,14 @@
             flex: 0 1 140px;
         }
 
-        .avatar-list-item__title {
+        .avatar-list-item__content-title {
             flex: 1 0 auto;
             padding-left: 50px;
             margin: 0;
             font-size: 40px;
         }
 
-        .avatar-list-item__cta {
+        .avatar-list-item__content-cta {
             flex: 0 1 auto;
             max-width: 250px;
             margin-right: 0;

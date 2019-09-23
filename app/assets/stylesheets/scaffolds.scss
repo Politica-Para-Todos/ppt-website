@@ -24,7 +24,6 @@ body {
 
     a {
         color: #666;
-        text-decoration: underline;
         background-color: transparent;
 
         &:visited {
@@ -35,6 +34,10 @@ body {
             color: rgba(#666, .7);
         }
     }
+}
+
+p a {
+    text-decoration: underline;
 }
 
 th {

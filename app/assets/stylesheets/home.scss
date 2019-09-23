@@ -13,15 +13,23 @@
 
 .home-our-mission {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.home-our-mission-text {
+    flex: 1;
+    max-width: 600px;
 }
 
 .home-our-mission-img {
-    margin-left: 10px;
+    flex: 0 1 auto;
+    padding-left: 30px;
 
     img {
-        width: 300px,
+        max-width: 400px;
     }
 }
 
@@ -29,14 +37,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 1px solid;
-    padding: 30px 0;
+    border-top: 1px solid $darkGrey;
+    padding: 50px 0 30px;
 }
 
 .countdown-container {
     display: flex;
     align-items: baseline;
-    margin-bottom: 15px;
+    margin: 20px auto;
 }
 
 .countdown-unit {
@@ -54,6 +62,7 @@
 .countdown-unit-label {
     font-size: 15px;
     line-height: 15px;
+    text-transform: uppercase;
 }
 
 .countdown-unit-separator {
@@ -82,6 +91,10 @@
 }
 
 .home-parties-list_disclaimer {
+    display: block;
+    max-width: 450px;
+    margin: 0 auto 20px;
+    color: $darkerGrey;
     text-align: center;
     font-style: italic;
 }
