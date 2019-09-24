@@ -72,7 +72,7 @@ class Candidates extends React.Component {
                                     className="candidate"
                                 >
                                     <div className="candidate__content">
-                                        <Avatar size={160} icon="user" />
+                                        <Avatar size={120} icon="user" />
                                         {candidate.circle.name && (
                                             <Paragraph className="candidate__content-circle">{candidate.circle.name}</Paragraph>
                                         )}

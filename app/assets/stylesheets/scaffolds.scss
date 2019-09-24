@@ -58,6 +58,10 @@ body {
     padding-left: 15px;
 }
 
+.ant-select {
+    max-width: 310px;
+}
+
 .ant-select-selection:hover,
 .ant-select-focused .ant-select-selection,
 .ant-select-selection:focus,
