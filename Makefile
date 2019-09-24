@@ -10,7 +10,7 @@ help:
 	@echo "  server             	  Start server"
 
 #Start/Build Containers
-start:
+compose:
 	@docker-compose up -d
 
 # Stop containers
@@ -22,8 +22,14 @@ shell:
 	@docker-compose exec dev bash
 
 # Run database migrations
-rake-migrate:
+migrate:
 	@rake db:migrate
 
-server:
+populate:
+	@rake data:populate
+
+recompile:
+	@rm -rf public/packs
+
+start:
 	@rails server

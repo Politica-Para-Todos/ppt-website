@@ -20,7 +20,7 @@ import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import HomeMission from "./HomeMission";
 import HomePartiesList from "./HomePartiesList";
-import HomeMovement from "./HomeMovement";
+import HomeMotivation from "./HomeMotivation";
 import { shuffleArray } from '../../utils';
 import HomeInitialWarning from "./HomeInitialWarning";
 
@@ -34,21 +34,21 @@ class Home extends PureComponent {
     }
 
     componentDidMount() {
-      fetch("parties.json")
-      .then(res => res.json())
-      .then(data =>
-        this.setState({
-          parties: shuffleArray(data.map(function(x) {
-            return {
-              'imageUrl': x.logo,
-              'title': x.title,
-              'subtitle': x.acronym,
-              'link': `party/${ encodeURIComponent(x.acronym) }`
-            }
-          }))
-        })
-      )
-      .catch(console.log)
+        fetch("parties.json")
+            .then(res => res.json())
+            .then(data =>
+                this.setState({
+                    parties: shuffleArray(data.map(function (x) {
+                        return {
+                            'imageUrl': x.logo,
+                            'title': x.acronym,
+                            'subtitle': x.title,
+                            'link': `party/${encodeURIComponent(x.acronym)}`
+                        }
+                    }))
+                })
+            )
+            .catch(console.log)
     }
 
     render() {
@@ -61,7 +61,7 @@ class Home extends PureComponent {
                     <HomeInitialWarning />
                     <HomeMission />
                     <HomePartiesList parties={parties} />
-                    <HomeMovement />
+                    <HomeMotivation />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>

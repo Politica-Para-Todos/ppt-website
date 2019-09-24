@@ -3,40 +3,66 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import './common/colors';
 
-.home-join {
-    display: flex;
-}
+section.home-motivation {
+    padding: 80px 0 70px;
 
-.home-join-container~.home-join-container {
-    margin-left: 20px;
-}
-
-.home-our-mission {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.home-our-mission-img {
-    margin-left: 10px;
-
-    img {
-        width: 300px,
+    .ant-row-flex {
+        flex-flow: row wrap;
     }
 }
 
-.home-voting-countdown {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid;
-    padding: 30px 0;
+.home-motivation__text {
+    ol {
+        padding-left: 20px;
+    }
+}
+
+section.home-our-mission {
+    padding: 100px 0;
+
+    .ant-row-flex {
+        flex-flow: row wrap;
+    }
+}
+
+.home-our-mission-text {
+    margin-left: 0;
+    margin-right: auto;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.home-our-mission-img {
+    padding-left: 30px;
+    margin-right: 0;
+    margin-left: auto;
+
+    img {
+        max-width: 500px;
+    }
+}
+
+section.home-voting-countdown {
+    padding: 0;
+
+    .ant-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+        text-align: center;
+        border-top: 1px solid $darkGrey;
+    }
 }
 
 .countdown-container {
     display: flex;
     align-items: baseline;
-    margin-bottom: 15px;
+    justify-content: center;
+    margin: 20px auto;
 }
 
 .countdown-unit {
@@ -54,6 +80,7 @@
 .countdown-unit-label {
     font-size: 15px;
     line-height: 15px;
+    text-transform: uppercase;
 }
 
 .countdown-unit-separator {
@@ -82,6 +109,10 @@
 }
 
 .home-parties-list_disclaimer {
+    display: block;
+    max-width: 450px;
+    margin: 0 auto 20px;
+    color: $darkerGrey;
     text-align: center;
     font-style: italic;
 }
