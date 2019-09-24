@@ -1,6 +1,6 @@
 @import './common/colors';
 
-section.party-section {
+main.party-section {
     padding: 0;
 
     .ant-layout-content {
@@ -26,7 +26,7 @@ section.party-section {
         text-align: center;
 
         .social-media-list {
-            margin-left: 10px;
+            margin-left: 15px;
         }
     }
 
