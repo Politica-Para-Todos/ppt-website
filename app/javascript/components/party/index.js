@@ -28,20 +28,18 @@ export default class Party extends PureComponent {
         super();
 
         this.state = {
-            party: {
-                candidates: []
-            }
+            party: {}
         }
     }
 
     componentDidMount() {
         fetch("/parties/" + this.props.match.params.id + ".json")
             .then(res => res.json())
-            .then(data =>
+            .then(data =>{
                 this.setState({
                     party: data
                 })
-            )
+            })
             .catch(console.log)
     }
 
