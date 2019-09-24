@@ -5,7 +5,7 @@ import LayoutFooter from "../common/LayoutFooter";
 import HomeMission from "./HomeMission";
 import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
-import HomeMovement from "./HomeMovement";
+import HomeMotivation from "./HomeMotivation";
 import { shuffleArray } from '../../utils';
 import HomeInitialWarning from "./HomeInitialWarning";
 
@@ -47,7 +47,7 @@ class Home extends PureComponent {
                     <HomeMission />
                     <HomeCountdown />
                     <HomePartiesList parties={parties} />
-                    <HomeMovement />
+                    <HomeMotivation />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>

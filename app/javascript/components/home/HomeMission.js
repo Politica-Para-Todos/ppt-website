@@ -6,7 +6,7 @@ class HomeMission extends PureComponent {
     render() {
         return (
             <section className="home-our-mission">
-                <Row>
+                <Row type="flex" justify="space-between" align="middle">
                     <Col span={24} lg={12} className="home-our-mission-text">
                         <h2>A nossa missão</h2>
                         <p>Missão: promover a participação activa dos cidadãos nos processos eleitorais em Portugal.</p>

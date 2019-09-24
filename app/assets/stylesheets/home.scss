@@ -3,18 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import './common/colors';
 
-.home-join {
-    padding-top: 100px;
+section.home-motivation {
+    padding: 80px 0 70px;
 
-    .ant-row {
-        display: flex;
+    .ant-row-flex {
         flex-flow: row wrap;
     }
 }
 
-.home-join__movement {
-    padding-right: 60px;
-
+.home-motivation__text {
     ol {
         padding-left: 20px;
     }
@@ -23,11 +20,8 @@
 section.home-our-mission {
     padding: 100px 0;
 
-    .ant-row {
-        display: flex;
+    .ant-row-flex {
         flex-flow: row wrap;
-        align-items: center;
-        justify-content: space-between;
     }
 }
 

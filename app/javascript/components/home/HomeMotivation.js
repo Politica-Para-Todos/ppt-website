@@ -1,13 +1,13 @@
 import React, { PureComponent } from "react";
 import { Row, Col } from "antd";
 
-class HomeMovement extends PureComponent {
+class HomeMotivation extends PureComponent {
     render() {
         return (
-            <section className="home-join">
-                <Row>
-                    <Col span={24} lg={16} className="home-join__movement">
-                        <h2>O que nos move </h2>
+            <section className="home-motivation">
+                <Row type="flex" justify="space-between">
+                    <Col span={24} lg={14} className="home-motivation__text">
+                        <h2>O que nos move</h2>
                         <ol>
                             <li>
                                 Acreditamos que um sistema governativo melhora quando a participação dos cidadãos aumenta. A nossa missão é aumentar a participação dos cidadãos.
@@ -38,7 +38,7 @@ class HomeMovement extends PureComponent {
                                 </li>
                         </ol>
                     </Col>
-                    <Col span={24} lg={8} className="home-join__cta">
+                    <Col span={24} lg={8} className="home-motivation__cta">
                         <h2>Junta-te a nós!</h2>
                         <p>Este projecto é aberto a todos os que se identifiquem com os valores do nosso manifesto. Trabalhamos de acordo com os princípios de transparência radical: todas as nossas decisões são públicas e é clara qual a contribuição de cada indivíduo. Toda a comunicação deste projecto passa pela nossa página na plataforma Loomio. Entra <a target="_blank" rel="noopener" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">neste link</a> para ver toda a nossa comunicação, e caso queiras contribuir, vai até à conversa "Como Contribuir". Ficamos à espera!</p>
                     </Col>
@@ -48,4 +48,4 @@ class HomeMovement extends PureComponent {
     }
 }
 
-export default HomeMovement;
+export default HomeMotivation;

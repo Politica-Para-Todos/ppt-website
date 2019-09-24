@@ -8,10 +8,7 @@
     background-color: $darkGrey;
     min-height: 80px;
 
-    .ant-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    .ant-row-flex {
         width: 100%;
     }
 

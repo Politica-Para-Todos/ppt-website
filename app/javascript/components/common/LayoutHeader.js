@@ -13,7 +13,7 @@ class LayoutHeader extends PureComponent {
     render() {
         return (
             <Header className="header">
-                <Row>
+                <Row type="flex" justify="space-between" align="middle">
                     <Col span={24} lg={24}>
                         <Link to="/">
                             <img className="header_logo" src={horizontal_logo} />

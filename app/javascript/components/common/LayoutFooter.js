@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Link } from 'react-router-dom';
 import { Layout, Row, Col } from "antd";
 import SocialSharing from "./SocialSharing";
 import ContributorsList from "./ContributorsList";
@@ -12,7 +13,7 @@ class LayoutFooter extends PureComponent {
 
         return (
             <Footer className="footer">
-                <Row>
+                <Row type="flex" justify="space-between">
                     <Col span={24} lg={6}>
                         <SocialSharing socialMediaList={socialSharing} />
                         <Link to="/">
