@@ -9,6 +9,7 @@
     color: white;
     text-decoration: none;
     transition: background-color .15s ease-in-out, color .15s ease-in-out;
+    outline: none;
 
     a {
         border: none;
@@ -56,7 +57,7 @@
     &:active {
         border: none;
         border-color: transparent;
-        background-color: $lightGrey;
-        color: black;
+        background-color: $darkerGrey;
+        color: white;
     }
 }

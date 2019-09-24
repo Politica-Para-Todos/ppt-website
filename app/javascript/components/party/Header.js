@@ -5,35 +5,29 @@ import SocialSharing from "../common/SocialSharing";
 const { Title, Paragraph } = Typography;
 
 const Header = ({ party }) => (
-  <Layout>
-    <Layout.Header className="party-header">
-      <Row>
-        <Col span={24}>
-          <Title>{party.name}</Title>
-          <Divider />
-          <Paragraph strong>{party.acronym}</Paragraph>
-        </Col>
-      </Row>
-      <Row type="flex" justify="center">
-        <Col>
-          <Avatar size={120} src={party.logo} icon="user" />
-        </Col>
-      </Row>
-      {/* <Row type="flex" justify="center">
+    <section className="party-header">
+        <Row>
+            <Col span={24}>
+                <Title>{party.name}</Title>
+                <Divider />
+                <Paragraph strong>{party.acronym}</Paragraph>
+            </Col>
+        </Row>
+        <Row type="flex" justify="center">
+            <Col>
+                <Avatar size={120} src={party.logo} icon="user" />
+            </Col>
+        </Row>
+        {/* <Row type="flex" justify="center">
         <Col>
           <Button className="button--grey">Ver Programa</Button>
         </Col>
-</Row> */}
-      <Row type="flex" justify="end" align="middle">
-        <Col>
+        </Row> */}
+        <Row type="flex" justify="end" align="middle">
             <a href={party.website} rel="noopener" target="_blank">{party.website}</a>
-        </Col>
-        <Col>
-          <SocialSharing socialMediaList={party.socialMedia} theme={"#c4c4c4"}/>
-        </Col>
-      </Row>
-    </Layout.Header>
-  </Layout>
+            <SocialSharing socialMediaList={party.socialMedia} theme={"#c4c4c4"} />
+        </Row>
+    </section>
 );
 
 export default Header;

@@ -1,16 +1,13 @@
 import React, { PureComponent } from "react";
-import Button from "antd/es/button";
-import Countdown from 'react-countdown-now';
-import CountdownRenderer from "./CountdownRenderer";
+import { Row, Col } from "antd";
 import infographic from "../../../assets/images/infographic.svg";
-import voting from "../../../assets/images/voting.svg";
 
 class HomeMission extends PureComponent {
     render() {
         return (
-            <section>
-                <div className="home-our-mission">
-                    <div>
+            <section className="home-our-mission">
+                <Row type="flex" justify="space-between" align="middle">
+                    <Col span={24} lg={12} className="home-our-mission-text">
                         <h2>A nossa missão</h2>
                         <p>Missão: promover a participação activa dos cidadãos nos processos eleitorais em Portugal.</p>
                         <br />
@@ -19,25 +16,11 @@ class HomeMission extends PureComponent {
                         <p>Para cada candidatura, e nos casos em que os programas eleitorais estejam disponíveis, é apresentada informação para ajudar a perceber as diferentes propostas, tais como: nomes dos cabeças de lista, contato de email da candidatura, programa eleitoral, e lista de candidatos.</p>
                         <br />
                         <p>Para além de listar as candidaturas, está ser desenvolvida a funcionalidade de comentar os programas eleitorais. Esta funcionalidade permitirá discutir medidas ou fazer perguntas para esclarecimento por parte dos partidos políticos. Permitirá ainda um envolvimento direto da comunidade com cada parágrafo de cada programa apresentado, o que facilita um maior esclarecimento e literacia na hora da decisão.</p>
-                    </div>
-                    <div className="home-our-mission-img">
+                    </Col>
+                    <Col span={24} lg={10} className="home-our-mission-img">
                         <img src={infographic} />
-                    </div>
-                </div>
-                <div className="home-voting-countdown">
-                    <img src={voting} />
-                    <Countdown date="2019-10-06T09:00:00" renderer={CountdownRenderer} />
-                    <Button className="button--grey">
-                        <a
-                            className=""
-                            href="https://www.portaldoeleitor.pt/Default.aspx"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Como votar?
-                        </a>
-                    </Button>
-                </div>
+                    </Col>
+                </Row>
             </section>
         );
     }

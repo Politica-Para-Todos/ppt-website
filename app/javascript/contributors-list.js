@@ -10,5 +10,6 @@ export default [
     "Miguel Spranger",
     "Paulo Fonseca",
     "Luís Silva",
-    "Nuno Cruz"
+    "Nuno Cruz",
+    "João Gonçalves",
 ]

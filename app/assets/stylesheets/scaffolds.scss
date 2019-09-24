@@ -1,7 +1,6 @@
 @import './common/colors';
 
 body {
-    background-color: white;
     color: #333;
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
@@ -23,18 +22,56 @@ body {
     }
 
     a {
-        color: #666;
-        text-decoration: underline;
+        color: $darkerGrey;
         background-color: transparent;
 
         &:visited {
-            color: #666;
+            color: $darkerGrey;
         }
 
         &:hover {
-            color: rgba(#666, .7);
+            color: rgba($darkerGrey, .7);
         }
     }
+}
+
+.ant-row,
+.ant-row-flex {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.ant-col {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.ant-select-selection:hover,
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:active {
+    border-color: $lightGrey;
+    box-shadow: none;
+}
+
+.ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled),
+.ant-select-dropdown-menu-item-selected,
+.ant-select-dropdown-menu-item-active {
+    background-color: $lightGrey;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+p a {
+    text-decoration: underline;
 }
 
 th {
