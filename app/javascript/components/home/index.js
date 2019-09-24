@@ -3,6 +3,7 @@ import Layout from 'antd/es/layout';
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import HomeMission from "./HomeMission";
+import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
 import HomeMovement from "./HomeMovement";
 import { shuffleArray } from '../../utils';
@@ -18,21 +19,21 @@ class Home extends PureComponent {
     }
 
     componentDidMount() {
-      fetch("parties.json")
-      .then(res => res.json())
-      .then(data =>
-        this.setState({
-          parties: shuffleArray(data.map(function(x) {
-            return {
-              'imageUrl': x.logo,
-              'title': x.title,
-              'subtitle': x.acronym,
-              'link': `party/${x.acronym}`
-            }
-          }))
-        })
-      )
-      .catch(console.log)
+        fetch("parties.json")
+            .then(res => res.json())
+            .then(data =>
+                this.setState({
+                    parties: shuffleArray(data.map(function (x) {
+                        return {
+                            'imageUrl': x.logo,
+                            'title': x.acronym,
+                            'subtitle': x.title,
+                            'link': `party/${x.acronym}`
+                        }
+                    }))
+                })
+            )
+            .catch(console.log)
     }
 
     render() {
@@ -44,6 +45,7 @@ class Home extends PureComponent {
                 <Layout.Content>
                     <HomeInitialWarning />
                     <HomeMission />
+                    <HomeCountdown />
                     <HomePartiesList parties={parties} />
                     <HomeMovement />
                 </Layout.Content>

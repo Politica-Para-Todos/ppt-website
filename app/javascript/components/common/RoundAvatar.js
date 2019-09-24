@@ -8,8 +8,8 @@ function RoundAvatar({ imageUrl, title, subtitle, link }) {
         <a className="avatar-list-item" href={link}>
             <div className="avatar-list-item__content">
                 <Avatar size={120} src={imageUrl} icon="user" />
-                <h3 className="avatar-list-item__title">{title}</h3>
-                <h4 className="avatar-list-item__subtitle">{subtitle}</h4>
+                <h3 className="avatar-list-item__content-title">{title}</h3>
+                <h4 className="avatar-list-item__content-subtitle">{subtitle}</h4>
             </div>
         </a>
     )

@@ -1,45 +1,55 @@
-// Styles for the footer component
-.footer {
-    min-height: 150px;
-    display: flex;
+@import './colors';
 
-    a {
-        color: white;
+// Styles for the footer component
+.footer.ant-layout-footer {
+    min-height: 150px;
+    padding: 90px 0 50px;
+    color: $darkerGrey;
+    background-color: $darkGrey;
+
+    .ant-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ant-col {
+        flex: 1;
+    }
+
+    h2 {
+        font-weight: 600;
+        color: black;
+    }
+
+    p a {
+        color: $darkerGrey;
+        text-decoration: underline;
 
         &:hover {
-            color: #eeeeee;
-        }
-
-        &:visited {
-            color: white;
+            color: $darkerGrey;
+            text-decoration: none;
         }
     }
 }
 
 .footer_logo {
-    width: 300px;
+    width: 240px;
     height: auto;
 }
 
 .footer .social-media-list {
     padding-left: 0;
+
+    .social-media__icon {
+        height: 25px;
+    }
 }
 
 .footer-info {
+    max-width: 600px;
     margin-left: 80px;
 }
 
 .footer .social-media-list {
     margin-bottom: 10px;
-}
-
-.ant-layout-footer {
-    padding-left: 10%;
-    padding-right: 10%;
-    background-color: #798184;
-    color: white;
-}
-
-.ant-layout-footer h2 {
-    color: white;
 }

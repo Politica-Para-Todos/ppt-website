@@ -3,11 +3,22 @@
 // Styles for the header component
 .header {
     display: flex;
-    align-items: center;
     height: auto;
-    padding: 0 10%;
+    padding: 0;
     background-color: $darkGrey;
     min-height: 80px;
+
+    .ant-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .ant-col {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .header_logo {
@@ -16,8 +27,9 @@
 }
 
 .ant-layout-header .ant-menu {
-    background-color: $darkGrey;
     flex-grow: 1;
+    margin-left: 30px;
+    background-color: $darkGrey;
     border: none;
 
     .ant-menu-item {

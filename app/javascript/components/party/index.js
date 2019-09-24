@@ -13,20 +13,20 @@ export default class Party extends PureComponent {
 
         this.state = {
             party: {
-              candidates: []
+                candidates: []
             }
         }
     }
 
     componentDidMount() {
-      fetch("/parties/" + this.props.match.params.id + ".json")
-      .then(res => res.json())
-      .then(data =>
-        this.setState({
-          party: data
-        })
-      )
-      .catch(console.log)
+        fetch("/parties/" + this.props.match.params.id + ".json")
+            .then(res => res.json())
+            .then(data =>
+                this.setState({
+                    party: data
+                })
+            )
+            .catch(console.log)
     }
 
     render() {
@@ -36,11 +36,11 @@ export default class Party extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
-                    <div className="party-section">
+                    <section className="party-section">
                         <Header party={party} />
                         <Intro party={party} />
                         <Candidates candidates={party.candidates} circles={circles} />
-                    </div>
+                    </section>
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>
@@ -48,128 +48,128 @@ export default class Party extends PureComponent {
     }
 }
 
-  const thematics = [
+const thematics = [
     {
-      value: 10,
-      icon: "build",
-      color: "green"
+        value: 10,
+        icon: "build",
+        color: "green"
     },
     {
-      value: 30,
-      icon: "build",
-      color: "yellow"
+        value: 30,
+        icon: "build",
+        color: "yellow"
     },
     {
-      value: 20,
-      icon: "build",
-      color: "red"
+        value: 20,
+        icon: "build",
+        color: "red"
     },
     {
-      value: 25,
-      icon: "build",
-      color: "blue"
+        value: 25,
+        icon: "build",
+        color: "blue"
     },
     {
-      value: 15,
-      icon: "build",
-      color: "gray"
+        value: 15,
+        icon: "build",
+        color: "gray"
     }
-  ];
+];
 
-  const analytics = {
+const analytics = {
     words: "310K",
     views: "310K",
     reading: "302 min",
     comments: "3.5K"
-  };
+};
 
-  const circles = [
+const circles = [
     {
-      value: "acores",
-      label: "Açores"
+        value: "acores",
+        label: "Açores"
     },
     {
-      value: "aveiro",
-      label: "Aveiro"
+        value: "aveiro",
+        label: "Aveiro"
     },
     {
-      value: "beja",
-      label: "Beja"
+        value: "beja",
+        label: "Beja"
     },
     {
-      value: "braga",
-      label: "Braga"
+        value: "braga",
+        label: "Braga"
     },
     {
-      value: "bragança",
-      label: "Bragança"
+        value: "bragança",
+        label: "Bragança"
     },
     {
-      value: "castelo-branco",
-      label: "Castelo Branco"
+        value: "castelo-branco",
+        label: "Castelo Branco"
     },
     {
-      value: "coimbra",
-      label: "Coimbra"
+        value: "coimbra",
+        label: "Coimbra"
     },
     {
-      value: "evora",
-      label: "Évora"
+        value: "evora",
+        label: "Évora"
     },
     {
-      value: "europa",
-      label: "Europa"
+        value: "europa",
+        label: "Europa"
     },
     {
-      value: "faro",
-      label: "Faro"
+        value: "faro",
+        label: "Faro"
     },
     {
-      value: "fora-da-europa",
-      label: "Fora da europa"
+        value: "fora-da-europa",
+        label: "Fora da europa"
     },
     {
-      value: "guarda",
-      label: "Guarda"
+        value: "guarda",
+        label: "Guarda"
     },
     {
-      value: "leiria",
-      label: "Leiria"
+        value: "leiria",
+        label: "Leiria"
     },
     {
-      value: "lisboa",
-      label: "Lisboa"
+        value: "lisboa",
+        label: "Lisboa"
     },
     {
-      value: "madeira",
-      label: "Madeira"
+        value: "madeira",
+        label: "Madeira"
     },
     {
-      value: "portalegre",
-      label: "Portalegre"
+        value: "portalegre",
+        label: "Portalegre"
     },
     {
-      value: "porto",
-      label: "Porto"
+        value: "porto",
+        label: "Porto"
     },
     {
-      value: "santarem",
-      label: "Santarém"
+        value: "santarem",
+        label: "Santarém"
     },
     {
-      value: "setubal",
-      label: "Setúbal"
+        value: "setubal",
+        label: "Setúbal"
     },
     {
-      value: "viana-do-castelo",
-      label: "Viana do Castelo"
+        value: "viana-do-castelo",
+        label: "Viana do Castelo"
     },
     {
-      value: "vila-real",
-      label: "Vila Real"
+        value: "vila-real",
+        label: "Vila Real"
     },
     {
-      value: "viseu",
-      label: "Viseu"
+        value: "viseu",
+        label: "Viseu"
     }
-  ];
+];

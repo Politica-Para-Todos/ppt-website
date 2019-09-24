@@ -4,24 +4,36 @@
 @import './common/colors';
 
 .home-join {
-    display: flex;
+    padding-top: 100px;
+
+    .ant-row {
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
 
-.home-join-container~.home-join-container {
-    margin-left: 20px;
+.home-join__movement {
+    padding-right: 60px;
+
+    ol {
+        padding-left: 20px;
+    }
 }
 
-.home-our-mission {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 50px;
+section.home-our-mission {
+    padding: 100px 0;
+
+    .ant-row {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .home-our-mission-text {
-    flex: 1;
-    max-width: 600px;
+    margin-left: 0;
+    margin-right: auto;
 
     p {
         margin-bottom: 0;
@@ -29,25 +41,32 @@
 }
 
 .home-our-mission-img {
-    flex: 0 1 auto;
     padding-left: 30px;
+    margin-right: 0;
+    margin-left: auto;
 
     img {
-        max-width: 400px;
+        max-width: 500px;
     }
 }
 
-.home-voting-countdown {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-top: 1px solid $darkGrey;
-    padding: 50px 0 30px;
+section.home-voting-countdown {
+    padding: 0;
+
+    .ant-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 80px 0 70px;
+        text-align: center;
+        border-top: 1px solid $darkGrey;
+    }
 }
 
 .countdown-container {
     display: flex;
     align-items: baseline;
+    justify-content: center;
     margin: 20px auto;
 }
 

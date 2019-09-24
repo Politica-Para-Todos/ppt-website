@@ -28,5 +28,8 @@ migrate:
 populate:
 	@rake data:populate
 
+recompile:
+	@rm -rf public/packs
+
 start:
 	@rails server
