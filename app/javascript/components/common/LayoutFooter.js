@@ -15,7 +15,9 @@ class LayoutFooter extends PureComponent {
                 <Row>
                     <Col span={24} lg={6}>
                         <SocialSharing socialMediaList={socialSharing} />
-                        <img className="footer_logo" src={vertical_logo} />
+                        <Link to="/">
+                            <img className="footer_logo" src={vertical_logo} />
+                        </Link>
                     </Col>
                     <Col span={24} lg={12} className="footer-info">
                         <h2>Quem Somos</h2>
