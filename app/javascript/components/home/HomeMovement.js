@@ -4,7 +4,7 @@ class HomeMovement extends PureComponent {
     render() {
         return (
             <section className="home-join">
-                <div className="home-join-container">
+                <div className="home-join-container-left">
                     <h2>O que nos move</h2>
                     <ol>
                         <li>
@@ -36,7 +36,7 @@ class HomeMovement extends PureComponent {
                         </li>
                     </ol>
                 </div>
-                <div className="home-join-container">
+                <div className="home-join-container-right">
                     <h2>Junta-te a nós!</h2>
                     <p>
                         Este projecto é aberto a todos os que se identifiquem com os valores do nosso manifesto. Trabalhamos de acordo com os princípios de transparência radical: todas as nossas decisões são públicas e é clara qual a contribuição de cada indivíduo. Toda a comunicação deste projecto passa pela nossa página na plataforma Loomio. Entra <a target="_blank"

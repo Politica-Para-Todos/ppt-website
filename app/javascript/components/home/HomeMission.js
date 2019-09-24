@@ -27,7 +27,7 @@ class HomeMission extends PureComponent {
                 <div className="home-voting-countdown">
                     <img src={voting} />
                     <Countdown date="2019-10-06T09:00:00" renderer={CountdownRenderer} />
-                    <Button className="button--grey">
+                    <Button className="button--grey" size="large">
                         <a
                             className=""
                             href="https://www.portaldoeleitor.pt/Default.aspx"
