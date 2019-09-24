@@ -35,14 +35,18 @@ export default class Party extends PureComponent {
     }
 
     componentDidMount() {
+        console.log(this.props.match.params.id)
         fetch("/parties/" + this.props.match.params.id + ".json")
             .then(res => res.json())
-            .then(data =>
+            .then(data => {
+                console.log(data)
                 this.setState({
                     party: data
                 })
-            )
-            .catch(console.log)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     render() {
@@ -100,7 +104,7 @@ const analytics = {
 const circles = [
     {
         value: "all",
-        label: "All"
+        label: "Todos"
     },
     {
         value: "acores",

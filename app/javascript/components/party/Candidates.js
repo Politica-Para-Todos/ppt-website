@@ -55,7 +55,7 @@ class Candidates extends React.Component {
                         </Select>
                     </Col>
                 </Row>
-                <Row className="candidates__list">
+                <Row type="flex" className="candidates__list">
                     {candidates
                         .filter(
                             candidate =>
@@ -73,7 +73,7 @@ class Candidates extends React.Component {
                                     className="candidate"
                                 >
                                     <Avatar size={160} icon="user" />
-                                    <Title level={4}>{getName(candidate.name)}</Title>
+                                    <Title level={3}>{getName(candidate.name)}</Title>
                                     <Paragraph>{candidate.circle.name}</Paragraph>
                                     <Paragraph>{candidate.biography}</Paragraph>
                                 </Col>
