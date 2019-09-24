@@ -37,8 +37,20 @@ body {
 
 .ant-row,
 .ant-row-flex {
-    max-width: 1170px;
+    max-width: 320px;
     margin: 0 auto;
+
+    @media only screen and (min-width: 768px) {
+        max-width: 738px;
+    }
+
+    @media only screen and (min-width: 992px) {
+        max-width: 962px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        max-width: 1170px;
+    }
 }
 
 .ant-col {
@@ -61,9 +73,16 @@ body {
 }
 
 h2 {
-    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
     font-size: 22px;
     font-weight: 600;
+    text-align: center;
+
+    @media only screen and (min-width: 992px) {
+        margin-left: 0;
+        text-align: left;
+    }
 }
 
 p {

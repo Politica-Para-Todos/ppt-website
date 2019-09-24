@@ -1,6 +1,12 @@
 // General styles
 .ant-layout {
+    position: relative;
+    overflow: hidden;
     background-color: #fff;
+
+    @media only screen and (min-width: 768px) {
+        overflow: initial;
+    }
 }
 
 .ant-layout-content section {
