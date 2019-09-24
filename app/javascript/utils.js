@@ -32,4 +32,10 @@ function shuffleArray(array) {
     return array;
 }
 
-export { slugify, shuffleArray };
+// Get first and last name
+function getName(str) {
+    var names = str.split(' ');
+    return names[0] + ' ' + names[names.length-1];
+}
+
+export { slugify, shuffleArray, getName };

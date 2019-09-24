@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Typography, Select, Avatar } from "antd";
+import { getName } from '../../utils';
 
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
@@ -55,8 +56,8 @@ class Candidates extends React.Component {
                                     xl={4}
                                     className="candidate"
                                 >
-                                    <Avatar size={160} src={candidate.photo} icon="user" />
-                                    <Title level={3}>{candidate.name}</Title>
+                                    <Avatar size={160} icon="user" />
+                                    <Title level={4}>{getName(candidate.name)}</Title>
                                     <Paragraph>{candidate.circle.name}</Paragraph>
                                     <Paragraph>{candidate.biography}</Paragraph>
                                 </Col>
