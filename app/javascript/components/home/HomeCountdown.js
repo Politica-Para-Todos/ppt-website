@@ -9,7 +9,7 @@ import voting from "../../../assets/images/voting.svg";
 class HomeCountdown extends PureComponent {
     render() {
         return (
-            <section className="home-voting-countdown">
+            <section className="home-voting-countdown" >
                 <Row>
                     <Col span={24} lg={24}>
                         <img src={voting} />

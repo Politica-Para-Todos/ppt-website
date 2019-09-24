@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Row, Col } from "antd";
 import infographic from "../../../assets/images/infographic.svg";
+import HomeCountdown from './HomeCountdown';
 
 class HomeMission extends PureComponent {
     render() {
@@ -21,6 +22,7 @@ class HomeMission extends PureComponent {
                         <img src={infographic} />
                     </Col>
                 </Row>
+                <HomeCountdown/>
             </section>
         );
     }
