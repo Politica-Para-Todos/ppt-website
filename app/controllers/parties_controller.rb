@@ -18,7 +18,7 @@ class PartiesController < InheritedResources::Base
     @party = Party.find_by(acronym: params[:acronym].upcase)
     # cand.district has downcase and unicode_normalize filters so that the sort is accent insensitive.
     # e.g. Évora was showing up as last
-    @candidates = @party.candidates.where(position: 1).sort_by { |cand| cand.district.downcase.unicode_normalize(:nfd) }
+    @candidates = @party.candidates.where(is_lead_candidate: true).sort_by { |cand| cand.district.downcase.unicode_normalize(:nfd) }
   end
 
   private
