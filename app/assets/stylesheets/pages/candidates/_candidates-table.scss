@@ -5,6 +5,14 @@
         color: $darkerGrey;
     }
 
+    &__list {
+        margin-bottom: 50px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
     &__items {
         margin-top: 12px;
     }

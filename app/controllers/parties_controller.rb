@@ -16,7 +16,7 @@ class PartiesController < InheritedResources::Base
   # GET /parties/:acronym.json
   def show
     @party = Party.find_by(acronym: params[:acronym].upcase)
-    @candidates = @party.candidates.where(is_lead_candidate: true).sort_by { |cand| cand.district }
+    @candidates = @party.candidates.where(position: 1).sort_by { |cand| cand.district }
   end
 
   private

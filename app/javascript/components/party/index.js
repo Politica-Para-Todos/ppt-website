@@ -21,7 +21,7 @@ import LayoutFooter from "../common/LayoutFooter";
 import Header from "./Header";
 import Intro from "./Intro";
 import Metrics from "./metrics";
-import Candidates from "./Candidates";
+import CandidatesList from "./CandidatesList";
 
 export default class Party extends PureComponent {
     constructor() {
@@ -39,6 +39,7 @@ export default class Party extends PureComponent {
                 this.setState({
                     party: data
                 })
+                console.log(party.candidates)
             })
             .catch((error) => {
                 console.log(error);
@@ -48,13 +49,15 @@ export default class Party extends PureComponent {
     render() {
         const { party } = this.state;
 
+        console.log(party);
+
         return (
             <Layout>
                 <LayoutHeader />
                 <Layout.Content className="party-section">
                     <Header party={party} />
                     <Intro party={party} />
-                    <Candidates candidates={party.candidates} circles={circles} />
+                    <CandidatesList candidates={party.candidates} circles={circles} />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>

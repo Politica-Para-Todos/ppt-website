@@ -3,7 +3,7 @@ import Layout from 'antd/es/layout';
 import LayoutHeader from "../../common/LayoutHeader";
 import LayoutFooter from "../../common/LayoutFooter";
 import Header from "../Header";
-import CandidateIntro from "./CandidateIntro";
+import CandidatesIntro from "./CandidatesIntro";
 import CandidatesTable from "./CandidatesTable";
 import { Typography } from "antd";
 
@@ -12,13 +12,6 @@ const { Paragraph } = Typography;
 const spokesperson = {
     name: "Carlos Manuel",
     responsibility: "Representante do Partido na Plataforma"
-};
-
-const party = {
-    name: "Partido Fictício Português",
-    acronym: "PFP",
-    website: "www.partido.pt",
-    url: "#"
 };
 
 const candidates = {
@@ -50,21 +43,39 @@ const candidates = {
     ]
 };
 
-class Candidate extends PureComponent {
+class PartyCandidates extends PureComponent {
     constructor() {
         super();
 
         this.state = {
-            parties: []
+            party: {}
         }
     }
+
+    componentDidMount() {
+        fetch("/parties/" + this.props.match.params.id + ".json")
+            .then(res => res.json())
+            .then(data => {
+                this.setState({
+                    party: data
+                })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
     render() {
+        const { party } = this.state;
+
+        console.log(party.candidates);
+
         return (
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
                     <Header party={party} />
-                    <CandidateIntro spokesperson={spokesperson}>
+                    <CandidatesIntro spokesperson={spokesperson}>
                         <Paragraph>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
                             lobortis eros sit amet lorem tincidunt, a bibendum elit eleifend.
@@ -81,8 +92,10 @@ class Candidate extends PureComponent {
                             pulvinar hendrerit. Aenean eleifend, augue in bibendum bibendum, justo
                             nisi faucibus.
                         </Paragraph>
-                    </CandidateIntro>
-                    <CandidatesTable candidates={candidates} />
+                    </CandidatesIntro>
+                    {/* {party.candidates && (
+                        <CandidatesTable candidates={party.candidates} />
+                    )} */}
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>
@@ -90,4 +103,4 @@ class Candidate extends PureComponent {
     }
 }
 
-export default Candidate;
+export default PartyCandidates;

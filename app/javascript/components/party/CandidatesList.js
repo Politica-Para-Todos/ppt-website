@@ -22,7 +22,7 @@ import { getName } from '../../utils';
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
 
-class Candidates extends React.Component {
+class CandidatesList extends React.Component {
     static propTypes = {
         candidates: PropTypes.array
     }
@@ -94,4 +94,4 @@ class Candidates extends React.Component {
     }
 }
 
-export default Candidates;
+export default CandidatesList;
