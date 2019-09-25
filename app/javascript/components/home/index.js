@@ -19,6 +19,7 @@ import Layout from 'antd/es/layout';
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import HomeMission from "./HomeMission";
+import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
 import HomeMotivation from "./HomeMotivation";
 import { shuffleArray } from '../../utils';
@@ -62,6 +63,7 @@ class Home extends PureComponent {
                 <Layout.Content>
                     <HomeInitialWarning />
                     <HomeMission />
+                    <HomeCountdown />
                     <HomePartiesList parties={parties} />
                     <HomeMotivation />
                 </Layout.Content>
