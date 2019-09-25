@@ -111,6 +111,9 @@ class LayoutHeader extends PureComponent {
                             <Menu.Item>
                                 <HashLink to="/#parties-section">Partidos</HashLink>
                             </Menu.Item>
+                            <Menu.Item key="3">
+                                <HashLink to="/about-us">Sobre nós</HashLink>
+                            </Menu.Item>
                         </Menu>
                         <a
                             className="header-join-us"
