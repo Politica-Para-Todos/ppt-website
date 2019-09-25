@@ -18,12 +18,20 @@ import React from "react";
 import PropTypes from 'prop-types';
 import SocialIcon from "./SocialIcon";
 
+function getHrefFromUrl(type, url) {
+    if (type === 'email') {
+        return `mailto:${url}`;
+    }
+
+    return url;
+}
+
 const SocialSharing = ({ socialMediaList = [], theme }) => {
     return (
         <ul className="social-media-list">
             {socialMediaList.map((social, index) => (
                 <li key={index}>
-                    <a href={social.url} target="_blank" rel="noopener">
+                    <a href={getHrefFromUrl(social.type, social.url)} target="_blank" rel="noopener">
                         <SocialIcon icon={social.type} theme={theme} />
                     </a>
                 </li>

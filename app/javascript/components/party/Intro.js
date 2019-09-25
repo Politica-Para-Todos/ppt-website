@@ -22,9 +22,10 @@ const { Title, Paragraph } = Typography;
 const Intro = ({ party }) => (
     <section className="party-intro">
         <Row>
-            <Col span={24} lg={17}>
+            <Col md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 16 }}>
                 <Title level={2}>Descrição do Partido</Title>
                 {party.description}
+                <p>Fonte: <a href={party.description_source} target="_blank" rel="noopener">Wikipedia</a></p>
             </Col>
             {/* <Col span={24} lg={7} className="party-intro__spokesperson">
           <Avatar size={160} icon="user" />

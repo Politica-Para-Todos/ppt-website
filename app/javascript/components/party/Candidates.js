@@ -15,13 +15,21 @@ limitations under the License.
 */
 
 import React from "react";
+import PropTypes from "prop-types";
 import { Row, Col, Typography, Select, Avatar } from "antd";
-import { getName } from '../../utils';
 
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
 
 class Candidates extends React.Component {
+    static propTypes = {
+        candidates: PropTypes.array
+    }
+
+    static defaultProps = {
+        candidates: []
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -38,24 +46,24 @@ class Candidates extends React.Component {
         const { circles, candidates } = this.props;
 
         return (
-            <section className="candidates">
+            <section className="party-candidates">
                 <Row>
                     <Col lg={17} span={24}>
                         <Title level={2}>Cabeças de Lista</Title>
                     </Col>
-                    <Col lg={7} span={24} className="candidates__circles">
+                    <Col lg={7} span={24} className="party-candidates__circles">
                         <Select
                             style={{ width: "100%" }}
                             placeholder="Escolha o Círculo Eleitoral"
                             onChange={this.updateCircle}
                         >
-                            {circles.map((circle, index) => (
+                            {circles.map((circle) => (
                                 <Option key={circle.value} value={circle.value}>{circle.label}</Option>
                             ))}
                         </Select>
                     </Col>
                 </Row>
-                <Row className="candidates__list">
+                <Row type="flex" className="party-candidates__list">
                     {candidates
                         .filter(
                             candidate =>
@@ -70,12 +78,20 @@ class Candidates extends React.Component {
                                     sm={8}
                                     lg={6}
                                     xl={4}
-                                    className="candidate"
+                                    className="party-candidate"
                                 >
-                                    <Avatar size={160} icon="user" />
-                                    <Title level={4}>{getName(candidate.name)}</Title>
-                                    <Paragraph>{candidate.circle.name}</Paragraph>
-                                    <Paragraph>{candidate.biography}</Paragraph>
+                                    <div className="party-candidate__content">
+                                        <Avatar size={120} icon="user" />
+                                        {candidate.circle.name && (
+                                            <Paragraph className="party-candidate__content-circle">{candidate.circle.name}</Paragraph>
+                                        )}
+                                        {candidate.name && (
+                                            <Title className="party-candidate__content-title" level={3}>{candidate.name}</Title>
+                                        )}
+                                        {candidate.biography && (
+                                            <Paragraph className="party-candidate__content-biography">{candidate.biography}</Paragraph>
+                                        )}
+                                    </div>
                                 </Col>
                             );
                         })}
