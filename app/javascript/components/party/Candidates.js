@@ -16,7 +16,6 @@ limitations under the License.
 
 import React from "react";
 import { Row, Col, Typography, Select, Avatar } from "antd";
-import { getName } from '../../utils';
 
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
@@ -49,7 +48,7 @@ class Candidates extends React.Component {
                             placeholder="Escolha o Círculo Eleitoral"
                             onChange={this.updateCircle}
                         >
-                            {circles.map((circle, index) => (
+                            {circles.map((circle) => (
                                 <Option key={circle.value} value={circle.value}>{circle.label}</Option>
                             ))}
                         </Select>
@@ -72,10 +71,18 @@ class Candidates extends React.Component {
                                     xl={4}
                                     className="candidate"
                                 >
-                                    <Avatar size={160} icon="user" />
-                                    <Title level={3}>{getName(candidate.name)}</Title>
-                                    <Paragraph>{candidate.circle.name}</Paragraph>
-                                    <Paragraph>{candidate.biography}</Paragraph>
+                                    <div className="candidate__content">
+                                        <Avatar size={120} icon="user" />
+                                        {candidate.circle.name && (
+                                            <Paragraph className="candidate__content-circle">{candidate.circle.name}</Paragraph>
+                                        )}
+                                        {candidate.name && (
+                                            <Title className="candidate__content-title" level={3}>{candidate.name}</Title>
+                                        )}
+                                        {candidate.biography && (
+                                            <Paragraph className="candidate__content-biography">{candidate.biography}</Paragraph>
+                                        )}
+                                    </div>
                                 </Col>
                             );
                         })}

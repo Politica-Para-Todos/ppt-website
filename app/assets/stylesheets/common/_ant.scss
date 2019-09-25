@@ -1,13 +1,31 @@
 @import './colors';
 
 .ant-layout {
-    background-color: white;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+
+    @media only screen and (min-width: 768px) {
+        overflow: initial;
+    }
 }
 
 .ant-row,
 .ant-row-flex {
-    max-width: 1170px;
+    max-width: 320px;
     margin: 0 auto;
+
+    @media only screen and (min-width: 768px) {
+        max-width: 738px;
+    }
+
+    @media only screen and (min-width: 992px) {
+        max-width: 962px;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        max-width: 1170px;
+    }
 }
 
 .ant-col {
@@ -15,23 +33,8 @@
     padding-left: 15px;
 }
 
-.ant-avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &.ant-avatar-image {
-        background: white;
-    }
-
-    img {
-        display: block;
-        width: auto;
-        height: auto;
-        position: absolute;
-        max-height: 100%;
-        max-width: 100%;
-    }
+.ant-select {
+    max-width: 310px;
 }
 
 .ant-select-selection:hover,

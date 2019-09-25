@@ -36,9 +36,16 @@ body {
 }
 
 h2 {
-    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
     font-size: 22px;
     font-weight: 600;
+    text-align: center;
+
+    @media only screen and (min-width: 992px) {
+        margin-left: 0;
+        text-align: left;
+    }
 }
 
 p {

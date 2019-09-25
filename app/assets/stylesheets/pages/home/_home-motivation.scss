@@ -1,27 +1,19 @@
-section.home-our-mission {
-    padding: 100px 0;
+section.home-motivation {
+    padding: 80px 0 70px;
 
     .ant-row-flex {
         flex-flow: row wrap;
     }
 }
 
-.home-our-mission-text {
-    margin-left: 0;
-    margin-right: auto;
+.home-motivation__text {
+    margin-bottom: 50px;
 
-    p {
+    @media only screen and (min-width: 992px) {
         margin-bottom: 0;
     }
-}
 
-.home-our-mission-img {
-    padding-left: 30px;
-    margin-right: 0;
-    margin-left: auto;
-
-    img {
-        width: 100%;
-        max-width: 500px;
+    ol {
+        padding-left: 20px;
     }
 }

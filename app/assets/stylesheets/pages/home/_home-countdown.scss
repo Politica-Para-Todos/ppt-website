@@ -7,7 +7,7 @@ section.home-voting-countdown {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 40px 0 20px;
+        padding: 70px 0 60px;
         margin-top: 40px;
         text-align: center;
         border-top: 1px solid $darkGrey;
@@ -29,17 +29,31 @@ section.home-voting-countdown {
 }
 
 .countdown-unit-value {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 20px;
+    line-height: 20px;
+
+    @media only screen and (min-width: 992px) {
+        font-size: 50px;
+        line-height: 50px;
+    }
 }
 
 .countdown-unit-label {
-    font-size: 15px;
-    line-height: 15px;
+    font-size: 10px;
+    line-height: 1;
     text-transform: uppercase;
+
+    @media only screen and (min-width: 992px) {
+        font-size: 15px;
+    }
 }
 
 .countdown-unit-separator {
-    font-size: 30px;
-    margin: 0 20px;
+    font-size: 16px;
+    margin: 0 7px;
+
+    @media only screen and (min-width: 992px) {
+        font-size: 30px;
+        margin: 0 20px;
+    }
 }
