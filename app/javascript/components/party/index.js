@@ -28,7 +28,9 @@ export default class Party extends PureComponent {
         super();
 
         this.state = {
-            party: {}
+            party: {
+              description_source: ""
+            }
         }
     }
 

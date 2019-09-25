@@ -46,6 +46,11 @@ main.party-section {
         }
     }
 
+    .party-desc {
+      white-space: pre-wrap;
+      padding-bottom: 5px;
+    }
+
     .metrics {
         &__container {
             background-color: $lightGrey;
