@@ -1,0 +1,53 @@
+@import './colors';
+
+.ant-layout {
+    background-color: white;
+}
+
+.ant-row,
+.ant-row-flex {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.ant-col {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.ant-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.ant-avatar-image {
+        background: white;
+    }
+
+    img {
+        display: block;
+        width: auto;
+        height: auto;
+        position: absolute;
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
+.ant-select-selection:hover,
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:active {
+    border-color: $lightGrey;
+    box-shadow: none;
+}
+
+.ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled),
+.ant-select-dropdown-menu-item-selected,
+.ant-select-dropdown-menu-item-active {
+    background-color: $lightGrey;
+}
+
+.ant-divider {
+    background-color: $darkGrey;
+}

@@ -1,0 +1,22 @@
+@import './../common/colors';
+
+.party-header {
+    background-color: $lightGrey;
+    padding-top: 80px;
+    height: auto;
+    text-align: center;
+
+    .social-media-list {
+        margin-left: 15px;
+    }
+
+    .ant-avatar {
+        margin: 0 auto 10px;
+
+        img {
+            // TODO: This should temporary. Images should fit with both properties at 100%.
+            max-height: 75%;
+            max-width: 75%;
+        }
+    }
+}

@@ -91,22 +91,3 @@
         }
     }
 }
-
-.ant-avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &.ant-avatar-image {
-        background: white;
-    }
-
-    img {
-        display: block;
-        width: auto;
-        height: auto;
-        position: absolute;
-        max-height: 100%;
-        max-width: 100%;
-    }
-}

@@ -2,5 +2,6 @@
 @import 'antd/dist/antd.css';
 @import './scaffolds.scss';
 @import './common/all';
-@import './home.scss';
-@import './party.scss';
+@import './partials/all';
+@import './home/home.scss';
+@import './party-detail/party-detail.scss';

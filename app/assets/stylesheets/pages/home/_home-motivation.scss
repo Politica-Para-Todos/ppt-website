@@ -1,0 +1,27 @@
+section.home-our-mission {
+    padding: 100px 0;
+
+    .ant-row-flex {
+        flex-flow: row wrap;
+    }
+}
+
+.home-our-mission-text {
+    margin-left: 0;
+    margin-right: auto;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.home-our-mission-img {
+    padding-left: 30px;
+    margin-right: 0;
+    margin-left: auto;
+
+    img {
+        width: 100%;
+        max-width: 500px;
+    }
+}

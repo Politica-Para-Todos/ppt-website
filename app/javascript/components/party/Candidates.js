@@ -38,12 +38,12 @@ class Candidates extends React.Component {
         const { circles, candidates } = this.props;
 
         return (
-            <section className="candidates">
+            <section className="party-candidates">
                 <Row>
                     <Col lg={17} span={24}>
                         <Title level={2}>Cabeças de Lista</Title>
                     </Col>
-                    <Col lg={7} span={24} className="candidates__circles">
+                    <Col lg={7} span={24} className="party-candidates__circles">
                         <Select
                             style={{ width: "100%" }}
                             placeholder="Escolha o Círculo Eleitoral"
@@ -55,7 +55,7 @@ class Candidates extends React.Component {
                         </Select>
                     </Col>
                 </Row>
-                <Row type="flex" className="candidates__list">
+                <Row type="flex" className="party-candidates__list">
                     {candidates
                         .filter(
                             candidate =>
