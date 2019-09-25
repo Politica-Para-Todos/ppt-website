@@ -29,7 +29,7 @@ export default function AboutUs() {
         <Layout>
             <LayoutHeader />
             <Layout.Content className="about-us-section">
-                <img src={rowsPeople} />
+                <img src={rowsPeople} className="about-us__header-img" />
                 <Contributors />
                 <Divider />
                 <Motivation />
