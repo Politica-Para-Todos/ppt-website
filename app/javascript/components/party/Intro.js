@@ -25,6 +25,7 @@ const Intro = ({ party }) => (
             <Col span={24} lg={17}>
                 <Title level={2}>Descrição do Partido</Title>
                 {party.description}
+                <p>Fonte: <a href={party.description_source} target="_blank" rel="noopener">Wikipedia</a></p>
             </Col>
             {/* <Col span={24} lg={7} className="party-intro__spokesperson">
           <Avatar size={160} icon="user" />

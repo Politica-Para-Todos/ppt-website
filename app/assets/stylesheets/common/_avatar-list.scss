@@ -93,10 +93,13 @@
 }
 
 .ant-avatar {
-    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &.ant-avatar-image {
+        background: white;
+    }
 
     img {
         display: block;

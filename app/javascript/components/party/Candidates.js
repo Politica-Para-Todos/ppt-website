@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import React from "react";
+import PropTypes from "prop-types";
 import { Row, Col, Typography, Select, Avatar } from "antd";
 import { getName } from '../../utils';
 
@@ -22,6 +23,14 @@ const { Title, Paragraph } = Typography;
 const { Option } = Select;
 
 class Candidates extends React.Component {
+    static propTypes = {
+        candidates: PropTypes.array
+    }
+
+    static defaultProps = {
+        candidates: []
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -55,7 +64,7 @@ class Candidates extends React.Component {
                         </Select>
                     </Col>
                 </Row>
-                <Row className="candidates__list">
+                <Row type="flex" className="candidates__list">
                     {candidates
                         .filter(
                             candidate =>
@@ -73,7 +82,7 @@ class Candidates extends React.Component {
                                     className="candidate"
                                 >
                                     <Avatar size={160} icon="user" />
-                                    <Title level={4}>{getName(candidate.name)}</Title>
+                                    <Title level={3}>{getName(candidate.name)}</Title>
                                     <Paragraph>{candidate.circle.name}</Paragraph>
                                     <Paragraph>{candidate.biography}</Paragraph>
                                 </Col>
