@@ -1,4 +1,4 @@
-@import './common/colors';
+@import './colors';
 
 body {
     color: #333;
@@ -33,47 +33,6 @@ body {
             color: rgba($darkerGrey, .7);
         }
     }
-}
-
-.ant-row,
-.ant-row-flex {
-    max-width: 320px;
-    margin: 0 auto;
-
-    @media only screen and (min-width: 768px) {
-        max-width: 738px;
-    }
-
-    @media only screen and (min-width: 992px) {
-        max-width: 962px;
-    }
-
-    @media only screen and (min-width: 1200px) {
-        max-width: 1170px;
-    }
-}
-
-.ant-col {
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.ant-select {
-    max-width: 310px;
-}
-
-.ant-select-selection:hover,
-.ant-select-focused .ant-select-selection,
-.ant-select-selection:focus,
-.ant-select-selection:active {
-    border-color: $lightGrey;
-    box-shadow: none;
-}
-
-.ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled),
-.ant-select-dropdown-menu-item-selected,
-.ant-select-dropdown-menu-item-active {
-    background-color: $lightGrey;
 }
 
 h2 {

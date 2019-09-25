@@ -46,12 +46,12 @@ class Candidates extends React.Component {
         const { circles, candidates } = this.props;
 
         return (
-            <section className="candidates">
+            <section className="party-candidates">
                 <Row>
                     <Col lg={17} span={24}>
                         <Title level={2}>Cabeças de Lista</Title>
                     </Col>
-                    <Col lg={7} span={24} className="candidates__circles">
+                    <Col lg={7} span={24} className="party-candidates__circles">
                         <Select
                             style={{ width: "100%" }}
                             placeholder="Escolha o Círculo Eleitoral"
@@ -63,7 +63,7 @@ class Candidates extends React.Component {
                         </Select>
                     </Col>
                 </Row>
-                <Row type="flex" className="candidates__list">
+                <Row type="flex" className="party-candidates__list">
                     {candidates
                         .filter(
                             candidate =>
@@ -78,18 +78,18 @@ class Candidates extends React.Component {
                                     sm={8}
                                     lg={6}
                                     xl={4}
-                                    className="candidate"
+                                    className="party-candidate"
                                 >
-                                    <div className="candidate__content">
+                                    <div className="party-candidate__content">
                                         <Avatar size={120} icon="user" />
                                         {candidate.circle.name && (
-                                            <Paragraph className="candidate__content-circle">{candidate.circle.name}</Paragraph>
+                                            <Paragraph className="party-candidate__content-circle">{candidate.circle.name}</Paragraph>
                                         )}
                                         {candidate.name && (
-                                            <Title className="candidate__content-title" level={3}>{candidate.name}</Title>
+                                            <Title className="party-candidate__content-title" level={3}>{candidate.name}</Title>
                                         )}
                                         {candidate.biography && (
-                                            <Paragraph className="candidate__content-biography">{candidate.biography}</Paragraph>
+                                            <Paragraph className="party-candidate__content-biography">{candidate.biography}</Paragraph>
                                         )}
                                     </div>
                                 </Col>

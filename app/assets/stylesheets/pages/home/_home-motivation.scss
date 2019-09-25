@@ -1,0 +1,19 @@
+section.home-motivation {
+    padding: 80px 0 70px;
+
+    .ant-row-flex {
+        flex-flow: row wrap;
+    }
+}
+
+.home-motivation__text {
+    margin-bottom: 50px;
+
+    @media only screen and (min-width: 992px) {
+        margin-bottom: 0;
+    }
+
+    ol {
+        padding-left: 20px;
+    }
+}
