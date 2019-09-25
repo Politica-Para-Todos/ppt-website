@@ -1,4 +1,4 @@
-@import './../../common/colors';
+@import '../../common/colors';
 
 .metrics {
     &__container {
@@ -73,7 +73,7 @@
             }
 
             &--gray {
-                background-color: #C4C4C4;
+                background-color: $darkGrey;
             }
         }
     }

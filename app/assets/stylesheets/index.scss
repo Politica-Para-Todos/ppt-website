@@ -1,7 +1,7 @@
 // External libs
 @import 'antd/dist/antd.css';
+
 @import './common/all';
 @import './partials/all';
-
-@import './pages/home/home.scss';
-@import './pages/party-detail/party-detail.scss';
+@import './pages/home/home';
+@import './pages/party-detail/party-detail';

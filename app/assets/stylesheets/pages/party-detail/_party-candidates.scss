@@ -1,6 +1,15 @@
 .party-candidates {
     .party-candidates__circles {
         text-align: right;
+
+        .ant-select {
+            display: block;
+            margin: 0 auto;
+
+            @media only screen and (min-width: 992px) {
+                margin-right: 0;
+            }
+        }
     }
 
     .party-candidates__list {
