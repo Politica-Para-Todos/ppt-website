@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 import React from "react";
+import PropTypes from "prop-types";
 import { Row, Col, Typography, Select, Avatar } from "antd";
 import { getName } from '../../utils';
 
@@ -22,6 +23,14 @@ const { Title, Paragraph } = Typography;
 const { Option } = Select;
 
 class Candidates extends React.Component {
+    static propTypes = {
+        candidates: PropTypes.array
+    }
+
+    static defaultProps = {
+        candidates: []
+    }
+
     constructor(props) {
         super(props);
         this.state = {

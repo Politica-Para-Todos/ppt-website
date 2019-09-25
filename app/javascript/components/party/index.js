@@ -28,9 +28,7 @@ export default class Party extends PureComponent {
         super();
 
         this.state = {
-            party: {
-                candidates: []
-            }
+            party: {}
         }
     }
 
