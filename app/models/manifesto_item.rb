@@ -6,14 +6,4 @@ class ManifestoItem < ApplicationRecord
 
   has_many :annotations
   has_many :comments
-
-  scope :printable, lambda { |version|
-    where(item_type: %w[ParagraphManifestoItem HeaderManifestoItem OrderedListManifestoItem UnorderedListManifestoItem],
-          version: version)
-      .order('position ASC')
-  }
-
-  def render
-    ''
-  end
 end
