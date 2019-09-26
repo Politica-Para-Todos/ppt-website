@@ -4,11 +4,20 @@
     height: auto;
     text-align: center;
 
-    h1 {
+    .party-header-title {
         font-size: 24px;
 
         @media only screen and (min-width: 768px) {
             font-size: 38px;
+        }
+    }
+
+    .party-header-subtitle {
+        font-size: 18px;
+        font-weight: 600;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 24px;
         }
     }
 
