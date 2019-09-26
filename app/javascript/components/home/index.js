@@ -65,7 +65,6 @@ class Home extends PureComponent {
                     <HomeMission />
                     <HomeCountdown />
                     <HomePartiesList parties={parties} />
-                    <HomeMotivation />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>

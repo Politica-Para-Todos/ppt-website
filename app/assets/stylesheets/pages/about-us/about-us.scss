@@ -19,8 +19,22 @@ limitations under the License.
 }
 
 .about-us__header-img {
-    width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    min-height: 240px;
     margin-top: 80px;
+
+    @media only screen and (min-width: 768px) {
+        min-height: 350px;
+    }
+
+    @media only screen and (min-width: 992px) {
+        width: 100%;
+        left: auto;
+        transform: none;
+    }
 }
 
 @import './about-us-contributors';
