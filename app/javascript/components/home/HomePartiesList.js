@@ -55,10 +55,10 @@ class HomePartiesList extends PureComponent {
                             </Col>
                             <Col span={8} offset={8}>
                                 <div  className="home-alphaetic-order"  >
-                                    <Switch className="home-alpha-order-switch" 
-                                            size="small" 
-                                            onChange={this.onChange} 
-                                />  -Ordenar alfabeticamente</div>
+                                    <Switch className="home-alpha-order-switch"
+                                            size="small"
+                                            onChange={this.onChange}
+                                />  Ordenar alfabeticamente</div>
                             </Col>
                         </Row>
                         <AvatarList items={parties} theme={"4x3"} />
