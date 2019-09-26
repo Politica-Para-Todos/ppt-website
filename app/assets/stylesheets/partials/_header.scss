@@ -83,7 +83,10 @@
                 }
             }
         }
+    }
 
+    .ant-drawer-content-wrapper {
+        min-width: 80%;
     }
 
     .social-media-list {
@@ -92,7 +95,7 @@
         li {
             margin-right: 10px;
 
-            a svg {
+            .social-media__icon {
                 height: 28px;
             }
         }
@@ -122,7 +125,7 @@
 .header__desktop-menu {
     display: none;
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 992px) {
         display: flex;
         flex: 1;
         margin-right: -8px;
@@ -134,7 +137,7 @@
 
 .header__mobile-burger,
 .header__mobile-menu {
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 992px) {
         display: none;
     }
 }
