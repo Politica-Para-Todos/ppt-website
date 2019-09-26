@@ -17,7 +17,7 @@ limitations under the License.
 import React, { PureComponent } from "react";
 import { Row, Col, Switch } from "antd";
 import AvatarList from "../common/AvatarList";
-import { shuffleArray } from '../../utils';
+import { shuffleArray, sortArrayByKey } from '../../utils';
 
 class HomePartiesList extends PureComponent {
     constructor(props) {
@@ -37,7 +37,7 @@ class HomePartiesList extends PureComponent {
 
         if (ordered) {
 
-            parties.sort(function (a, b) {
+            /*parties.sort(function (a, b) {
                 var nameA = a.title.toUpperCase();
                 var nameB = b.title.toUpperCase();
                 if (nameA < nameB) {
@@ -47,7 +47,9 @@ class HomePartiesList extends PureComponent {
                     return 1;
                 }
                 return 0;
-            });
+            });*/
+
+            parties = sortArrayByKey(parties, 'title');
         } else {
             parties = shuffleArray(parties);
         };
@@ -69,7 +71,7 @@ class HomePartiesList extends PureComponent {
                                     <Switch className="home-alpha-order-switch" 
                                             size="small" 
                                             onChange={this.onChange} 
-                                />  Ordenar alfabeticamente</div>
+                                />  -Ordenar alfabeticamente</div>
                             </Col>
                         </Row>
                         <AvatarList items={parties} theme={"4x3"} />
