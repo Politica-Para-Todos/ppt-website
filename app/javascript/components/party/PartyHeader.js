@@ -28,7 +28,7 @@ function getPartyProgram(acronym) {
         return (
             <p>
                 Este partido não apresentou programa eleitoral. <br />
-                Para qualquer correção entra em contacto conosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
+                Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
             </p>
         );
     }
