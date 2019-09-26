@@ -16,12 +16,15 @@ limitations under the License.
 
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
+import { Typography } from "antd";
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
-import Header from "./Header";
-import Intro from "./Intro";
-import Metrics from "./metrics";
-import Candidates from "./Candidates";
+import PartyHeader from "./PartyHeader";
+import PartyIntro from "./PartyIntro";
+import PartyCandidatesList from "./PartyCandidatesList";
+import PartyMetrics from "./metrics";
+
+const { Paragraph } = Typography;
 
 export default class Party extends PureComponent {
     constructor() {
@@ -29,8 +32,9 @@ export default class Party extends PureComponent {
 
         this.state = {
             party: {
-              description_source: ""
-            }
+              description_source: "",
+            },
+            spokesperson: null
         }
     }
 
@@ -45,18 +49,22 @@ export default class Party extends PureComponent {
             .catch((error) => {
                 console.log(error);
             });
+        // TODO: Fetch spokesperson data from API
     }
 
     render() {
-        const { party } = this.state;
+        const { party, spokesperson } = this.state;
 
         return (
             <Layout>
                 <LayoutHeader />
                 <Layout.Content className="party-section">
-                    <Header party={party} />
-                    <Intro party={party} />
-                    <Candidates candidates={party.candidates} circles={circles} />
+                    <PartyHeader party={party} />
+                    <PartyIntro spokesperson={spokesperson} title="Descrição do Partido">
+                        <Paragraph className="party-desc">{party.description}</Paragraph>
+                        {party.description_source.split('\n').map((item, i) => <Paragraph key={i}>Fonte: <a href={item} target="_blank" rel="noopener">Wikipedia</a></Paragraph>)}
+                    </PartyIntro>
+                    <PartyCandidatesList candidates={party.candidates} circles={circles} acronym={party.acronym} />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>
@@ -121,7 +129,7 @@ const circles = [
         label: "Braga"
     },
     {
-        value: "bragança",
+        value: "braganca",
         label: "Bragança"
     },
     {

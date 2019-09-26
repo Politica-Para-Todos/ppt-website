@@ -14,9 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import React, { PureComponent } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
-import { Layout, Row, Col } from "antd";
+import { Layout } from "antd";
 import SocialSharing from "../common/SocialSharing";
 import socialSharing from "../../social-sharing";
 import vertical_logo from "../../../assets/images/vertical_logo.jpg";

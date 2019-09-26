@@ -1,0 +1,59 @@
+import React, { PureComponent } from "react";
+import Layout from 'antd/es/layout';
+import LayoutHeader from "../../common/LayoutHeader";
+import LayoutFooter from "../../common/LayoutFooter";
+import PartyHeader from "../PartyHeader";
+import PartyIntro from "../PartyIntro";
+import PartyCandidatesTable from "./PartyCandidatesTable";
+import { Typography } from "antd";
+
+const { Paragraph } = Typography;
+
+class PartyCandidates extends PureComponent {
+    constructor() {
+        super();
+
+        this.state = {
+            party: {
+              leadCandidate: {}
+            },
+        }
+    }
+
+    componentDidMount() {
+        fetch("/parties/" + this.props.match.params.id + "/candidates/" + this.props.match.params.district + ".json")
+            .then(res => res.json())
+            .then(data => {
+                data.acronym = data.acronym + " - Distrito de " + this.props.match.params.district;
+                this.setState({
+                    party: data
+                })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    render() {
+        const { party } = this.state;
+
+        return (
+            <Layout>
+                <LayoutHeader />
+                <Layout.Content>
+                    <PartyHeader party={party} />
+                    <PartyIntro spokesperson={party.leadCandidate} title={party.leadCandidate.name}>
+                        <Paragraph className="party-desc">{party.leadCandidate.biography}</Paragraph>
+                        <Paragraph>Biografia: <a href={party.leadCandidate.biography_source} target="_blank" rel="noopener">aqui</a></Paragraph>
+                    </PartyIntro>
+                    {party.candidates && (
+                        <PartyCandidatesTable candidates={party.candidates} />
+                    )}
+                </Layout.Content>
+                <LayoutFooter />
+            </Layout>
+        );
+    }
+}
+
+export default PartyCandidates;

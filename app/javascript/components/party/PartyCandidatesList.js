@@ -21,7 +21,7 @@ import { Row, Col, Typography, Select, Avatar } from "antd";
 const { Title, Paragraph } = Typography;
 const { Option } = Select;
 
-class Candidates extends React.Component {
+class PartyCandidatesList extends React.Component {
     static propTypes = {
         candidates: PropTypes.array
     }
@@ -43,7 +43,7 @@ class Candidates extends React.Component {
     };
 
     render() {
-        const { circles, candidates } = this.props;
+        const { circles, candidates, acronym } = this.props;
 
         return (
             <section className="party-candidates">
@@ -80,18 +80,20 @@ class Candidates extends React.Component {
                                     xl={4}
                                     className="party-candidate"
                                 >
-                                    <div className="party-candidate__content">
-                                        <Avatar size={120} icon="user" />
-                                        {candidate.circle.name && (
-                                            <Paragraph className="party-candidate__content-circle">{candidate.circle.name}</Paragraph>
-                                        )}
-                                        {candidate.name && (
-                                            <Title className="party-candidate__content-title" level={3}>{candidate.name}</Title>
-                                        )}
-                                        {candidate.biography && (
-                                            <Paragraph className="party-candidate__content-biography">{candidate.biography}</Paragraph>
-                                        )}
-                                    </div>
+                                  <a className="avatar-list-item" href={`/party/${acronym}/candidates/${encodeURIComponent(candidate.circle.name)}`}>
+                                      <div className="party-candidate__content">
+                                          <Avatar size={120} icon="user" />
+                                          {candidate.circle.name && (
+                                              <Paragraph className="party-candidate__content-circle">{candidate.circle.name}</Paragraph>
+                                          )}
+                                          {candidate.name && (
+                                              <Title className="party-candidate__content-title" level={3}>{candidate.name}</Title>
+                                          )}
+                                          {candidate.biography && (
+                                              <Paragraph className="party-candidate__content-biography">{candidate.biography}</Paragraph>
+                                          )}
+                                      </div>
+                                  </a>
                                 </Col>
                             );
                         })}
@@ -101,4 +103,4 @@ class Candidates extends React.Component {
     }
 }
 
-export default Candidates;
+export default PartyCandidatesList;

@@ -1,0 +1,22 @@
+.about-us-contributors {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.about-us-contributors-title {
+    margin: 0 auto 20px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.4em;
+}
+
+.about-us-contributors p {
+    font-size: 18px;
+    line-height: 2em;
+}
+
+.about-us-contributors-list {
+    margin-top: 50px;
+}

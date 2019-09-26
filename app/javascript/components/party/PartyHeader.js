@@ -15,12 +15,12 @@ limitations under the License.
 */
 
 import React from "react";
-import { Layout, Row, Col, Typography, Divider, Avatar, Button } from "antd";
+import { Row, Col, Typography, Divider, Avatar, Button } from "antd";
 import SocialSharing from "../common/SocialSharing";
 
 const { Title, Paragraph } = Typography;
 
-const Header = ({ party }) => (
+const PartyHeader = ({ party }) => (
     <section className="party-header">
         <Row>
             <Col span={24}>
@@ -46,4 +46,4 @@ const Header = ({ party }) => (
     </section>
 );
 
-export default Header;
+export default PartyHeader;

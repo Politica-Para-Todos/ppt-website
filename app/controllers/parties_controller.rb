@@ -21,6 +21,13 @@ class PartiesController < InheritedResources::Base
     @candidates = @party.candidates.where(is_lead_candidate: true).sort_by { |cand| cand.district.downcase.unicode_normalize(:nfd) }
   end
 
+  # GET /parties/:acronym/candidates/:district.json
+  def district
+    @party = Party.find_by(acronym: params[:acronym].upcase)
+    @candidates = @party.candidates.where(district: params[:district])
+    @lead_candidate = @candidates.where(is_lead_candidate: true)[0]
+  end
+
   private
 
     def party_params

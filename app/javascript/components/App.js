@@ -20,6 +20,7 @@ import { withRouter } from 'react-router';
 import Home from "./home";
 import Program from "./program";
 import Party from "./party";
+import PartyCandidates from "./party/party-candidates";
 import AboutUs from './about-us';
 
 class App extends React.Component {
@@ -33,10 +34,11 @@ class App extends React.Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/manifesto/:party_acronym/:section_id?" component={withRouter(Program)} />
                 <Route exact path="/party/:id" component={withRouter(Party)} />
+                <Route exact path="/party/:id/candidates/:district" component={withRouter(PartyCandidates)} />
                 <Route exact path="/about-us" component={AboutUs} />
-            </Switch>
+            </Switch >
         )
     }
 }
 
-export default App
+export default App;

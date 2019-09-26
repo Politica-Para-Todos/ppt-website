@@ -39,7 +39,7 @@ class LayoutHeader extends PureComponent {
     }
 
     updateMenuVisibility() {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 992) {
             this.setState({
                 visible: false,
             });
@@ -82,6 +82,9 @@ class LayoutHeader extends PureComponent {
                                     <Menu.Item>
                                         <HashLink to="/#parties-section">Partidos</HashLink>
                                     </Menu.Item>
+                                    <Menu.Item>
+                                        <HashLink to="/about-us">Sobre nós</HashLink>
+                                    </Menu.Item>
                                 </Menu>
                                 <a
                                     className="header-join-us"
@@ -111,8 +114,8 @@ class LayoutHeader extends PureComponent {
                             <Menu.Item>
                                 <HashLink to="/#parties-section">Partidos</HashLink>
                             </Menu.Item>
-                            <Menu.Item key="3">
-                                <HashLink to="/about-us">Sobre nós</HashLink>
+                            <Menu.Item>
+                                <HashLink to="/about-us">Quem Somos</HashLink>
                             </Menu.Item>
                         </Menu>
                         <a

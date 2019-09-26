@@ -17,10 +17,9 @@ limitations under the License.
 import React from "react";
 import { Layout, Divider } from 'antd';
 import LayoutHeader from "../common/LayoutHeader";
-import LayoutFooter from "../common/LayoutFooter";
-import Contributors from "./Contributors";
-import Motivation from "./Motivation";
-import JoinUs from "./JoinUs";
+import AboutUsContributors from "./AboutUsContributors";
+import AboutUsMotivation from "./AboutUsMotivation";
+import AboutUsJoinUs from "./AboutUsJoinUs";
 import AboutUsFooter from "./AboutUsFooter";
 import rowsPeople from "../../../assets/images/rows-people.svg";
 
@@ -30,10 +29,10 @@ export default function AboutUs() {
             <LayoutHeader />
             <Layout.Content className="about-us-section">
                 <img src={rowsPeople} className="about-us__header-img" />
-                <Contributors />
+                <AboutUsContributors />
                 <Divider />
-                <Motivation />
-                <JoinUs />
+                <AboutUsMotivation />
+                <AboutUsJoinUs />
             </Layout.Content>
             <AboutUsFooter />
         </Layout>

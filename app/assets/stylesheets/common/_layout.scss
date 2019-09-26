@@ -3,23 +3,29 @@
 
 body {
     color: #333;
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.7em;
 
     p,
     ol,
     ul,
     td {
-        font-family: verdana, arial, helvetica, sans-serif;
-        font-size: 13px;
-        line-height: 18px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 1.7em;
+        color: $darkerGrey;
+    }
+
+    ol,
+    ul {
+        padding-left: 20px;
     }
 
     pre {
         background-color: $lightGrey;
         padding: 10px;
-        font-size: 11px;
+        font-size: 14px;
     }
 
     a {
@@ -51,10 +57,11 @@ h2 {
 
 p {
     margin-bottom: 0;
-}
 
-p a {
-    text-decoration: underline;
+    a {
+        font-weight: 700;
+        text-decoration: underline;
+    }
 }
 
 th {

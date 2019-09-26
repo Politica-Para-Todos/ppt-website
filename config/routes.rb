@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :parties, only: [:index]
 
   get '/parties/:acronym/manifesto', to: 'parties#manifesto'
+  get '/parties/:acronym/candidates/:district', to: 'parties#district'
   get '/parties/:acronym', to: 'parties#show'
 
   resources :comments, only: [:create, :update, :delete]

@@ -15,19 +15,20 @@ limitations under the License.
 */
 
 import React from "react";
+import { Row, Col } from "antd";
 import { shuffleArray } from "../../utils";
 import contributorsList from "../../contributors-list";
-import rowsPeople from "../../../assets/images/rows-people.svg";
 
-export default function Contributors() {
+export default function AboutUsContributors() {
     return (
         <section className="about-us-contributors">
-                <h2>Quem Somos</h2>
-                <p>
-                    Podes consultar <a target="_blank"
-                    rel="noopener" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">aqui</a> todo o histórico do projecto.
-                </p>
-                <p className="about-us-contributors-list">{shuffleArray(contributorsList).join(", ")}.</p>
-        </section>
+            <Row type="flex" justify="space-between" align="middle">
+                <Col span={24}>
+                    <h2 className="about-us-contributors-title">Quem Somos</h2>
+                    <p>Podes consultar <a target="_blank" rel="noopener" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">aqui</a> todo o histórico do projecto.</p>
+                    <p className="about-us-contributors-list">{shuffleArray(contributorsList).join(", ")}.</p>
+                </Col>
+            </Row>
+        </section >
     )
 }
