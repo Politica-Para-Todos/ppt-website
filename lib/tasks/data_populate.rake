@@ -30,7 +30,8 @@ namespace :data do
             c = Candidate.find_or_initialize_by(
               party_id: p.id,
               district: district,
-              position: candidate.fetch('position')
+              position: candidate.fetch('position'),
+              candidate_type: candidate.fetch('type')
             )
 
             c.name = candidate.fetch('name')
@@ -40,7 +41,6 @@ namespace :data do
             c.link_parlamento = candidate.fetch('link_parlamento', nil)
             c.photo = candidate.fetch('photo', nil)
             c.photo_source = candidate.fetch('photo_source', nil)
-            c.candidate_type = candidate.fetch('type')
 
             puts "Candidate #{c.name} updated!" if c.save
           end
