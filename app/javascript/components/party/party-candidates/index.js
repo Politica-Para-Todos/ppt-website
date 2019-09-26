@@ -9,26 +9,22 @@ import { Typography } from "antd";
 
 const { Paragraph } = Typography;
 
-const spokesperson = {
-    name: "Carlos Manuel",
-    responsibility: "Representante do Partido na Plataforma"
-};
-
 class PartyCandidates extends PureComponent {
     constructor() {
         super();
 
         this.state = {
-            party: {},
-            spokesperson: {}
-            // TODO: Fetch spokesperson data from API
+            party: {
+              leadCandidate: {}
+            },
         }
     }
 
     componentDidMount() {
-        fetch("/parties/" + this.props.match.params.id + ".json")
+        fetch("/parties/" + this.props.match.params.id + "/candidates/" + this.props.match.params.district + ".json")
             .then(res => res.json())
             .then(data => {
+                data.acronym = data.acronym + " - Distrito de " + this.props.match.params.district;
                 this.setState({
                     party: data
                 })
@@ -46,26 +42,10 @@ class PartyCandidates extends PureComponent {
                 <LayoutHeader />
                 <Layout.Content>
                     <PartyHeader party={party} />
-                    {spokesperson && (
-                        <PartyIntro title={spokesperson.name} spokesperson={spokesperson}>
-                            <Paragraph>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-                                lobortis eros sit amet lorem tincidunt, a bibendum elit eleifend.
-                                Quisque gravida odio ac eros varius dictum. Donec lectus mauris,
-                                congue id placerat et, commodo ac sem. Curabitur consectetur ut ipsum
-                                ut placerat. Cras dictum gravida nisi, eu gravida dolor semper in.
-                                Vestibulum ultricies libero sit amet porta auctor. Interdum et
-                                malesuada fames ac ante ipsum primis in faucibus. Duis scelerisque
-                                lobortis cursus. Aenean eleifend pharetra tempor. Praesent quis odio
-                                ipsum.
-                            </Paragraph>
-                            <Paragraph>
-                                Donec et fermentum est, eu sollicitudin urna. Suspendisse cursus
-                                pulvinar hendrerit. Aenean eleifend, augue in bibendum bibendum, justo
-                                nisi faucibus.
-                        </Paragraph>
-                        </PartyIntro>
-                    )}
+                    <PartyIntro spokesperson={party.leadCandidate} title={party.leadCandidate.name}>
+                        <Paragraph className="party-desc">{party.leadCandidate.biography}</Paragraph>
+                        <Paragraph>Biografia: <a href={party.leadCandidate.biography_source} target="_blank" rel="noopener">aqui</a></Paragraph>
+                    </PartyIntro>
                     {party.candidates && (
                         <PartyCandidatesTable candidates={party.candidates} />
                     )}

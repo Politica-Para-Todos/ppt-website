@@ -60,13 +60,11 @@ export default class Party extends PureComponent {
                 <LayoutHeader />
                 <Layout.Content className="party-section">
                     <PartyHeader party={party} />
-                    {spokesperson && (
-                        <PartyIntro spokesperson={spokesperson} title="Descrição do Partido">
-                            <Paragraph>{party.description}</Paragraph>
-                            <Paragraph>Fonte: <a href={party.description_source} target="_blank" rel="noopener">Wikipedia</a></Paragraph>
-                        </PartyIntro>
-                    )}
-                    <PartyCandidatesList candidates={party.candidates} circles={circles} />
+                    <PartyIntro spokesperson={spokesperson} title="Descrição do Partido">
+                        <Paragraph className="party-desc">{party.description}</Paragraph>
+                        {party.description_source.split('\n').map((item, i) => <Paragraph key={i}>Fonte: <a href={item} target="_blank" rel="noopener">Wikipedia</a></Paragraph>)}
+                    </PartyIntro>
+                    <PartyCandidatesList candidates={party.candidates} circles={circles} acronym={party.acronym} />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>

@@ -26,11 +26,12 @@ const PartyIntro = ({ title, spokesperson, children }) => (
                 <Title level={2}>{title}</Title>
                 {children}
             </Col>
-            <Col span={24} lg={8} className="party-intro__spokesperson">
-                <Avatar size={160} icon="user" />
+            {spokesperson && (<Col span={24} lg={8} className="party-intro__spokesperson">
+                <Avatar size={160} src={spokesperson.photo} icon="user" />
                 <Title className="party-intro__spokesperson-name" level={3}>{spokesperson.name}</Title>
                 <Paragraph className="party-intro__spokesperson-description">{spokesperson.responsibility}</Paragraph>
             </Col>
+          )}
         </Row>
     </section>
 );

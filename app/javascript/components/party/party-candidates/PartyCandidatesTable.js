@@ -1,30 +1,26 @@
 import React from "react";
 import { Row, Col, Typography, List } from "antd";
+import { sortArrayByKey } from '../../../utils';
 
 const { Title } = Typography;
 
 const PartyCandidatesTable = ({ candidates }) => {
-    // TODO: When endpoint is ready, we will need to .filter() the data
-    // const mainCandidates = candidates.filter(is_lead_candidate === true);
-    // const secondaryCandidates = candidates.filter(is_lead_candidate === false);
-    const candidatesNames = [];
-
-    candidates.map(value => {
-        candidatesNames.push(value.name)
-    });
+  console.log(candidates)
+    const mainCandidates = sortArrayByKey(candidates.filter(c => c.type === "main"), "position");
+    const secondaryCandidates = sortArrayByKey(candidates.filter(c => c.type === "secundary"), "position");
 
     return (
         <section className="party-candidates-table">
             <div className="party-candidates-table__list">
                 <Row>
                     <Col span={24}>
-                        <Title level={3}>Lista Principal</Title>
+                        <Title level={3}>Efetivos</Title>
                     </Col>
                     <Col span={24}>
                         <List
                             bordered={false}
-                            dataSource={candidatesNames}
-                            renderItem={item => <List.Item>{item}</List.Item>}
+                            dataSource={mainCandidates}
+                            renderItem={item => <List.Item>{`${item.position} - ${item.name}`}</List.Item>}
                             className="party-candidates-table__items"
                         />
                     </Col>
@@ -33,13 +29,13 @@ const PartyCandidatesTable = ({ candidates }) => {
             <div className="party-candidates-table__list">
                 <Row>
                     <Col span={24}>
-                        <Title level={3}>Lista de Suplentes</Title>
+                        <Title level={3}>Suplentes</Title>
                     </Col>
                     <Col span={24}>
                         <List
                             bordered={false}
-                            dataSource={candidatesNames}
-                            renderItem={item => <List.Item>{item}</List.Item>}
+                            dataSource={secondaryCandidates}
+                            renderItem={item => <List.Item>{`${item.position} - ${item.name}`}</List.Item>}
                             className="party-candidates-table__items"
                         />
                     </Col>
