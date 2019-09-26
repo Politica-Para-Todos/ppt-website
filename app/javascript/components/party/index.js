@@ -16,19 +16,23 @@ limitations under the License.
 
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
+import { Typography } from "antd";
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
-import Header from "./Header";
-import Intro from "./Intro";
-import Metrics from "./metrics";
-import CandidatesList from "./CandidatesList";
+import PartyHeader from "./PartyHeader";
+import PartyIntro from "./PartyIntro";
+import PartyCandidatesList from "./PartyCandidatesList";
+import PartyMetrics from "./metrics";
+
+const { Paragraph } = Typography;
 
 export default class Party extends PureComponent {
     constructor() {
         super();
 
         this.state = {
-            party: {}
+            party: {},
+            spokesperson: null
         }
     }
 
@@ -39,25 +43,28 @@ export default class Party extends PureComponent {
                 this.setState({
                     party: data
                 })
-                console.log(party.candidates)
             })
             .catch((error) => {
                 console.log(error);
             });
+        // TODO: Fetch spokesperson data from API
     }
 
     render() {
-        const { party } = this.state;
-
-        console.log(party);
+        const { party, spokesperson } = this.state;
 
         return (
             <Layout>
                 <LayoutHeader />
                 <Layout.Content className="party-section">
-                    <Header party={party} />
-                    <Intro party={party} />
-                    <CandidatesList candidates={party.candidates} circles={circles} />
+                    <PartyHeader party={party} />
+                    {spokesperson && (
+                        <PartyIntro spokesperson={spokesperson} title="Descrição do Partido">
+                            <Paragraph>{party.description}</Paragraph>
+                            <Paragraph>Fonte: <a href={party.description_source} target="_blank" rel="noopener">Wikipedia</a></Paragraph>
+                        </PartyIntro>
+                    )}
+                    <PartyCandidatesList candidates={party.candidates} circles={circles} />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>

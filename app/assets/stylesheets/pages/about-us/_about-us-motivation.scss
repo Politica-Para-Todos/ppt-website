@@ -1,0 +1,15 @@
+.about-us-motivation {
+    background-image: url("../images/manifesto.svg");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 20%;
+}
+
+.about-us-motivation__manifesto-lis {
+    column-count: 2;
+    column-gap: 100px;
+
+    & li {
+        margin-bottom: 20px;
+    }
+}

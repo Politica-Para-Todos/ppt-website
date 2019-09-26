@@ -1,4 +1,4 @@
-@import './common/colors';
+@import './colors';
 
 body {
     color: #333;
@@ -35,35 +35,17 @@ body {
     }
 }
 
-.ant-row,
-.ant-row-flex {
-    max-width: 1170px;
-    margin: 0 auto;
-}
-
-.ant-col {
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.ant-select-selection:hover,
-.ant-select-focused .ant-select-selection,
-.ant-select-selection:focus,
-.ant-select-selection:active {
-    border-color: $lightGrey;
-    box-shadow: none;
-}
-
-.ant-select-dropdown-menu-item:hover:not(.ant-select-dropdown-menu-item-disabled),
-.ant-select-dropdown-menu-item-selected,
-.ant-select-dropdown-menu-item-active {
-    background-color: $lightGrey;
-}
-
 h2 {
-    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
     font-size: 22px;
     font-weight: 600;
+    text-align: center;
+
+    @media only screen and (min-width: 992px) {
+        margin-left: 0;
+        text-align: left;
+    }
 }
 
 p {

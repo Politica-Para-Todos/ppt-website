@@ -1,0 +1,23 @@
+.party-intro__spokesperson {
+    text-align: center;
+
+    .ant-avatar {
+        display: block;
+        margin: 0 auto 10px;
+    }
+
+    .party-intro__spokesperson-name {
+        position: relative;
+        margin-bottom: 0;
+        font-size: 20px;
+        line-height: 1.3em;
+    }
+
+    .party-intro__spokesperson-description {
+        max-width: 220px;
+        margin: 0 auto;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.3em;
+    }
+}

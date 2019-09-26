@@ -19,21 +19,20 @@ import { Row, Col, Typography, Avatar } from "antd";
 
 const { Title, Paragraph } = Typography;
 
-const Intro = ({ party }) => (
+const PartyIntro = ({ title, spokesperson, children }) => (
     <section className="party-intro">
         <Row>
-            <Col span={24} lg={17}>
-                <Title level={2}>Descrição do Partido</Title>
-                {party.description}
-                <p>Fonte: <a href={party.description_source} target="_blank" rel="noopener">Wikipedia</a></p>
+            <Col md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 16 }}>
+                <Title level={2}>{title}</Title>
+                {children}
             </Col>
-            {/* <Col span={24} lg={7} className="party-intro__spokesperson">
-          <Avatar size={160} icon="user" />
-          <Title level={3}>{party.spokesperson}</Title>
-          <Paragraph strong>Representante do Partido na Plataforma</Paragraph>
-          </Col> */}
+            <Col span={24} lg={8} className="party-intro__spokesperson">
+                <Avatar size={160} icon="user" />
+                <Title className="party-intro__spokesperson-name" level={3}>{spokesperson.name}</Title>
+                <Paragraph className="party-intro__spokesperson-description">{spokesperson.responsibility}</Paragraph>
+            </Col>
         </Row>
     </section>
 );
 
-export default Intro;
+export default PartyIntro;

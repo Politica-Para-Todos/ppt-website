@@ -1,7 +1,9 @@
 // External libs
 @import 'antd/dist/antd.css';
-@import './scaffolds.scss';
+
 @import './common/all';
-@import './home.scss';
-@import './party.scss';
-@import './pages/candidates/candidates';
+@import './partials/all';
+@import './pages/home/home';
+@import './pages/party-detail/party-detail';
+@import './pages/party-candidates/party-candidates';
+@import './pages/about-us/about-us';

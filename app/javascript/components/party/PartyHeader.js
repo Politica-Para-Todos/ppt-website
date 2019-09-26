@@ -15,12 +15,12 @@ limitations under the License.
 */
 
 import React from "react";
-import { Layout, Row, Col, Typography, Divider, Avatar, Button } from "antd";
+import { Row, Col, Typography, Divider, Avatar, Button } from "antd";
 import SocialSharing from "../common/SocialSharing";
 
 const { Title, Paragraph } = Typography;
 
-const Header = ({ party }) => (
+const PartyHeader = ({ party }) => (
     <section className="party-header">
         <Row>
             <Col span={24}>
@@ -31,7 +31,7 @@ const Header = ({ party }) => (
         </Row>
         <Row type="flex" justify="center">
             <Col>
-                <Avatar size={120} src={party.logo} icon="user" />
+                <Avatar size={200} src={party.logo} icon="user" />
             </Col>
         </Row>
         {/* <Row type="flex" justify="center">
@@ -39,11 +39,11 @@ const Header = ({ party }) => (
           <Button className="button--grey">Ver Programa</Button>
         </Col>
         </Row> */}
-        <Row type="flex" justify="end" align="middle">
+        <Row type="flex" justify="end" align="middle" className="party-header__social">
             <a href={party.website} rel="noopener" target="_blank">{party.website}</a>
             <SocialSharing socialMediaList={party.socialMedia} theme={"#c4c4c4"} />
         </Row>
     </section>
 );
 
-export default Header;
+export default PartyHeader;
