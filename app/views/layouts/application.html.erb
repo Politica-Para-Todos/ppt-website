@@ -22,7 +22,7 @@
     <meta property="twitter:title" content="Politica Para Todos">
     <meta property="twitter:description" content="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal">
     <meta property="twitter:image" content="/images/meta-banner.png">
-    
+
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -36,9 +36,11 @@
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
     <% if Rails.env.production? %>
       <script async src="//www.googletagmanager.com/gtag/js?id=UA-146417339-1"></script>
       <script>
@@ -49,7 +51,6 @@
           }
           gtag('js', new Date());
           gtag('config', 'UA-146417339-1', {
-              'send_page_view': false,
               'anonymize_ip': true
           });
       </script>

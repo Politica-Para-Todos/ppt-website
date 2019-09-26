@@ -1,0 +1,80 @@
+.party-candidates {
+    .party-candidates__circles {
+        text-align: right;
+
+        .ant-select {
+            display: block;
+            margin: 0 auto;
+
+            @media only screen and (min-width: 992px) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .party-candidates__list {
+        margin-top: 32px;
+        text-align: center;
+    }
+
+    .party-candidate .ant-avatar {
+        margin: 0 auto 10px;
+
+        @media only screen and (min-width: 768px) {
+            width: 160px !important;
+            height: 160px !important;
+        }
+    }
+
+    .party-candidate {
+        margin-bottom: 30px;
+    }
+
+    .party-candidate__content {
+        max-width: 180px;
+        margin: 0 auto;
+
+        @media only screen and (min-width: 992px) {
+            max-width: 220px;
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    .party-candidate__content-title.ant-typography {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 1.3em;
+        text-decoration: none;
+    }
+
+    .party-candidate__content-circle,
+    .party-candidate__content-biography {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.3em;
+        text-decoration: none;
+    }
+
+    .party-candidate__content-circle {
+        padding-bottom: 8px;
+        margin-top: 0;
+
+        &::after {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            border-top: 1px solid #d3d3d3;
+            width: 100px;
+            content: '';
+        }
+    }
+}

@@ -30,13 +30,13 @@ class LayoutFooter extends PureComponent {
         return (
             <Footer className="footer">
                 <Row type="flex" justify="space-between">
-                    <Col span={24} lg={6}>
+                    <Col span={24} md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 6 }} className="footer-social">
                         <SocialSharing socialMediaList={socialSharing} />
                         <Link to="/">
                             <img className="footer_logo" src={vertical_logo} />
                         </Link>
                     </Col>
-                    <Col span={24} lg={12} className="footer-info">
+                    <Col span={24} md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 12 }} className="footer-info">
                         <h2>Quem Somos</h2>
                         <p>Podes consultar <a target="_blank"
                             rel="noopener" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">aqui</a> todo o histórico do projecto.</p>

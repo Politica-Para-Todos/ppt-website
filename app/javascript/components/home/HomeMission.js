@@ -17,14 +17,13 @@ limitations under the License.
 import React, { PureComponent } from "react";
 import { Row, Col } from "antd";
 import infographic from "../../../assets/images/infographic.svg";
-import HomeCountdown from './HomeCountdown';
 
 class HomeMission extends PureComponent {
     render() {
         return (
             <section className="home-our-mission">
                 <Row type="flex" justify="space-between" align="middle">
-                    <Col span={24} lg={12} className="home-our-mission-text">
+                    <Col span={24} md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 12 }} className="home-our-mission-text">
                         <h2>A nossa missão</h2>
                         <p>Missão: promover a participação activa dos cidadãos nos processos eleitorais em Portugal.</p>
                         <br />
@@ -38,7 +37,6 @@ class HomeMission extends PureComponent {
                         <img src={infographic} />
                     </Col>
                 </Row>
-                <HomeCountdown/>
             </section>
         );
     }

@@ -13,6 +13,6 @@ export default [
     },
     {
         type: 'email',
-        url: 'mailto:contacto@politicaparatodos.pt'
+        url: 'contacto@politicaparatodos.pt'
     }
 ]

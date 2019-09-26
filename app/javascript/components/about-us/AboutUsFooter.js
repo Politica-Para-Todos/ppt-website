@@ -15,26 +15,21 @@ limitations under the License.
 */
 
 import React from "react";
-import PropTypes from 'prop-types';
-import RoundAvatar from "./RoundAvatar";
-import { slugify } from "../../utils";
+import { Link } from 'react-router-dom';
+import { Layout } from "antd";
+import SocialSharing from "../common/SocialSharing";
+import socialSharing from "../../social-sharing";
+import vertical_logo from "../../../assets/images/vertical_logo.jpg";
 
-function AvatarList({ items, theme }) {
+const Footer = Layout.Footer;
+
+export default function AboutUsFooter() {
     return (
-        <div className="avatar-list-container" className={`avatar-list-container avatar-list-container--${theme}`}>
-            {items.map((data) => (
-                <RoundAvatar key={slugify(data.title)} {...data} />
-            ))}
-        </div>
-    )
+        <Footer className="about-us-footer footer">
+            <SocialSharing socialMediaList={socialSharing} />
+            <Link to="/">
+                <img className="footer_logo" src={vertical_logo} />
+            </Link>
+        </Footer>
+    );
 }
-
-AvatarList.propTypes = {
-    items: PropTypes.array.isRequired,
-    theme: PropTypes.string,
-}
-
-AvatarList.defaultProps = {
-    theme: 'row'
-};
-export default AvatarList;

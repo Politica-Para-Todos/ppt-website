@@ -1,0 +1,29 @@
+.party-candidates-table {
+    h3 {
+        color: $darkerGrey;
+    }
+
+    &__list {
+        margin-bottom: 50px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__items {
+        margin-top: 12px;
+    }
+
+    ul {
+        li {
+            border: 0;
+            color: #000;
+            padding: 12px 24px;
+
+            &:nth-child(odd) {
+                background-color: $lightGrey;
+            }
+        }
+    }
+}
