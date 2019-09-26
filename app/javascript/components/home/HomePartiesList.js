@@ -15,18 +15,43 @@ limitations under the License.
 */
 
 import React, { PureComponent } from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Switch } from "antd";
 import AvatarList from "../common/AvatarList";
+import { shuffleArray } from '../../utils';
 
 class HomePartiesList extends PureComponent {
     constructor(props) {
         super(props);
+        this.state = {
+            ordered: false
+        }
+    }
+
+    onChange = (checked) => {
+        this.setState({ordered: checked});
     }
 
     render() {
-        const { parties } = this.props;
+        let { parties } = this.props;
+        let { ordered } = this.state;
+        
+        if (ordered ){
 
-        return (
+            parties.sort(function(a, b) {
+                var nameA = a.title.toUpperCase();
+                var nameB = b.title.toUpperCase();
+                if (nameA < nameB) {
+                return -1;
+                }
+                if (nameA > nameB) {
+                return 1;
+                }
+            return 0;
+          });
+        } else {
+            parties = shuffleArray(parties);
+        };
+          return (
             <section id="parties-section" className="section-home-parties-list section--grey">
                 <Row>
                     <Col span={24} lg={24}>
@@ -36,6 +61,7 @@ class HomePartiesList extends PureComponent {
                             Sempre que voltares a carregar esta página a ordem será diferente.
                         </p>
                         <h2>Lista de Partidos</h2>
+                        <Switch onChange={this.onChange} /> <p>Ordenar alfabeticamente</p>
                         <AvatarList items={parties} theme={"4x3"} />
                     </Col>
                 </Row>
