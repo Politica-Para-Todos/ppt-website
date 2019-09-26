@@ -83,7 +83,7 @@ class LayoutHeader extends PureComponent {
                                         <HashLink to="/#parties-section">Partidos</HashLink>
                                     </Menu.Item>
                                     <Menu.Item>
-                                        <HashLink to="/about-us">Sobre nós</HashLink>
+                                        <HashLink to="/about-us">Quem Somos</HashLink>
                                     </Menu.Item>
                                 </Menu>
                                 <a
