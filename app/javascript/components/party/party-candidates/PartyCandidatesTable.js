@@ -5,7 +5,6 @@ import { sortArrayByKey } from '../../../utils';
 const { Title } = Typography;
 
 const PartyCandidatesTable = ({ candidates }) => {
-  console.log(candidates)
     const mainCandidates = sortArrayByKey(candidates.filter(c => c.type === "main"), "position");
     const secondaryCandidates = sortArrayByKey(candidates.filter(c => c.type === "secundary"), "position");
 
