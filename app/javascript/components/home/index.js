@@ -38,14 +38,14 @@ class Home extends PureComponent {
             .then(res => res.json())
             .then(data =>
                 this.setState({
-                    parties: shuffleArray(data.map(function (x) {
+                    parties: data.map(function (x) {
                         return {
                             'imageUrl': x.logo,
                             'title': x.acronym,
                             'subtitle': x.title,
                             'link': `party/${encodeURIComponent(x.acronym)}`
                         }
-                    }))
+                    })
                 })
             )
             .catch((error) => {

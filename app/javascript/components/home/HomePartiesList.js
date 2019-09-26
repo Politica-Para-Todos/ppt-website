@@ -28,30 +28,30 @@ class HomePartiesList extends PureComponent {
     }
 
     onChange = (checked) => {
-        this.setState({ordered: checked});
+        this.setState({ ordered: checked });
     }
 
     render() {
         let { parties } = this.props;
         let { ordered } = this.state;
-        
-        if (ordered ){
 
-            parties.sort(function(a, b) {
+        if (ordered) {
+
+            parties.sort(function (a, b) {
                 var nameA = a.title.toUpperCase();
                 var nameB = b.title.toUpperCase();
                 if (nameA < nameB) {
-                return -1;
+                    return -1;
                 }
                 if (nameA > nameB) {
-                return 1;
+                    return 1;
                 }
-            return 0;
-          });
+                return 0;
+            });
         } else {
             parties = shuffleArray(parties);
         };
-          return (
+        return (
             <section id="parties-section" className="section-home-parties-list section--grey">
                 <Row>
                     <Col span={24} lg={24}>
@@ -60,8 +60,18 @@ class HomePartiesList extends PureComponent {
                             <br />
                             Sempre que voltares a carregar esta página a ordem será diferente.
                         </p>
-                        <h2>Lista de Partidos</h2>
-                        <Switch onChange={this.onChange} /> <p>Ordenar alfabeticamente</p>
+                        <Row >
+                            <Col span={8}>
+                                <h2>Lista de Partidos</h2>
+                            </Col>
+                            <Col span={8} offset={8}>
+                                <div  className="home-alphaetic-order"  >
+                                    <Switch className="home-alpha-order-switch" 
+                                            size="small" 
+                                            onChange={this.onChange} 
+                                />  Ordenar alfabeticamente</div>
+                            </Col>
+                        </Row>
                         <AvatarList items={parties} theme={"4x3"} />
                     </Col>
                 </Row>
