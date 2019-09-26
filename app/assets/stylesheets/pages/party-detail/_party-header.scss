@@ -1,0 +1,67 @@
+@import '../../common/colors';
+
+.party-header {
+    background-color: $lightGrey;
+    padding-top: 80px;
+    height: auto;
+    text-align: center;
+
+    h1 {
+        font-size: 24px;
+
+        @media only screen and (min-width: 768px) {
+            font-size: 38px;
+        }
+    }
+
+    .ant-avatar {
+        margin: 0 auto 10px;
+
+        img {
+            // TODO: This should temporary. Images should fit with both properties at 100%.
+            max-height: 75%;
+            max-width: 75%;
+        }
+    }
+
+    .party-header__social {
+        flex-flow: column wrap;
+
+        @media only screen and (min-width: 992px) {
+            flex-direction: row;
+        }
+    }
+
+    .social-media-list {
+        margin-top: 30px;
+
+        @media only screen and (min-width: 992px) {
+            margin-top: 0;
+            margin-left: 15px;
+        }
+
+        li {
+            margin-right: 10px;
+
+            @media only screen and (min-width: 992px) {
+                margin-right: 3px;
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+
+                @media only screen and (min-width: 992px) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        img {
+            height: 30px;
+
+            @media only screen and (min-width: 992px) {
+                height: 20px;
+            }
+        }
+    }
+}

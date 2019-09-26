@@ -22,7 +22,7 @@ const { Title, Paragraph } = Typography;
 const Intro = ({ party }) => (
     <section className="party-intro">
         <Row>
-            <Col span={24} lg={17}>
+            <Col md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 16 }}>
                 <Title level={2}>Descrição do Partido</Title>
                 <div className="party-desc">{party.description}</div>
                 {party.description_source.split('\n').map((item, i) => <p key={i}>Fonte: <a href={item} target="_blank" rel="noopener">Wikipedia</a></p>)}

@@ -1,0 +1,21 @@
+// Place all the styles related to the Party Detail controller here.
+@import './pages/party-detail/party-header';
+@import './pages/party-detail/party-intro';
+@import './pages/party-detail/party-metrics';
+@import './pages/party-detail/party-candidates';
+
+main.party-section {
+    padding: 0;
+
+    .ant-layout-content {
+        padding: 32px;
+
+        @media only screen and (min-width: 992px) {
+            padding: 64px;
+        }
+    }
+
+    section.ant-layout {
+        padding: 0;
+    }
+}

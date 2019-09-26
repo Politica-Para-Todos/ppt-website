@@ -38,7 +38,9 @@ class Program extends PureComponent {
         return fetch("/manifesto_sections/" + this.props.match.params.section_id + ".json")
         .then(res => res.json())
         .then(data => data.items)
-        .catch(console.log)
+        .catch((error) => {
+            console.log(error);
+        });
       }
 
       return []
@@ -47,7 +49,9 @@ class Program extends PureComponent {
     getProgramData() {
       return fetch("/parties/" + encodeURIComponent(this.props.match.params.party_acronym) + "/manifesto.json")
       .then(res => res.json())
-      .catch(console.log)
+      .catch((error) => {
+        console.log(error);
+    });
     }
 
     componentDidMount() {
@@ -92,7 +96,6 @@ class Program extends PureComponent {
         }
       })
 
-      console.log(openKey)
       return openKey
     }
 
