@@ -31,7 +31,9 @@ export default class Party extends PureComponent {
         super();
 
         this.state = {
-            party: {},
+            party: {
+              description_source: "",
+            },
             spokesperson: null
         }
     }
@@ -129,7 +131,7 @@ const circles = [
         label: "Braga"
     },
     {
-        value: "bragança",
+        value: "braganca",
         label: "Bragança"
     },
     {
