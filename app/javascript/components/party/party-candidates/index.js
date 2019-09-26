@@ -24,7 +24,6 @@ class PartyCandidates extends PureComponent {
         fetch("/parties/" + this.props.match.params.id + "/candidates/" + this.props.match.params.district + ".json")
             .then(res => res.json())
             .then(data => {
-                data.acronym = data.acronym + " - Distrito de " + this.props.match.params.district;
                 this.setState({
                     party: data
                 })
@@ -41,7 +40,7 @@ class PartyCandidates extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
-                    <PartyHeader party={party} />
+                    <PartyHeader party={party} subtitle={party.acronym + " - Distrito de " + this.props.match.params.district} />
                     <PartyIntro spokesperson={party.leadCandidate} title={party.leadCandidate.name}>
                         <Paragraph className="party-desc">{party.leadCandidate.biography}</Paragraph>
                         <Paragraph>Biografia: <a href={party.leadCandidate.biography_source} target="_blank" rel="noopener">aqui</a></Paragraph>

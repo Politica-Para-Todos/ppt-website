@@ -41,13 +41,13 @@ function getPartyProgram(acronym) {
         </Button>
     );
 }
-const PartyHeader = ({ party }) => (
+const PartyHeader = ({ party, subtitle }) => (
     <section className="party-header">
         <Row>
             <Col span={24}>
                 <Title>{party.name}</Title>
                 <Divider />
-                <Paragraph strong>{party.acronym}</Paragraph>
+                <Paragraph strong>{subtitle}</Paragraph>
             </Col>
         </Row>
         <Row type="flex" justify="center">
