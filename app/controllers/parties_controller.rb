@@ -16,7 +16,16 @@ class PartiesController < InheritedResources::Base
   # GET /parties/:acronym.json
   def show
     @party = Party.find_by(acronym: params[:acronym].upcase)
-    @candidates = @party.candidates.where(is_lead_candidate: true).sort_by { |cand| cand.district }
+    # cand.district has downcase and unicode_normalize filters so that the sort is accent insensitive.
+    # e.g. Évora was showing up as last
+    @candidates = @party.candidates.where(is_lead_candidate: true).sort_by { |cand| cand.district.downcase.unicode_normalize(:nfd) }
+  end
+
+  # GET /parties/:acronym/candidates/:district.json
+  def district
+    @party = Party.find_by(acronym: params[:acronym].upcase)
+    @candidates = @party.candidates.where(district: params[:district])
+    @lead_candidate = @candidates.where(is_lead_candidate: true)[0]
   end
 
   private

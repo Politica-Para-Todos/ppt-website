@@ -16,16 +16,22 @@
     padding-left: 0;
 
     li {
-        margin-right: 3px;
+        margin-right: 10px;
 
         &:last-of-type {
             margin-right: 0;
         }
 
         a {
-            display: inline-block;
+            display: flex;
+            transition: opacity .15s ease-in-out;
 
-            svg {
+            &:hover,
+            &:focus {
+                opacity: .7;
+            }
+
+            .social-media__icon {
                 width: auto;
                 height: 20px;
                 vertical-align: top;
@@ -38,6 +44,6 @@
     background-color: transparent;
 }
 
-.social-media-list svg {
+.social-media-list .social-media__icon {
     fill: white;
 }

@@ -24,4 +24,6 @@ export default [
     "Fábio Cláudio",
     "Luis Cunha",
     "Marta Costa",
+    "Vanessa Vilela",
+    "Renata Henriques"
 ]

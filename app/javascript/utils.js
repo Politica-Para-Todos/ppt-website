@@ -54,4 +54,13 @@ function getName(str) {
     return names[0] + ' ' + names[names.length-1];
 }
 
-export { slugify, shuffleArray, getName };
+// Sort array by key
+function sortArrayByKey(array, key) {
+  return array.sort(function(a, b) {
+        var x = a[key];
+        var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
+export { slugify, shuffleArray, getName, sortArrayByKey };
