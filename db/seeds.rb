@@ -7,9 +7,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-ManifestoItem.destroy_all
-ManifestoSection.where.not(manifesto_section_id: nil).destroy_all
-ManifestoSection.destroy_all
-Manifesto.destroy_all
-Candidate.destroy_all
-Party.destroy_all
