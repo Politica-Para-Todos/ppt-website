@@ -53,10 +53,6 @@ const PartyHeader = ({ party, subtitle }) => (
         <Row type="flex" justify="center">
             <Col>
                 <Avatar size={200} src={party.logo} icon="user" />
-            </Col>
-        </Row>
-        <Row type="flex" justify="center">
-            <Col>
                 {getPartyProgram(party.acronym)}
             </Col>
         </Row>

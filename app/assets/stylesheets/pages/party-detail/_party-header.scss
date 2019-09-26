@@ -13,6 +13,7 @@
     }
 
     .party-header-subtitle {
+        margin-bottom: 20px;
         font-size: 18px;
         font-weight: 600;
 
@@ -28,6 +29,15 @@
             // TODO: This should temporary. Images should fit with both properties at 100%.
             max-height: 75%;
             max-width: 75%;
+        }
+    }
+
+    .party-header__program-cta {
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        @media only screen and (min-width: 992px) {
+            margin-bottom: 0;
         }
     }
 
