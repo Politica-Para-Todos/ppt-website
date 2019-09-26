@@ -80,7 +80,7 @@ class PartyCandidatesList extends React.Component {
                                     xl={4}
                                     className="party-candidate"
                                 >
-                                  <a className="avatar-list-item" href={`/party/${acronym}/candidates/${encodeURIComponent(candidate.circle.name)}`}>
+                                  <a className="avatar-list-item" href={`/party/${encodeURIComponent(acronym)}/candidates/${encodeURIComponent(candidate.circle.name)}`}>
                                       <div className="party-candidate__content">
                                           <Avatar size={120} icon="user" />
                                           {candidate.circle.name && (
