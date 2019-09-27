@@ -67,4 +67,6 @@ Rails.application.configure do
 
   # Web console
   config.web_console.permissions = '192.168.128.0/24'
+
+  config.force_ssl = true
 end
