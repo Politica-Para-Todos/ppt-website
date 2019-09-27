@@ -14,115 +14,108 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import React, { PureComponent } from "react";
+import React, { PureComponent, Fragment } from "react";
 import Layout from 'antd/es/layout';
 const Sider = Layout.Sider;
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
-import MenuBar from "./MenuBar";
-import Section from "./Section";
+import ProgramSider from "./ProgramSider";
+import ProgramSection from "./ProgramSection";
 
 class Program extends PureComponent {
-
     constructor() {
-      super()
-      this.state = {
-          title: "",
-          sections: [],
-          items: []
-      }
+        super()
+        this.state = {
+            title: "",
+            sections: [],
+            items: []
+        }
     }
 
     getItems() {
-      if (this.props.match.params.section_id) {
-        return fetch("/manifesto_sections/" + this.props.match.params.section_id + ".json")
-        .then(res => res.json())
-        .then(data => data.items)
-        .catch((error) => {
-            console.log(error);
-        });
-      }
+        const { section_id } = this.props.match.params;
 
-      return []
+        if (section_id) {
+            return fetch(`/manifesto_sections/${section_id}.json`)
+                .then(res => res.json())
+                .then(data => data.items)
+                .catch((error) => {
+                    console.log(error);
+                });
+        }
+
+        return []
     }
 
     getProgramData() {
-      return fetch("/parties/" + encodeURIComponent(this.props.match.params.party_acronym) + "/manifesto.json")
-      .then(res => res.json())
-      .catch((error) => {
-        console.log(error);
-    });
+        const { party_acronym } = this.props.match.params;
+
+        return fetch(`/parties/${encodeURIComponent(party_acronym)}/manifesto.json`)
+            .then(res => res.json())
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     componentDidMount() {
-        var promise1 = this.getItems()
-        var promise2 = this.getProgramData()
+        const itemsPromise = this.getItems()
+        const programDataPromise = this.getProgramData()
 
-        Promise.all([promise1, promise2]).then((results) => {
-          const [ items, data ] = results;
+        Promise.all([itemsPromise, programDataPromise]).then((results) => {
+            const [items, data] = results;
 
-          this.setState({
-            title: data.title,
-            sections: data.sections,
-            items: items
-          });
+            this.setState({
+                title: data.title,
+                sections: data.sections,
+                items: items
+            });
         });
     }
 
-    getSectionContent() {
-      if (this.props.match.params.section_id) {
-        return <Section
-          section_id={this.props.match.params.section_id}
-          items={this.state.items}
-        />
-      } else {
-        return <div> introduction </div>
-      }
-    }
-
     getSelectedKey(sections, section_id) {
-      return section_id ? [section_id] : []
+        return section_id ? [section_id] : null
     }
 
     getOpenKey(sections, section_id) {
-      var openKey = []
-      sections.forEach(function(section) {
-        if (section.subsections.length > 0) {
-          section.subsections.forEach(function(subsection) {
-            if (subsection.id.toString() === section_id) {
-              openKey = [section.id.toString()]
+        let openKey = []
+        sections.forEach((section) => {
+            if (section.subsections.length > 0) {
+                section.subsections.forEach((subsection) => {
+                    if (subsection.id.toString() === section_id) {
+                        openKey = [section.id.toString()]
+                    }
+                })
             }
-          })
-        }
-      })
+        })
 
-      return openKey
+        return openKey.length ? openKey : null
     }
 
     render() {
-        let sections = this.state.sections;
-        let section_id = this.props.match.params.section_id;
+        const { sections, title, items } = this.state;
+        const { section_id, party_acronym } = this.props.match.params;
 
         return (
-          <Layout>
-            <LayoutHeader />
-            <Layout>
-              <Sider width={200}>
-                <MenuBar
-                  sections={sections}
-                  party_acronym={this.props.match.params.party_acronym}
-                  section_id={section_id}
-                  selectedKey={this.getSelectedKey(sections, section_id)}
-                  openKey={this.getOpenKey(sections, section_id)}//{["71"]}
-                />
-              </Sider>
-              <Layout.Content>
-                <div>{this.state.title}</div>
-                <div>{this.getSectionContent()}</div>
-              </Layout.Content>
+            <Layout className="party-program">
+                <LayoutHeader />
+                <Layout>
+                    <Sider width={200} className="party-program-sider">
+                        {sections.length && (
+                            <ProgramSider
+                                sections={sections}
+                                party_acronym={party_acronym}
+                                section_id={section_id}
+                                selectedKey={this.getSelectedKey(sections, section_id)}
+                                openKey={this.getOpenKey(sections, section_id)}
+                            />
+                        )}
+                    </Sider>
+                    <Layout.Content>
+                        <ProgramSection title={title} items={items} section_id={section_id} />
+                    </Layout.Content>
+                </Layout>
+                <LayoutFooter />
             </Layout>
-            <LayoutFooter />
-          </Layout>
         );
     }
 }

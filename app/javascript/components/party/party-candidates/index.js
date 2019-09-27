@@ -15,13 +15,13 @@ class PartyCandidates extends PureComponent {
 
         this.state = {
             party: {
-              leadCandidate: {}
+                leadCandidate: {}
             },
         }
     }
 
     componentDidMount() {
-        fetch("/parties/" + this.props.match.params.id + "/candidates/" + this.props.match.params.district + ".json")
+        fetch("/parties/" + this.props.match.params.party_acronym + "/candidates/" + this.props.match.params.district + ".json")
             .then(res => res.json())
             .then(data => {
                 this.setState({
