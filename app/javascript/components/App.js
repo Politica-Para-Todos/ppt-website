@@ -32,9 +32,9 @@ class App extends React.Component {
         return (
             <Switch>
                 <Route exact path="/" component={Home} />
-                <Route exact path="/manifesto/:party_acronym/:section_id?" component={withRouter(Program)} />
-                <Route exact path="/party/:id" component={withRouter(Party)} />
-                <Route exact path="/party/:id/candidates/:district" component={withRouter(PartyCandidates)} />
+                <Route exact path="/party/:party_acronym" component={withRouter(Party)} />
+                <Route exact path="/party/:party_acronym/candidates/:district" component={withRouter(PartyCandidates)} />
+                <Route exact path="/party/:party_acronym/manifesto/:section_id?" component={withRouter(Program)} />
                 <Route exact path="/about-us" component={AboutUs} />
             </Switch >
         )

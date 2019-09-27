@@ -1,10 +1,11 @@
 .ant-layout {
     position: relative;
-    overflow: hidden;
+    overflow-X: hidden;
+    width: 100%;
     background-color: white;
 
     @media only screen and (min-width: 992px) {
-        overflow: initial;
+        overflow-X: initial;
     }
 }
 
