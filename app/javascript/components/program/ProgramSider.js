@@ -37,6 +37,7 @@ class ProgramSider extends PureComponent {
                 style={{ height: '100%', borderRight: 0 }}
             >
                 {sections && sections.map(section => {
+                    console.log(section);
                     if (section.subsections.length > 0) {
                         return (
                             <SubMenu
@@ -45,6 +46,7 @@ class ProgramSider extends PureComponent {
                                 className={`section-${section.id}`}
                             >
                                 {section.subsections && section.subsections.map(subsection => {
+                                    console.log(subsection);
                                     return (
                                         <Menu.Item key={subsection.id} className={`section-${subsection.id}`}>
                                             <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${subsection.id}`}>{subsection.title}</Link>
@@ -52,7 +54,7 @@ class ProgramSider extends PureComponent {
                                     )
                                 })}
                             </SubMenu>
-                        )
+                        )/
                     } else {
                         return (
                             <Menu.Item key={section.id}>

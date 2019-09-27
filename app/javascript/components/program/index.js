@@ -20,7 +20,7 @@ const Sider = Layout.Sider;
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import ProgramSider from "./ProgramSider";
-import ProgramSection from "./ProgramSection";
+{/* import ProgramSection from "./ProgramSection"; */}
 
 class Program extends PureComponent {
     constructor() {
@@ -111,7 +111,7 @@ class Program extends PureComponent {
                         )}
                     </Sider>
                     <Layout.Content>
-                        <ProgramSection title={title} items={items} section_id={section_id} />
+                        {/* <ProgramSection title={title} items={items} section_id={section_id} /> */}
                     </Layout.Content>
                 </Layout>
                 <LayoutFooter />
