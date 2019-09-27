@@ -10,7 +10,8 @@ class PartiesController < InheritedResources::Base
 
   # GET /parties.json
   def index
-    @parties = Party.all
+    # removing PCP and PEV, keeping CDU
+    @parties = Party.all.where.not(name: nil)
   end
 
   # GET /parties/:acronym.json
