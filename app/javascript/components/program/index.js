@@ -49,7 +49,8 @@ class Program extends PureComponent {
     getProgramData() {
         const { party_acronym } = this.props.match.params;
 
-        return fetch(`/parties/${encodeURIComponent(party_acronym)}/manifesto.json`)
+        // party_acronym is already encoded
+        return fetch(`/parties/${party_acronym}/manifesto.json`)
             .then(res => res.json())
             .catch((error) => {
                 console.log(error);

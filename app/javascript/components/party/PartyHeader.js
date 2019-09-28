@@ -17,14 +17,11 @@ limitations under the License.
 import React from "react";
 import { Row, Col, Typography, Divider, Avatar, Button } from "antd";
 import SocialSharing from "../common/SocialSharing";
-import partyProgram from "./party_programs.json";
 
 const { Title, Paragraph } = Typography;
 
-function getPartyProgram(acronym) {
-    const programLink = partyProgram[acronym];
-
-    if (!programLink) {
+function getPartyProgram(acronym, hasManifesto) {
+    if (!hasManifesto) {
         return (
             <p>
                 Este partido não apresentou programa eleitoral. <br />
@@ -35,7 +32,7 @@ function getPartyProgram(acronym) {
 
     return (
         <Button className="button--grey">
-            <a href={programLink} target="_blank" rel="noopener">
+            <a href={`/party/${encodeURIComponent(acronym)}/manifesto`} rel="noopener">
                 Ver Programa
             </a>
         </Button>
@@ -57,7 +54,7 @@ const PartyHeader = ({ party, subtitle }) => (
         </Row>
         <Row type="flex" justify="center">
         <Col>
-          {getPartyProgram(party.acronym)}
+          {getPartyProgram(party.acronym, party.hasManifesto)}
         </Col>
         </Row>
         <Row type="flex" justify="end" align="middle" className="party-header__social">
