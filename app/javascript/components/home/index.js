@@ -18,12 +18,12 @@ import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
-import HomeMission from "./HomeMission";
+import { HomeMission1, HomeMission2 } from "./HomeMission";
 import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
 import HomeMotivation from "./HomeMotivation";
+import HomeVideos from "./HomeVideos";
 import { shuffleArray } from '../../utils';
-import HomeInitialWarning from "./HomeInitialWarning";
 
 class Home extends PureComponent {
     constructor() {
@@ -61,9 +61,10 @@ class Home extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
-                    <HomeInitialWarning />
-                    <HomeMission />
+                    <HomeMission1 />
                     <HomeCountdown />
+                    <HomeMission2 />
+                    <HomeVideos />
                     <HomePartiesList parties={parties} />
                 </Layout.Content>
                 <LayoutFooter />

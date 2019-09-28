@@ -11,4 +11,8 @@
     & li {
         margin-bottom: 20px;
     }
+
+    @media only screen and (max-width: 992px) {
+        column-count: 1;
+    }
 }
