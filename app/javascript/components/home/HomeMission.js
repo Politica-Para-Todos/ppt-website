@@ -39,7 +39,7 @@ class HomeMission1 extends PureComponent {
 class HomeMission2 extends PureComponent {
     render() {
         return (
-            <section className="home-our-mission">
+            <section className="home-our-mission home-our-mission-border" >
                 <Row type="flex" justify="space-between" align="middle">
                     <Col span={24} lg={24} className="home-our-mission-text">
                         <p>As eleições legislativas de 6 de Outubro de 2019 aproximam-se. Como um grupo de cidadãos independentes, decidimos criar esta página para agregar toda a informação relevante para estas eleições.</p>

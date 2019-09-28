@@ -22,6 +22,7 @@ import { HomeMission1, HomeMission2 } from "./HomeMission";
 import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
 import HomeMotivation from "./HomeMotivation";
+import HomeVideos from "./HomeVideos";
 import { shuffleArray } from '../../utils';
 
 class Home extends PureComponent {
@@ -63,6 +64,7 @@ class Home extends PureComponent {
                     <HomeMission1 />
                     <HomeCountdown />
                     <HomeMission2 />
+                    <HomeVideos />
                     <HomePartiesList parties={parties} />
                 </Layout.Content>
                 <LayoutFooter />
