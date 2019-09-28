@@ -26,8 +26,41 @@ class ProgramSider extends PureComponent {
         this.state = {}
     }
 
+    _renderMenuItem(id, title, party_acronym) {
+        return (
+            <Menu.Item key={id} className={`section-${id}`}>
+                <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${id}`}>{title}</Link>
+            </Menu.Item>
+        )
+    }
+    _renderSubMenu(section, party_acronym) {
+        const subsections = section.subsections || [];
+
+        return (
+            <SubMenu
+                key={section.id}
+                title={section.title}
+                className={`section-${section.id}`}
+            >
+                {subsections.map(({ id, title }) => this._renderMenuItem(id, title, party_acronym))}
+            </SubMenu>
+        );
+    }
+
+    _renderMenuItems() {
+        const party_acronym = this.props.party_acronym;
+        const sections = this.props.sections || [];
+
+        return sections.map(section => {
+            if (section.subsections.length > 0) {
+                return this._renderSubMenu(section, party_acronym);
+            } else {
+                return this._renderMenuItem(section.id, section.title, party_acronym);
+            }
+        });
+    }
     render() {
-        const { sections, party_acronym, section_id, selectedKey, openKey, ...props } = this.props;
+        const { section_id, selectedKey, openKey, ...props } = this.props;
 
         return (
             <Menu
@@ -36,34 +69,8 @@ class ProgramSider extends PureComponent {
                 defaultOpenKeys={openKey}
                 style={{ height: '100%', borderRight: 0 }}
             >
-                {sections && sections.map(section => {
-                    console.log(section);
-                    if (section.subsections.length > 0) {
-                        return (
-                            <SubMenu
-                                key={section.id}
-                                title={section.title}
-                                className={`section-${section.id}`}
-                            >
-                                {section.subsections && section.subsections.map(subsection => {
-                                    console.log(subsection);
-                                    return (
-                                        <Menu.Item key={subsection.id} className={`section-${subsection.id}`}>
-                                            <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${subsection.id}`}>{subsection.title}</Link>
-                                        </Menu.Item>
-                                    )
-                                })}
-                            </SubMenu>
-                        )/
-                    } else {
-                        return (
-                            <Menu.Item key={section.id}>
-                                <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${section.id}`}>{section.title}</Link>
-                            </Menu.Item>
-                        )
-                    }
-                })}
-            </Menu >
+                {this._renderMenuItems()}
+            </Menu>
         );
     }
 }

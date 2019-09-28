@@ -120,3 +120,12 @@ section.party-program-body {
         margin: 0;
     }
 }
+
+.party-program__share-popover {
+    background-color: $darkerGrey;
+    color: white;
+    padding: 0px 20px;
+    text-align: center;
+    border: 1px solid;
+    border-radius: 2px;
+}

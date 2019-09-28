@@ -20,7 +20,7 @@ const Sider = Layout.Sider;
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import ProgramSider from "./ProgramSider";
-{/* import ProgramSection from "./ProgramSection"; */}
+import ProgramSection from "./ProgramSection";
 
 class Program extends PureComponent {
     constructor() {
@@ -28,7 +28,7 @@ class Program extends PureComponent {
         this.state = {
             title: "",
             sections: [],
-            items: []
+            section: undefined
         }
     }
 
@@ -38,7 +38,6 @@ class Program extends PureComponent {
         if (section_id) {
             return fetch(`/manifesto_sections/${section_id}.json`)
                 .then(res => res.json())
-                .then(data => data.items)
                 .catch((error) => {
                     console.log(error);
                 });
@@ -62,18 +61,18 @@ class Program extends PureComponent {
         const programDataPromise = this.getProgramData()
 
         Promise.all([itemsPromise, programDataPromise]).then((results) => {
-            const [items, data] = results;
+            const [section, data] = results;
 
             this.setState({
                 title: data.title,
                 sections: data.sections,
-                items: items
+                section: section
             });
         });
     }
 
     getSelectedKey(sections, section_id) {
-        return section_id ? [section_id] : null
+        return section_id ? [section_id] : []
     }
 
     getOpenKey(sections, section_id) {
@@ -88,11 +87,11 @@ class Program extends PureComponent {
             }
         })
 
-        return openKey.length ? openKey : null
+        return openKey.length ? openKey : [];
     }
 
     render() {
-        const { sections, title, items } = this.state;
+        const { sections, title, section } = this.state;
         const { section_id, party_acronym } = this.props.match.params;
 
         return (
@@ -111,7 +110,7 @@ class Program extends PureComponent {
                         )}
                     </Sider>
                     <Layout.Content>
-                        {/* <ProgramSection title={title} items={items} section_id={section_id} /> */}
+                        <ProgramSection title={title} section={section} section_id={section_id} />
                     </Layout.Content>
                 </Layout>
                 <LayoutFooter />
