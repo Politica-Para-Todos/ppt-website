@@ -23,7 +23,6 @@ import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
 import HomeMotivation from "./HomeMotivation";
 import { shuffleArray } from '../../utils';
-import HomeInitialWarning from "./HomeInitialWarning";
 
 class Home extends PureComponent {
     constructor() {
@@ -61,7 +60,6 @@ class Home extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
-                    <HomeInitialWarning />
                     <HomeMission1 />
                     <HomeCountdown />
                     <HomeMission2 />
