@@ -32,7 +32,7 @@ export default class Party extends PureComponent {
 
         this.state = {
             party: {
-              description_source: "",
+                description_source: "",
             },
             spokesperson: null
         }
@@ -59,9 +59,9 @@ export default class Party extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content className="party-section">
-                    <PartyHeader party={party} subtitle={party.acronym}/>
+                    <PartyHeader party={party} subtitle={party.acronym} />
                     <PartyIntro spokesperson={spokesperson} title="Descrição do Partido">
-                        <Paragraph className="party-desc">{party.description}</Paragraph>
+                        <Paragraph>{party.description}</Paragraph>
                         {party.description_source.split('\n').map((item, i) => <Paragraph key={i}>Fonte: <a href={item} target="_blank" rel="noopener">Wikipedia</a></Paragraph>)}
                     </PartyIntro>
                     <PartyCandidatesList candidates={party.candidates} circles={circles} acronym={party.acronym} />

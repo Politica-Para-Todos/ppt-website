@@ -23,7 +23,7 @@ import SocialSharing from './SocialSharing';
 import socialSharing from "../../social-sharing";
 import horizontal_logo from "../../../assets/images/horizontal_logo.svg";
 import burger_image from "../../../assets/images/burger.svg";
-
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 const Header = Layout.Header;
 
 class LayoutHeader extends PureComponent {
@@ -31,6 +31,7 @@ class LayoutHeader extends PureComponent {
 
     componentDidMount() {
         this.updateMenuVisibility();
+        this.targetElement = document.querySelector('.header__mobile-menu ul');
         window.addEventListener("resize", this.updateMenuVisibility.bind(this));
     }
 
@@ -43,6 +44,7 @@ class LayoutHeader extends PureComponent {
             this.setState({
                 visible: false,
             });
+            enableBodyScroll(this.targetElement);
         }
     }
 
@@ -50,12 +52,14 @@ class LayoutHeader extends PureComponent {
         this.setState({
             visible: true,
         });
+        disableBodyScroll(this.targetElement);
     };
 
-    onClose = () => {
+    closeDrawer = () => {
         this.setState({
             visible: false,
         });
+        enableBodyScroll(this.targetElement);
     };
 
     render() {
@@ -79,11 +83,11 @@ class LayoutHeader extends PureComponent {
                                     <Menu.Item>
                                         <Link to="/">Home</Link>
                                     </Menu.Item>
-                                    <Menu.Item>
-                                        <HashLink to="/#parties-section">Partidos</HashLink>
+                                    <Menu.Item onClick={this.closeDrawer}>
+                                        <HashLink smooth to="/#parties-section" onClick={this.closeDrawer}>Partidos</HashLink>
                                     </Menu.Item>
                                     <Menu.Item>
-                                        <HashLink to="/about-us">Quem Somos</HashLink>
+                                        <Link to="/about-us">Quem Somos</Link>
                                     </Menu.Item>
                                 </Menu>
                                 <a
@@ -102,7 +106,7 @@ class LayoutHeader extends PureComponent {
                         className="header__mobile-menu"
                         placement="right"
                         closable={false}
-                        onClose={this.onClose}
+                        onClose={this.closeDrawer}
                         visible={this.state.visible}
                         getContainer={false}
                         style={{ position: 'absolute' }}
@@ -112,10 +116,10 @@ class LayoutHeader extends PureComponent {
                                 <Link to="/">Home</Link>
                             </Menu.Item>
                             <Menu.Item>
-                                <HashLink to="/#parties-section">Partidos</HashLink>
+                                <HashLink to="/#parties-section" onClick={this.closeDrawer}>Partidos</HashLink>
                             </Menu.Item>
                             <Menu.Item>
-                                <HashLink to="/about-us">Quem Somos</HashLink>
+                                <Link to="/about-us">Quem Somos</Link>
                             </Menu.Item>
                         </Menu>
                         <a
