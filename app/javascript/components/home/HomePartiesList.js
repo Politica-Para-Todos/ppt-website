@@ -15,15 +15,19 @@ limitations under the License.
 */
 
 import React, { PureComponent } from "react";
-import { Row, Col, Switch } from "antd";
+import { Row, Col, Switch, Select } from "antd";
 import AvatarList from "../common/AvatarList";
 import { shuffleArray, sortArrayByKey } from '../../utils';
+
+const { Option } = Select;
 
 class HomePartiesList extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            ordered: false
+            parties: [],
+            ordered: false,
+            circle: "all"
         }
     }
 
@@ -31,8 +35,33 @@ class HomePartiesList extends PureComponent {
         this.setState({ ordered: checked });
     }
 
+    updateCircle = value => {
+        const circle = value || "all";
+        this.setState({ circle });
+    };
+
+    componentDidMount() {
+        fetch("parties.json")
+            .then(res => res.json())
+            .then(data =>
+                this.setState({
+                    parties: data.map(function (x) {
+                        return {
+                            'imageUrl': x.logo,
+                            'title': x.acronym,
+                            'subtitle': x.title,
+                            'link': `party/${encodeURIComponent(x.acronym)}`
+                        }
+                    })
+                })
+            )
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
     render() {
-        let { parties } = this.props;
+        let { parties } = this.state;
         let { ordered } = this.state;
 
         if (ordered) {
@@ -53,12 +82,23 @@ class HomePartiesList extends PureComponent {
                             <Col span={8}>
                                 <h2>Lista de Partidos</h2>
                             </Col>
+                            <Col lg={7} span={24} className="party-candidates__circles">
+                                <Select
+                                    style={{ width: "100%" }}
+                                    placeholder="Escolha o Círculo Eleitoral"
+                                    onChange={this.updateCircle}
+                                >
+                                    {circles.map((circle) => (
+                                        <Option key={circle.value} value={circle.value}>{circle.label}</Option>
+                                    ))}
+                                </Select>
+                            </Col>
                             <Col span={8} offset={8}>
-                                <div  className="home-alphaetic-order"  >
+                                <div className="home-alphaetic-order"  >
                                     <Switch className="home-alpha-order-switch"
-                                            size="small"
-                                            onChange={this.onChange}
-                                />  Ordenar alfabeticamente</div>
+                                        size="small"
+                                        onChange={this.onChange}
+                                    />  Ordenar alfabeticamente</div>
                             </Col>
                         </Row>
                         <AvatarList items={parties} theme={"4x3"} />
@@ -68,5 +108,101 @@ class HomePartiesList extends PureComponent {
         );
     }
 }
+
+const circles = [
+    {
+        value: "all",
+        label: "Todos"
+    },
+    {
+        value: "acores",
+        label: "Açores"
+    },
+    {
+        value: "aveiro",
+        label: "Aveiro"
+    },
+    {
+        value: "beja",
+        label: "Beja"
+    },
+    {
+        value: "braga",
+        label: "Braga"
+    },
+    {
+        value: "braganca",
+        label: "Bragança"
+    },
+    {
+        value: "castelo-branco",
+        label: "Castelo Branco"
+    },
+    {
+        value: "coimbra",
+        label: "Coimbra"
+    },
+    {
+        value: "evora",
+        label: "Évora"
+    },
+    {
+        value: "europa",
+        label: "Europa"
+    },
+    {
+        value: "faro",
+        label: "Faro"
+    },
+    {
+        value: "fora-da-europa",
+        label: "Fora da europa"
+    },
+    {
+        value: "guarda",
+        label: "Guarda"
+    },
+    {
+        value: "leiria",
+        label: "Leiria"
+    },
+    {
+        value: "lisboa",
+        label: "Lisboa"
+    },
+    {
+        value: "madeira",
+        label: "Madeira"
+    },
+    {
+        value: "portalegre",
+        label: "Portalegre"
+    },
+    {
+        value: "porto",
+        label: "Porto"
+    },
+    {
+        value: "santarem",
+        label: "Santarém"
+    },
+    {
+        value: "setubal",
+        label: "Setúbal"
+    },
+    {
+        value: "viana-do-castelo",
+        label: "Viana do Castelo"
+    },
+    {
+        value: "vila-real",
+        label: "Vila Real"
+    },
+    {
+        value: "viseu",
+        label: "Viseu"
+    }
+];
+
 
 export default HomePartiesList;

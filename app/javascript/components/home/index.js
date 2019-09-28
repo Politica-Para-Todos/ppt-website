@@ -27,34 +27,9 @@ import { shuffleArray } from '../../utils';
 class Home extends PureComponent {
     constructor() {
         super();
-
-        this.state = {
-            parties: []
-        }
-    }
-
-    componentDidMount() {
-        fetch("parties.json")
-            .then(res => res.json())
-            .then(data =>
-                this.setState({
-                    parties: data.map(function (x) {
-                        return {
-                            'imageUrl': x.logo,
-                            'title': x.acronym,
-                            'subtitle': x.title,
-                            'link': `party/${encodeURIComponent(x.acronym)}`
-                        }
-                    })
-                })
-            )
-            .catch((error) => {
-                console.log(error);
-            });
     }
 
     render() {
-        const { parties } = this.state;
 
         return (
             <Layout>
@@ -62,7 +37,7 @@ class Home extends PureComponent {
                 <Layout.Content>
                     <HomeMission />
                     <HomeCountdown />
-                    <HomePartiesList parties={parties} />
+                    <HomePartiesList/>
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>
