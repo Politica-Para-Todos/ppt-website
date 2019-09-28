@@ -2,9 +2,9 @@ import React, { PureComponent, Fragment } from "react";
 import { Tooltip } from "antd";
 import ReactHtmlParser from 'react-html-parser';
 import Popover from "react-text-selection-popover";
-import twitterImg from "../../../assets/images/glyph_twitter.svg";
+import twitterImg from "../../../../assets/images/glyph_twitter.svg";
 
-class ProgramSection extends PureComponent {
+class ManifestoSection extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -49,17 +49,17 @@ class ProgramSection extends PureComponent {
         const { title } = this.props;
 
         return (
-            <section className="party-program-body">
-                <h1 className="party-program-body__title">{title}</h1>
+            <section className="party-manifesto-body">
+                <h1 className="party-manifesto-body__title">{title}</h1>
                 {this.renderSectionTitle()}
                 <div
                     ref={this.sectionContentRef}
-                    className="party-program-body__content">
+                    className="party-manifesto-body__content">
                     {this.renderSectionContent()}
                 </div>
                 <Popover
                     selectionRef={this.sectionContentRef}
-                    className="party-program__share-popover">
+                    className="party-manifesto__share-popover">
                     <a
                         onClick={this.onClickTwitterShare}>
                         <img src={twitterImg} />
@@ -70,4 +70,4 @@ class ProgramSection extends PureComponent {
     }
 }
 
-export default ProgramSection;
+export default ManifestoSection;

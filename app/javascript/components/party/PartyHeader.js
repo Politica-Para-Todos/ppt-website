@@ -20,25 +20,30 @@ import SocialSharing from "../common/SocialSharing";
 
 const { Title, Paragraph } = Typography;
 
-function getPartyProgram(acronym, hasManifesto) {
-    if (!hasManifesto) {
-        return (
-            <p>
-                Este partido não apresentou programa eleitoral. <br />
-                Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
-            </p>
-        );
-    }
+function PartyManifestoLink(props) {
+    const {acronym, hasManifesto, showManifestoLink} = props;
 
-    return (
-        <Button className="button--grey">
-            <a href={`/party/${encodeURIComponent(acronym)}/manifesto`} rel="noopener">
-                Ver Programa
-            </a>
-        </Button>
-    );
+    if (showManifestoLink) {
+      if (!hasManifesto) {
+          return (
+              <p>
+                  Este partido não apresentou programa eleitoral. <br />
+                  Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
+              </p>
+          );
+      }
+
+      return (
+          <Button className="button--grey">
+              <a href={`/party/${encodeURIComponent(acronym)}/manifesto`} rel="noopener">
+                  Ver Programa
+              </a>
+          </Button>
+      );
+    };
+    return <div/>
 }
-const PartyHeader = ({ party, subtitle }) => (
+const PartyHeader = ({ party, subtitle, showManifestoLink }) => (
     <section className="party-header">
         <Row>
             <Col span={24}>
@@ -54,7 +59,7 @@ const PartyHeader = ({ party, subtitle }) => (
         </Row>
         <Row type="flex" justify="center">
         <Col>
-          {getPartyProgram(party.acronym, party.hasManifesto)}
+            <PartyManifestoLink acronym={party.acronym} hasManifesto={party.hasManifesto} showManifestoLink={showManifestoLink} />
         </Col>
         </Row>
         <Row type="flex" justify="end" align="middle" className="party-header__social">

@@ -18,9 +18,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import Home from "./home";
-import Program from "./program";
 import Party from "./party";
-import PartyCandidates from "./party/party-candidates";
+import PartyCandidate from "./party/party-candidates";
+import PartyManifesto from "./party/party-manifestos";
 import AboutUs from './about-us';
 
 class App extends React.Component {
@@ -33,8 +33,8 @@ class App extends React.Component {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/party/:party_acronym" component={withRouter(Party)} />
-                <Route exact path="/party/:party_acronym/candidates/:district" component={withRouter(PartyCandidates)} />
-                <Route exact path="/party/:party_acronym/manifesto/:section_id?" component={withRouter(Program)} />
+                <Route exact path="/party/:party_acronym/candidates/:district" component={withRouter(PartyCandidate)} />
+                <Route exact path="/party/:party_acronym/manifesto/:section_id?" component={withRouter(PartyManifesto)} />
                 <Route exact path="/about-us" component={AboutUs} />
             </Switch >
         )

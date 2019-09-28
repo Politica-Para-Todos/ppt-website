@@ -1,14 +1,14 @@
-.party-program .ant-layout-has-sider {
+.party-manifesto .ant-layout-has-sider {
     display: flex;
     flex-wrap: wrap;
     flex: 1 0 auto;
 }
 
-.party-program .ant-layout-content {
+.party-manifesto .ant-layout-content {
     min-height: 700px;
 }
 
-section.party-program-body {
+section.party-manifesto-body {
     max-width: 850px;
     padding: 0 30px;
     margin: 50px auto 0;
@@ -22,13 +22,13 @@ section.party-program-body {
     }
 }
 
-.party-program-body__title {
+.party-manifesto-body__title {
     margin-bottom: 50px;
     font-size: 34px;
     color: $darkerGrey;
 }
 
-.party-program-body__content p {
+.party-manifesto-body__content p {
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 400;
@@ -36,7 +36,7 @@ section.party-program-body {
     color: $darkerGrey;
 }
 
-.party-program-sider {
+.party-manifesto-sider {
     display: none;
     padding-top: 90px;
     background-color: transparent;
@@ -121,7 +121,7 @@ section.party-program-body {
     }
 }
 
-.party-program__share-popover {
+.party-manifesto__share-popover {
     background-color: $darkerGrey;
     color: white;
     padding: 0px 20px;

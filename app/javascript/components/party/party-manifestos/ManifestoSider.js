@@ -20,7 +20,7 @@ import { Menu } from 'antd';
 
 const { SubMenu } = Menu;
 
-class ProgramSider extends PureComponent {
+class ManifestoSider extends PureComponent {
     constructor() {
         super()
         this.state = {}
@@ -66,4 +66,4 @@ class ProgramSider extends PureComponent {
     }
 }
 
-export default ProgramSider;
+export default ManifestoSider;

@@ -9,7 +9,7 @@ import { Typography } from "antd";
 
 const { Paragraph } = Typography;
 
-class PartyCandidates extends PureComponent {
+class PartyCandidate extends PureComponent {
     constructor() {
         super();
 
@@ -40,7 +40,7 @@ class PartyCandidates extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
-                    <PartyHeader party={party} subtitle={party.acronym + " - Distrito de " + this.props.match.params.district} />
+                    <PartyHeader party={party} subtitle={party.acronym + " - Distrito de " + this.props.match.params.district} showManifestoLink={true} />
                     <PartyIntro spokesperson={party.leadCandidate} title={party.leadCandidate.name}>
                         <Paragraph className="party-desc">{party.leadCandidate.biography}</Paragraph>
                         <Paragraph>Biografia: <a href={party.leadCandidate.biography_source} target="_blank" rel="noopener">aqui</a></Paragraph>
@@ -55,4 +55,4 @@ class PartyCandidates extends PureComponent {
     }
 }
 
-export default PartyCandidates;
+export default PartyCandidate;
