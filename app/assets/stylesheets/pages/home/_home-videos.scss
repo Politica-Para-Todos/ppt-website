@@ -1,5 +1,7 @@
 section.home-videos {
     padding: 0;
+    margin-left: 0;
+    margin-right: auto;
 
     .ant-row {
         display: flex;
@@ -7,16 +9,31 @@ section.home-videos {
         align-items: center;
         padding: 70px 0 60px;
         margin-top: 0;
+        text-align: center;
     }
-}
 
-.player-wrapper {
-  position: relative;
-  padding-top: 40% /* Player ratio: 100 / (1280 / 720) */
-}
+    .ant-col {
+        margin-bottom: 20px;
+    }
 
-.react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
+    .home-videos-title {
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .home-videos-player-wrapper {
+      position: relative;
+      padding-top: 40%;
+
+      @media only screen and (max-width: 768px) {
+        padding-top: 60%
+      }
+    }
+
+    .home-videos-react-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 }
