@@ -1,8 +1,12 @@
 .home-parties-list_disclaimer {
     display: block;
     max-width: 480px;
-    margin: 0 auto 20px;
+    margin: 0 auto 60px;
     color: $darkerGrey;
     text-align: center;
     font-style: italic;
+
+    @media only screen and (min-width: 768px) {
+        margin-bottom: 20px;
+    }
 }

@@ -141,3 +141,17 @@ input {
 .section--grey {
     background-color: #f5f5f5;
 }
+
+.alphabetic-order {
+    text-align: center;
+
+    @media only screen and (min-width: 768px) {
+        text-align: right;
+    }
+
+    .ant-switch {
+        position: relative;
+        top: -1px;
+        margin-right: 10px;
+    }
+}

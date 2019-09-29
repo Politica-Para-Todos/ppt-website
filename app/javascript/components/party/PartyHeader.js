@@ -27,8 +27,8 @@ function getPartyProgram(acronym) {
     if (!programLink) {
         return (
             <p>
-                Este partido não apresentou programa eleitoral. <br />
-                Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
+                Este partido não apresentou programa eleitoral.<br />
+                Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail</a>.
             </p>
         );
     }
@@ -45,20 +45,16 @@ const PartyHeader = ({ party, subtitle }) => (
     <section className="party-header">
         <Row>
             <Col span={24}>
-                <Title>{party.name}</Title>
+                <Title className="party-header-title">{party.name}</Title>
                 <Divider />
-                <Paragraph strong>{subtitle}</Paragraph>
+                <Paragraph class="party-header-subtitle" strong>{subtitle}</Paragraph>
             </Col>
         </Row>
         <Row type="flex" justify="center">
             <Col>
                 <Avatar size={200} src={party.logo} icon="user" />
+                {getPartyProgram(party.acronym)}
             </Col>
-        </Row>
-        <Row type="flex" justify="center">
-        <Col>
-          {getPartyProgram(party.acronym)}
-        </Col>
         </Row>
         <Row type="flex" justify="end" align="middle" className="party-header__social">
             <a href={party.website} rel="noopener" target="_blank">{party.website}</a>

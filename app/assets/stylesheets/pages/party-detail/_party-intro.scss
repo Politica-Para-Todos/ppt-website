@@ -1,3 +1,26 @@
+.party-intro__text {
+
+    p,
+    .ant-typography {
+        color: $darkerGrey;
+        padding-bottom: 5px;
+        white-space: pre-wrap;
+
+        a {
+            color: $darkerGrey;
+            font-weight: 700;
+            text-decoration: underline;
+            transition: color .15s ease-in-out;
+
+            &:hover,
+            &:focus {
+                color: rgba($darkerGrey, .7);
+            }
+        }
+    }
+
+}
+
 .party-intro__spokesperson {
     text-align: center;
 
@@ -20,9 +43,4 @@
         font-weight: 400;
         line-height: 1.3em;
     }
-}
-
-.party-desc {
-  white-space: pre-wrap;
-  padding-bottom: 5px;
 }
