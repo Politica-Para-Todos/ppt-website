@@ -28,6 +28,18 @@ class PartiesController < InheritedResources::Base
     @lead_candidate = @candidates.where(is_lead_candidate: true)[0]
   end
 
+  # GET /partiesdistrict/:district.json
+  def partiesdistrict
+    if params[:district] === "all"
+      @parties = Party.all
+    else 
+      @parties = Party.joins(:candidates).where(candidates: {district: params[:district], is_lead_candidate: true})
+    end
+
+    User.joins(:tags).where.not(tags: { value: 'single' })
+    # @lead_candidate = @candidates.where(is_lead_candidate: true)[0]
+  end
+
   private
 
     def party_params

@@ -60,10 +60,32 @@ class HomePartiesList extends PureComponent {
             });
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.circle !== prevState.circle && prevState.circle) {
+        fetch("/partiesdistrict/"+this.state.circle+".json")
+            .then(res => res.json())
+            .then(data =>
+                this.setState({
+                    parties: data.map(function (x) {
+                        return {
+                            'imageUrl': x.logo,
+                            'title': x.acronym,
+                            'subtitle': x.title,
+                            'link': `party/${encodeURIComponent(x.acronym)}`
+                        }
+                    })
+                })
+            )
+            .catch((error) => {
+                console.log(error);
+            });
+        }
+    }
+
     render() {
         let { parties } = this.state;
         let { ordered } = this.state;
-
+        
         if (ordered) {
             parties = sortArrayByKey(parties, 'title');
         } else {
@@ -115,91 +137,91 @@ const circles = [
         label: "Todos"
     },
     {
-        value: "acores",
+        value: "Açores",
         label: "Açores"
     },
     {
-        value: "aveiro",
+        value: "Aveiro",
         label: "Aveiro"
     },
     {
-        value: "beja",
+        value: "Beja",
         label: "Beja"
     },
     {
-        value: "braga",
+        value: "Braga",
         label: "Braga"
     },
     {
-        value: "braganca",
+        value: "Bragança",
         label: "Bragança"
     },
     {
-        value: "castelo-branco",
+        value: "Castelo Branco",
         label: "Castelo Branco"
     },
     {
-        value: "coimbra",
+        value: "Coimbra",
         label: "Coimbra"
     },
     {
-        value: "evora",
+        value: "Évora",
         label: "Évora"
     },
     {
-        value: "europa",
+        value: "Europa",
         label: "Europa"
     },
     {
-        value: "faro",
+        value: "Faro",
         label: "Faro"
     },
     {
-        value: "fora-da-europa",
+        value: "Fora da europa",
         label: "Fora da europa"
     },
     {
-        value: "guarda",
+        value: "Guarda",
         label: "Guarda"
     },
     {
-        value: "leiria",
+        value: "Leiria",
         label: "Leiria"
     },
     {
-        value: "lisboa",
+        value: "Lisboa",
         label: "Lisboa"
     },
     {
-        value: "madeira",
+        value: "Madeira",
         label: "Madeira"
     },
     {
-        value: "portalegre",
+        value: "Portalegre",
         label: "Portalegre"
     },
     {
-        value: "porto",
+        value: "Porto",
         label: "Porto"
     },
     {
-        value: "santarem",
+        value: "Santarém",
         label: "Santarém"
     },
     {
-        value: "setubal",
+        value: "Setúbal",
         label: "Setúbal"
     },
     {
-        value: "viana-do-castelo",
+        value: "Viana do Castelo",
         label: "Viana do Castelo"
     },
     {
-        value: "vila-real",
+        value: "Vila Real",
         label: "Vila Real"
     },
     {
-        value: "viseu",
+        value: "Viseu",
         label: "Viseu"
     }
 ];
