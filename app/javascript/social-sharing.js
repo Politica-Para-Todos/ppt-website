@@ -14,5 +14,9 @@ export default [
     {
         type: 'email',
         url: 'contacto@politicaparatodos.pt'
+    },
+    {
+        type: 'instagram',
+        url: 'https://www.instagram.com/politica_para_todos/'
     }
 ]
