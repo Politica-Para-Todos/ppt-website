@@ -39,7 +39,7 @@ export default class Party extends PureComponent {
     }
 
     componentDidMount() {
-        fetch("/parties/" + this.props.match.params.id + ".json")
+        fetch("/parties/" + this.props.match.params.party_acronym + ".json")
             .then(res => res.json())
             .then(data => {
                 this.setState({

@@ -39,7 +39,7 @@ class Home extends PureComponent {
             .then(res => res.json())
             .then(data =>
                 this.setState({
-                    parties: data.map(function (x) {
+                    parties: data.map(x => {
                         return {
                             'imageUrl': x.logo,
                             'title': x.acronym,
