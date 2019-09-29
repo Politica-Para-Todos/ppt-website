@@ -32,8 +32,13 @@ class LayoutHeader extends PureComponent {
     componentDidMount() {
         this.updateMenuVisibility();
         this.targetElement = document.querySelector('.header__mobile-menu ul');
-
+        //getSocial 
+        const po = document.createElement("script"); 
+        po.type = "text/javascript"; 
+        po.async = true;
+        po.src = "https://api.at.getsocial.io/get/v1/3404615d/gs_async.js";
         
+        document.body.appendChild(po);
         window.addEventListener("resize", this.updateMenuVisibility.bind(this));
     }
 
