@@ -81,13 +81,13 @@ class LayoutHeader extends PureComponent {
                             <div className="header__desktop-menu">
                                 <Menu mode="horizontal">
                                     <Menu.Item>
-                                        <Link to="/">Home</Link>
+                                        <Link to="/" onClick={this.closeDrawer}>Home</Link>
                                     </Menu.Item>
                                     <Menu.Item onClick={this.closeDrawer}>
                                         <HashLink smooth to="/#parties-section" onClick={this.closeDrawer}>Partidos</HashLink>
                                     </Menu.Item>
                                     <Menu.Item>
-                                        <Link to="/about-us">Quem Somos</Link>
+                                        <Link to="/about-us" onClick={this.closeDrawer}>Quem Somos</Link>
                                     </Menu.Item>
                                 </Menu>
                                 <a
@@ -113,13 +113,13 @@ class LayoutHeader extends PureComponent {
                     >
                         <Menu mode="vertical">
                             <Menu.Item>
-                                <Link to="/">Home</Link>
+                                <Link to="/" onClick={this.closeDrawer}>Home</Link>
                             </Menu.Item>
                             <Menu.Item>
                                 <HashLink to="/#parties-section" onClick={this.closeDrawer}>Partidos</HashLink>
                             </Menu.Item>
                             <Menu.Item>
-                                <Link to="/about-us">Quem Somos</Link>
+                                <Link to="/about-us" onClick={this.closeDrawer}>Quem Somos</Link>
                             </Menu.Item>
                         </Menu>
                         <a
