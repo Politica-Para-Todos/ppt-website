@@ -23,21 +23,48 @@ import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
 import HomeMotivation from "./HomeMotivation";
 import { shuffleArray } from '../../utils';
+import HomeInitialWarning from "./HomeInitialWarning";
 
 class Home extends PureComponent {
     constructor() {
         super();
+
+        this.state = {
+            parties: []
+        }
+    }
+
+    componentDidMount() {
+        fetch("parties.json")
+            .then(res => res.json())
+            .then(data =>
+                this.setState({
+                    parties: data.map(function (x) {
+                        return {
+                            'imageUrl': x.logo,
+                            'title': x.acronym,
+                            'subtitle': x.title,
+                            'link': `party/${encodeURIComponent(x.acronym)}`
+                        }
+                    })
+                })
+            )
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     render() {
+        const { parties } = this.state;
 
         return (
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
+                    <HomeInitialWarning />
                     <HomeMission />
                     <HomeCountdown />
-                    <HomePartiesList/>
+                    <HomePartiesList parties={parties} />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>
