@@ -40,7 +40,7 @@ class PartyCandidate extends PureComponent {
             <Layout>
                 <LayoutHeader />
                 <Layout.Content>
-                    <PartyHeader party={party} subtitle={party.acronym + " - Distrito de " + this.props.match.params.district} showManifestoLink={true} />
+                    <PartyHeader party={party} subtitle={`${party.acronym} - Distrito de ${this.props.match.params.district}`} isManifestoPage={true} />
                     <PartyIntro spokesperson={party.leadCandidate} title={party.leadCandidate.name}>
                         <Paragraph className="party-desc">{party.leadCandidate.biography}</Paragraph>
                         <Paragraph>Biografia: <a href={party.leadCandidate.biography_source} target="_blank" rel="noopener">aqui</a></Paragraph>

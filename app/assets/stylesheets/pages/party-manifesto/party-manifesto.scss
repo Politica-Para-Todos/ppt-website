@@ -2,11 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     flex: 1 0 auto;
-    padding-top: 0;
+    padding: 0;
 }
 
 .party-manifesto .ant-layout-content {
-    min-height: 700px;
+    min-height: 350px;
+
+    @media only screen and (min-width: 768px) {
+        min-height: 700px;
+    }
 }
 
 section.party-manifesto-body {
@@ -21,13 +25,22 @@ section.party-manifesto-body {
     @media only screen and (min-width: 1200px) {
         padding: 50px 200px 0 5px;
     }
+
+    h2 {
+        margin-left: 0;
+        text-align: left;
+    }
 }
 
 .party-manifesto-body__title {
     margin-bottom: 50px;
-    font-size: 34px;
+    font-size: 28px;
     line-height: 1.4em;
     color: $darkerGrey;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 34px;
+    }
 }
 
 .party-manifesto-body__content p {
@@ -39,13 +52,27 @@ section.party-manifesto-body {
 }
 
 .party-manifesto-sider {
-    display: none;
-    padding-top: 90px;
+    padding: 90px 0 80px;
     background-color: transparent;
     border-right: 1px solid $darkGrey;
 
+    @media only screen and (max-width: 768px) {
+        flex: 1 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        padding-bottom: 0;
+    }
+
     @media only screen and (min-width: 768px) {
         display: inline-block;
+    }
+
+    .ant-layout-sider-children {
+        @media only screen and (max-width: 768px) {
+            border-top: 1px solid $darkGrey;
+            border-bottom: 1px solid $darkGrey;
+        }
     }
 
     .ant-menu-item,

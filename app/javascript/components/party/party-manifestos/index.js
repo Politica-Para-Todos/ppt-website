@@ -114,7 +114,11 @@ class PartyManifesto extends PureComponent {
             <Layout className="party-manifesto">
                 <LayoutHeader />
                 <Layout.Content>
-                    <PartyHeader party={party} subtitle={party.acronym + " - Programa"} showManifestoLink={false} />
+                    <PartyHeader
+                        party={party}
+                        subtitle={`${party.acronym} - Programa`}
+                        isManifestoPage={true}
+                    />
                     <Layout>
                         <Sider width={400} className="party-manifesto-sider">
                             {sections.length && (
