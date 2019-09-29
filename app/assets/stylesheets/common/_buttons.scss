@@ -47,7 +47,7 @@
 }
 
 .button--grey {
-    background-color: $darkGrey;
+    background-color: $darkerGrey;
     border: none;
     border-color: transparent;
     color: white;
@@ -57,7 +57,7 @@
     &:active {
         border: none;
         border-color: transparent;
-        background-color: $darkerGrey;
+        background-color: $darkGrey;
         color: white;
     }
 }

@@ -16,7 +16,6 @@ limitations under the License.
 
 import React, { PureComponent, Fragment } from "react";
 import Layout from 'antd/es/layout';
-import Row from "antd";
 const Sider = Layout.Sider;
 import LayoutHeader from "../../common/LayoutHeader";
 import LayoutFooter from "../../common/LayoutFooter";
@@ -61,14 +60,14 @@ class PartyManifesto extends PureComponent {
     }
 
     getParty() {
-      const { party_acronym } = this.props.match.params;
+        const { party_acronym } = this.props.match.params;
 
-      // party_acronym is already encoded
-      return fetch(`/parties/${party_acronym}.json`)
-          .then(res => res.json())
-          .catch((error) => {
-              console.log(error);
-          });
+        // party_acronym is already encoded
+        return fetch(`/parties/${party_acronym}.json`)
+            .then(res => res.json())
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     componentDidMount() {
@@ -117,7 +116,7 @@ class PartyManifesto extends PureComponent {
                 <Layout.Content>
                     <PartyHeader party={party} subtitle={party.acronym + " - Programa"} showManifestoLink={false} />
                     <Layout>
-                        <Sider width={200} className="party-manifesto-sider">
+                        <Sider width={400} className="party-manifesto-sider">
                             {sections.length && (
                                 <ManifestoSider
                                     sections={sections}
@@ -129,11 +128,13 @@ class PartyManifesto extends PureComponent {
                             )}
                         </Sider>
                         <Layout.Content>
-                            <ManifestoSection title={title} section={section} section_id={section_id} />
+                            {section && (
+                                <ManifestoSection title={title} section={section} section_id={section_id} />
+                            )}
                         </Layout.Content>
                     </Layout>
-                    <LayoutFooter />
                 </Layout.Content>
+                <LayoutFooter />
             </Layout>
         );
     }

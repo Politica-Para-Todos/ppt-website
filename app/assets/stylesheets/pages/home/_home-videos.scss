@@ -1,0 +1,35 @@
+section.home-videos {
+    padding: 0;
+    margin-left: 0;
+    margin-right: auto;
+
+    .ant-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 70px 0 60px;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .ant-col {
+        margin-bottom: 20px;
+    }
+
+    .home-videos-title {
+        h2 {
+            text-align: center;
+        }
+    }
+
+    .home-videos-player-wrapper {
+        position: relative;
+        padding-top: 59%;
+    }
+
+    .home-videos-react-player {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

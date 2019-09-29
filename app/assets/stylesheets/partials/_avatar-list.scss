@@ -12,7 +12,6 @@
         margin-bottom: 60px;
         text-align: center;
         text-decoration: none;
-        transition: opacity .15s ease-in-out;
 
         @media only screen and (min-width: 768px) {
             flex: 0 1 33.333%;
@@ -20,10 +19,6 @@
 
         @media only screen and (min-width: 992px) {
             flex: 0 1 16%;
-        }
-
-        &:hover {
-            opacity: 0.7;
         }
 
         .avatar-list-item__content {
@@ -73,6 +68,16 @@
             line-height: 1.3em;
             text-decoration: none;
         }
+    }
+}
+
+a.avatar-list-item {
+    display: flex;
+    transition: opacity .15s ease-in-out;
+
+    &:hover,
+    &:focus {
+        opacity: 0.7;
     }
 }
 

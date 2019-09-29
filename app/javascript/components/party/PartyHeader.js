@@ -21,46 +21,44 @@ import SocialSharing from "../common/SocialSharing";
 const { Title, Paragraph } = Typography;
 
 function PartyManifestoLink(props) {
-    const {acronym, hasManifesto, showManifestoLink} = props;
+    const { acronym, hasManifesto, showManifestoLink } = props;
 
     if (showManifestoLink) {
-      if (!hasManifesto) {
-          return (
-              <p>
-                  Este partido não apresentou programa eleitoral. <br />
-                  Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
-              </p>
-          );
-      }
+        if (!hasManifesto) {
+            return (
+                <p>
+                    Este partido não apresentou programa eleitoral. <br />
+                    Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
+                </p>
+            );
+        }
 
-      return (
-          <Button className="button--grey">
-              <a href={`/party/${encodeURIComponent(acronym)}/manifesto`} rel="noopener">
-                  Ver Programa
-              </a>
-          </Button>
-      );
+        return (
+            <Button className="button--grey">
+                <a href={`/party/${encodeURIComponent(acronym)}/manifesto`} rel="noopener">
+                    Ver Programa
+                </a>
+            </Button>
+        );
     };
-    return <div/>
+    return <div />
 }
 const PartyHeader = ({ party, subtitle, showManifestoLink }) => (
     <section className="party-header">
         <Row>
             <Col span={24}>
-                <Title>{party.name}</Title>
+                <Title className="party-header-title">{party.name}</Title>
                 <Divider />
-                <Paragraph strong>{subtitle}</Paragraph>
+                <Paragraph className="party-header-subtitle" strong>{subtitle}</Paragraph>
             </Col>
         </Row>
         <Row type="flex" justify="center">
             <Col>
                 <Avatar size={200} src={party.logo} icon="user" />
+                <div className="party-header__program-cta">
+                    <PartyManifestoLink acronym={party.acronym} hasManifesto={party.hasManifesto} showManifestoLink={showManifestoLink} />
+                </div>
             </Col>
-        </Row>
-        <Row type="flex" justify="center">
-        <Col>
-            <PartyManifestoLink acronym={party.acronym} hasManifesto={party.hasManifesto} showManifestoLink={showManifestoLink} />
-        </Col>
         </Row>
         <Row type="flex" justify="end" align="middle" className="party-header__social">
             <a href={party.website} rel="noopener" target="_blank">{party.website}</a>

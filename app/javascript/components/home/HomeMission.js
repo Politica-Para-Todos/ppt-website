@@ -18,20 +18,14 @@ import React, { PureComponent } from "react";
 import { Row, Col } from "antd";
 import infographic from "../../../assets/images/infographic.svg";
 
-class HomeMission extends PureComponent {
+class HomeMission1 extends PureComponent {
     render() {
         return (
             <section className="home-our-mission">
                 <Row type="flex" justify="space-between" align="middle">
-                    <Col span={24} md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 12 }} className="home-our-mission-text">
+                    <Col span={24} md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 10 }} className="home-our-mission-text">
                         <h2>A nossa missão</h2>
-                        <p>Missão: promover a participação activa dos cidadãos nos processos eleitorais em Portugal.</p>
-                        <br />
-                        <p>As eleições legislativas de 6 de Outubro de 2019 aproximam-se. Como um grupo de cidadãos independentes, decidimos criar esta página para agregar toda a informação relevante para estas eleições.</p>
-                        <br />
-                        <p>Para cada candidatura, e nos casos em que os programas eleitorais estejam disponíveis, é apresentada informação para ajudar a perceber as diferentes propostas, tais como: nomes dos cabeças de lista, contato de email da candidatura, programa eleitoral, e lista de candidatos.</p>
-                        <br />
-                        <p>Para além de listar as candidaturas, está ser desenvolvida a funcionalidade de comentar os programas eleitorais. Esta funcionalidade permitirá discutir medidas ou fazer perguntas para esclarecimento por parte dos partidos políticos. Permitirá ainda um envolvimento direto da comunidade com cada parágrafo de cada programa apresentado, o que facilita um maior esclarecimento e literacia na hora da decisão.</p>
+                        <p>Promover a participação activa dos cidadãos nos processos eleitorais em Portugal.</p>
                     </Col>
                     <Col span={24} lg={10} className="home-our-mission-img">
                         <img src={infographic} />
@@ -42,4 +36,20 @@ class HomeMission extends PureComponent {
     }
 }
 
-export default HomeMission;
+class HomeMission2 extends PureComponent {
+    render() {
+        return (
+            <section className="home-our-mission home-our-mission-border" >
+                <Row type="flex" justify="space-between" align="middle">
+                    <Col span={24} lg={24} className="home-our-mission-text">
+                        <p>As eleições legislativas de 6 de Outubro de 2019 aproximam-se. Como um grupo de cidadãos independentes, decidimos criar esta página para agregar toda a informação relevante para estas eleições.</p>
+                        <br />
+                        <p>Para cada candidatura, e nos casos em que os programas eleitorais estejam disponíveis, é apresentada informação para ajudar a perceber as diferentes propostas, tais como: nomes dos cabeças de lista, contato de email da candidatura, programa eleitoral, e lista de candidatos.</p>
+                    </Col>
+                </Row>
+            </section>
+        );
+    }
+}
+
+export { HomeMission1, HomeMission2 };

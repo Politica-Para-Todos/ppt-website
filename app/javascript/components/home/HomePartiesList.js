@@ -49,16 +49,18 @@ class HomePartiesList extends PureComponent {
                             <br />
                             Sempre que voltares a carregar esta página a ordem será diferente.
                         </p>
-                        <Row >
-                            <Col span={8}>
+                        <Row type="flex" justify="space-between">
+                            <Col span={24} md={10}>
                                 <h2>Lista de Partidos</h2>
                             </Col>
-                            <Col span={8} offset={8}>
-                                <div  className="home-alphaetic-order"  >
-                                    <Switch className="home-alpha-order-switch"
-                                            size="small"
-                                            onChange={this.onChange}
-                                />  Ordenar alfabeticamente</div>
+                            <Col span={24} md={12}>
+                                <div className="alphabetic-order">
+                                    <Switch className="alphabetic-order__switch"
+                                        size="small"
+                                        onChange={this.onChange}
+                                    />
+                                    Ordenar alfabeticamente
+                                </div>
                             </Col>
                         </Row>
                         <AvatarList items={parties} theme={"4x3"} />

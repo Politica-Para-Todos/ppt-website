@@ -24,14 +24,16 @@ const PartyIntro = ({ title, spokesperson, children }) => (
         <Row>
             <Col md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 16 }}>
                 <Title level={2}>{title}</Title>
-                {children}
+                <div className="party-intro__text">
+                    {children}
+                </div>
             </Col>
             {spokesperson && (<Col span={24} lg={8} className="party-intro__spokesperson">
                 <Avatar size={160} src={spokesperson.photo} icon="user" />
                 <Title className="party-intro__spokesperson-name" level={3}>{spokesperson.name}</Title>
                 <Paragraph className="party-intro__spokesperson-description">{spokesperson.responsibility}</Paragraph>
             </Col>
-          )}
+            )}
         </Row>
     </section>
 );

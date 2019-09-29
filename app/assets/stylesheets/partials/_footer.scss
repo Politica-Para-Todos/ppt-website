@@ -1,5 +1,6 @@
 // Styles for the footer component
 .footer.ant-layout-footer {
+    width: 100%;
     min-height: 150px;
     padding: 90px 0 50px;
     color: $darkerGrey;
@@ -13,10 +14,11 @@
     p a {
         color: $darkerGrey;
         text-decoration: underline;
+        transition: color .15s ease-in-out;
 
-        &:hover {
-            color: $darkerGrey;
-            text-decoration: none;
+        &:hover,
+        &:focus {
+            color: rgba($darkerGrey, .7);
         }
     }
 }

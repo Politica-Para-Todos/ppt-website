@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     flex: 1 0 auto;
+    padding-top: 0;
 }
 
 .party-manifesto .ant-layout-content {
@@ -25,6 +26,7 @@ section.party-manifesto-body {
 .party-manifesto-body__title {
     margin-bottom: 50px;
     font-size: 34px;
+    line-height: 1.4em;
     color: $darkerGrey;
 }
 
@@ -53,6 +55,10 @@ section.party-manifesto-body {
         height: auto;
     }
 
+    .ant-layout-sider-children .ant-menu-item {
+        padding-right: 24px;
+    }
+
     .ant-menu-item,
     .ant-menu-submenu {
         height: auto;
@@ -73,6 +79,9 @@ section.party-manifesto-body {
         }
 
         a {
+            position: relative;
+            text-overflow: ellipsis;
+            overflow: hidden;
             color: $darkerGrey;
             font-weight: 400;
         }
@@ -116,7 +125,7 @@ section.party-manifesto-body {
     .ant-menu-vertical-right>.ant-menu-submenu>.ant-menu-submenu-title,
     .ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title {
         height: auto;
-        padding: 5px 0;
+        padding: 5px 45px 5px 24px;
         margin: 0;
     }
 }
