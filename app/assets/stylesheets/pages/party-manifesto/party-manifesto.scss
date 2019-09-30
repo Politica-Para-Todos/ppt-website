@@ -177,3 +177,17 @@ section.party-manifesto-body {
         }
     }
 }
+
+.party-manifesto-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.party-manifesto-item__bar {
+    flex: 0 0 5px;
+    margin-right: 10px;
+    background-color: black;
+    cursor: pointer;
+}
