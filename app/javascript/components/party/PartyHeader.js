@@ -26,8 +26,8 @@ class PartyHeader extends PureComponent {
 
     render() {
         const { party, subtitle } = this.props;
-        const hasManifesto = party.hasManifesto;
-        const hasNoManifesto = !party.hasManifesto;
+        //const hasManifesto = party.manifestos.length > 0;
+        //const hasNoManifesto = party.manifestos.length == 0;
 
         return (
             <section className="party-header">
@@ -45,16 +45,20 @@ class PartyHeader extends PureComponent {
                 <Row type="flex" justify="center">
                     <Col>
                         <Avatar size={200} src={party.logo} icon="user" />
-                        {hasManifesto && (
+                        {party.manifestos && party.manifestos.length > 0 && (
                             <div className="party-header__program-cta">
-                                <Button className="button--grey">
-                                    <a href={`/party/${encodeURIComponent(party.acronym)}/manifesto`} rel="noopener">
-                                        Ver Programa
-                                    </a>
-                                </Button>
+                                {party.manifestos.map((manifesto, index) => {
+                                    return (
+                                        <Button className="button--grey party-header__program-button" key={index}>
+                                            <a href={`/party/${encodeURIComponent(manifesto)}/manifesto`} rel="noopener">
+                                                {`Ver Programa ${manifesto}`}
+                                            </a>
+                                        </Button>
+                                    );
+                                })}
                             </div>
                         )}
-                        {hasNoManifesto && (
+                        {party.manifestos && party.manifestos.length == 0 && (
                             <div className="party-header__program-cta">
                                 <p>
                                     Este partido não apresentou programa eleitoral. <br />
