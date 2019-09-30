@@ -2,7 +2,6 @@
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    text-align: center;
 }
 
 .about-us-contributors-title {
@@ -19,4 +18,5 @@
 
 .about-us-contributors-list {
     margin-top: 50px;
+    text-align: center;
 }
