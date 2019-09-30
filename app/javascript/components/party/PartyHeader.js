@@ -14,53 +14,74 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import React from "react";
-import { Row, Col, Typography, Divider, Avatar, Button } from "antd";
+import React, { PureComponent, Fragment } from "react";
+import PropTypes from 'prop-types';
+import { Row, Col, Divider, Avatar, Button } from "antd";
 import SocialSharing from "../common/SocialSharing";
-import partyProgram from "./party_programs.json";
 
-const { Title, Paragraph } = Typography;
-
-function getPartyProgram(acronym) {
-    const programLink = partyProgram[acronym];
-
-    if (!programLink) {
-        return (
-            <p>
-                Este partido não apresentou programa eleitoral.<br />
-                Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail</a>.
-            </p>
-        );
+class PartyHeader extends PureComponent {
+    constructor(props) {
+        super(props)
     }
 
-    return (
-        <Button className="button--grey">
-            <a href={programLink} target="_blank" rel="noopener">
-                Ver Programa
-            </a>
-        </Button>
-    );
+    render() {
+        const { party, subtitle, isManifestoPage } = this.props;
+        const hasManifesto = !isManifestoPage && party.hasManifesto;
+        const hasNoManifesto = !isManifestoPage && !party.hasManifesto;
+
+        return (
+            <section className="party-header">
+                <Row>
+                    <Col span={24}>
+                        <h1 className="party-header-title">{party.name}</h1>
+                        {subtitle && (
+                            <Fragment>
+                                <Divider />
+                                <p className="party-header-subtitle">{subtitle}</p>
+                            </Fragment>
+                        )}
+                    </Col>
+                </Row>
+                <Row type="flex" justify="center">
+                    <Col>
+                        <Avatar size={200} src={party.logo} icon="user" />
+                        {hasManifesto && (
+                            <div className="party-header__program-cta">
+                                <Button className="button--grey">
+                                    <a href={`/party/${encodeURIComponent(party.acronym)}/manifesto`} rel="noopener">
+                                        Ver Programa
+                                    </a>
+                                </Button>
+                            </div>
+                        )}
+                        {hasNoManifesto && (
+                            <div className="party-header__program-cta">
+                                <p>
+                                    Este partido não apresentou programa eleitoral. <br />
+                                    Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
+                                </p>
+                            </div>
+                        )}
+                    </Col>
+                </Row>
+                <Row type="flex" justify="end" align="middle" className="party-header__social">
+                    <a href={party.website} rel="noopener" target="_blank">{party.website}</a>
+                    <SocialSharing socialMediaList={party.socialMedia} theme={"#c4c4c4"} />
+                </Row>
+            </section>
+        )
+    }
 }
-const PartyHeader = ({ party, subtitle }) => (
-    <section className="party-header">
-        <Row>
-            <Col span={24}>
-                <Title className="party-header-title">{party.name}</Title>
-                <Divider />
-                <Paragraph class="party-header-subtitle" strong>{subtitle}</Paragraph>
-            </Col>
-        </Row>
-        <Row type="flex" justify="center">
-            <Col>
-                <Avatar size={200} src={party.logo} icon="user" />
-                {getPartyProgram(party.acronym)}
-            </Col>
-        </Row>
-        <Row type="flex" justify="end" align="middle" className="party-header__social">
-            <a href={party.website} rel="noopener" target="_blank">{party.website}</a>
-            <SocialSharing socialMediaList={party.socialMedia} theme={"#c4c4c4"} />
-        </Row>
-    </section>
-);
+
+PartyHeader.propTypes = {
+    party: PropTypes.object.isRequired,
+    subtitle: PropTypes.string,
+    isManifestoPage: PropTypes.bool,
+}
+
+PartyHeader.defaultProps = {
+    subtitle: null,
+    isManifestoPage: false,
+};
 
 export default PartyHeader;

@@ -17,23 +17,19 @@ section.home-videos {
     }
 
     .home-videos-title {
-      h2 {
-        text-align: center;
-      }
+        h2 {
+            text-align: center;
+        }
     }
 
     .home-videos-player-wrapper {
-      position: relative;
-      padding-top: 40%;
-
-      @media only screen and (max-width: 768px) {
-        padding-top: 60%
-      }
+        position: relative;
+        padding-top: 59%;
     }
 
     .home-videos-react-player {
-      position: absolute;
-      top: 0;
-      left: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 }
