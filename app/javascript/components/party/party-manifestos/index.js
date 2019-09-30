@@ -132,7 +132,7 @@ class PartyManifesto extends PureComponent {
                         </Sider>
                         <Layout.Content>
                             {section && (
-                                <ManifestoSection title={title} section={section} section_id={section_id} />
+                                <ManifestoSection title={title} section={section} section_id={section_id} party_acronym={party_acronym} />
                             )}
                         </Layout.Content>
                     </Layout>
