@@ -26,8 +26,50 @@ class ManifestoSider extends PureComponent {
         this.state = {}
     }
 
+    renderMenuItem(id, title, party_acronym) {
+        return (
+            <Menu.Item key={id} className={`section-${id}`}>
+                <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${id}`}>{title}</Link>
+            </Menu.Item>
+        );
+    }
+
+    renderMenuSubitems(subsections, party_acronym) {
+        if (!subsections) {
+            return null;
+        }
+
+        return subsections.map(({ id, title}) => {
+            return this.renderMenuItem(id, title, party_acronym);
+        });
+    }
+
+    renderMenuItems() {
+        const { sections, party_acronym } = this.props;
+
+        if (!sections) {
+            return null;
+        }
+
+        return sections.map(section => {
+            if (Array.isArray(section.subsections) && section.subsections.length > 0) {
+                return (
+                    <SubMenu
+                        key={section.id}
+                        title={section.title}
+                        className={`section-mobile-${section.id}`}
+                    >
+                        {this.renderMenuSubitems(section.subsections, party_acronym)}
+                    </SubMenu>
+                )
+            } else {
+                return this.renderMenuItem(section.id, section.title, party_acronym);
+            }
+        })
+    }
+
     render() {
-        const { sections, party_acronym, section_id, selectedKey, openKey, ...props } = this.props;
+        const { section_id, selectedKey, openKey } = this.props;
 
         return (
             <Fragment>
@@ -43,33 +85,9 @@ class ManifestoSider extends PureComponent {
                             title="Capítulos"
                             className="section-mobile__chapter"
                         >
-                            {sections && sections.map(section => {
-                                if (section.subsections.length > 0) {
-                                    return (
-                                        <SubMenu
-                                            key={`section-mobile-${section.id}`}
-                                            title={section.title}
-                                            className={`section-mobile-${section.id}`}
-                                        >
-                                            {section.subsections && section.subsections.map(subsection => {
-                                                return (
-                                                    <Menu.Item key={`section-mobile-${subsection.id}`} className={`section-${subsection.id}`}>
-                                                        <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${subsection.id}`}>{subsection.title}</Link>
-                                                    </Menu.Item>
-                                                )
-                                            })}
-                                        </SubMenu>
-                                    )
-                                } else {
-                                    return (
-                                        <Menu.Item key={`section-mobile-${section.id}`}>
-                                            <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${section.id}`}>{section.title}</Link>
-                                        </Menu.Item>
-                                    )
-                                }
-                            })}
+                          {this.renderMenuItems()}  
                         </SubMenu>
-                    </Menu >
+                    </Menu>
                 )} />
                 <Media query="(min-width: 769px)" render={() => (
                     <Menu
@@ -78,32 +96,8 @@ class ManifestoSider extends PureComponent {
                         defaultOpenKeys={openKey}
                         style={{ height: '100%', borderRight: 0 }}
                     >
-                        {sections && sections.map(section => {
-                            if (section.subsections.length > 0) {
-                                return (
-                                    <SubMenu
-                                        key={`section-${section.id}`}
-                                        title={section.title}
-                                        className={`section-${section.id}`}
-                                    >
-                                        {section.subsections && section.subsections.map(subsection => {
-                                            return (
-                                                <Menu.Item key={`section-${section.id}`} className={`section-${subsection.id}`}>
-                                                    <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${subsection.id}`}>{subsection.title}</Link>
-                                                </Menu.Item>
-                                            )
-                                        })}
-                                    </SubMenu>
-                                )
-                            } else {
-                                return (
-                                    <Menu.Item key={`section-${section.id}`}>
-                                        <Link to={`/party/${encodeURIComponent(party_acronym)}/manifesto/${section.id}`}>{section.title}</Link>
-                                    </Menu.Item>
-                                )
-                            }
-                        })}
-                    </Menu >
+                        {this.renderMenuItems()}
+                    </Menu>
                 )} />
             </Fragment>
         );
