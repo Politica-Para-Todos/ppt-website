@@ -17,6 +17,7 @@ limitations under the License.
 import React, { PureComponent } from "react";
 import { Row, Col } from "antd";
 import YouTubePlayer from 'react-player/lib/players/YouTube'
+import video_mask from "../../../assets/images/video_mask.jpg";
 
 class HomeVideos extends PureComponent {
     constructor(props) {
@@ -29,21 +30,22 @@ class HomeVideos extends PureComponent {
         return (
             <section className="home-videos">
                 <Row >
-                    <Col span={24} lg={24} className="home-videos-title">
+                    <Col span={24} className="home-videos-title">
                         <h2>Como funcionam as Eleições Legislativas</h2>
                     </Col>
-                    <Col span={24} lg={24}>
+                    <Col span={24} lg={18}>
                         <div className='home-videos-player-wrapper'>
-                          <YouTubePlayer
-                            className='home-videos-react-player'
-                            url="https://www.youtube.com/watch?v=up0Gfd5c0cM"
-                            width='100%'
-                            height='100%'
-                            controls
-                          />
+                            <YouTubePlayer
+                                className='home-videos-react-player'
+                                url="https://www.youtube.com/watch?v=up0Gfd5c0cM"
+                                poster={video_mask}
+                                width='100%'
+                                height='100%'
+                                controls
+                            />
                         </div>
                     </Col>
-                    <Col span={24} md={{ offset: 0, span: 16 }} lg={{ offset: 0, span: 20 }}>
+                    <Col span={24} md={16}>
                         <p>Mas afinal para que serve votar? Este é o primeiro de uma série de vídeos que explicam como funcionam as eleições legislativas e a nossa Assembleia da República.</p>
                     </Col>
                 </Row>

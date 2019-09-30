@@ -8,8 +8,9 @@ namespace :data do
     json_path = args[:json_path] || './db/seeds.json'
 
     json_file = open(json_path)
+    json = JSON.parse(json_file.read)
 
-    JSON.parse(json_file.read).each do |party_acronym, party|
+    json.fetch('parties').each do |party_acronym, party|
       p = Party.find_or_initialize_by(acronym: party_acronym)
 
       p.description = party.fetch('description')
@@ -46,6 +47,67 @@ namespace :data do
           end
         end
       end
+    end
+
+    json.fetch('manifestos').each do |party_acronym, manifesto|
+      # CDU does not have manifesto, instead we have manifestos for PCP and PEV
+      p = Party.find_or_initialize_by(acronym: party_acronym)
+      p.save
+      m = Manifesto.find_or_initialize_by(party_id: p.id)
+
+      m.title = manifesto.fetch('title')
+
+      puts "Manifesto #{p.acronym} updated!" if m.save
+
+      manifesto.fetch('sections').each do |section|
+        s = ManifestoSection.find_or_initialize_by(
+          position: section.fetch('position'),
+          manifesto_id: m.id,
+          manifesto_section_id: nil
+        )
+
+        s.title = section.fetch('title')
+
+        puts "ManifestoSection #{s.title} updated!" if s.save
+
+        content = section.fetch('content')
+        if content[0].key?("html")
+          content.each do |item|
+            i = ManifestoItem.find_or_initialize_by(
+              position: item.fetch('position'),
+              manifesto_section_id: s.id
+            )
+
+            i.content = item.fetch('html')
+
+            puts "ManifestoItem #{i.position} updated!" if i.save
+          end
+        else
+          content.each do |subsection|
+            subs = ManifestoSection.find_or_initialize_by(
+              position: subsection.fetch('position'),
+              manifesto_id: m.id,
+              manifesto_section_id: s.id
+            )
+
+            subs.title = subsection.fetch('title')
+
+            puts "ManifestoSection #{subs.manifesto_section_id}-#{subs.position} updated!" if subs.save
+
+            subsection.fetch('content').each do |item|
+              i = ManifestoItem.find_or_initialize_by(
+                position: item.fetch('position'),
+                manifesto_section_id: subs.id
+              )
+
+              i.content = item.fetch('html')
+
+              puts "ManifestoItem #{subs.id}-#{i.position} updated!" if i.save
+            end
+          end
+        end
+      end
+
     end
   end
 end
