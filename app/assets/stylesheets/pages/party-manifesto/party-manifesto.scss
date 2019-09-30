@@ -1,14 +1,19 @@
-.party-program .ant-layout-has-sider {
+.party-manifesto .ant-layout-has-sider {
     display: flex;
     flex-wrap: wrap;
     flex: 1 0 auto;
+    padding: 0;
 }
 
-.party-program .ant-layout-content {
-    min-height: 700px;
+.party-manifesto .ant-layout-content {
+    min-height: 350px;
+
+    @media only screen and (min-width: 768px) {
+        min-height: 700px;
+    }
 }
 
-section.party-program-body {
+section.party-manifesto-body {
     max-width: 850px;
     padding: 0 30px;
     margin: 50px auto 0;
@@ -20,15 +25,25 @@ section.party-program-body {
     @media only screen and (min-width: 1200px) {
         padding: 50px 200px 0 5px;
     }
+
+    h2 {
+        margin-left: 0;
+        text-align: left;
+    }
 }
 
-.party-program-body__title {
+.party-manifesto-body__title {
     margin-bottom: 50px;
-    font-size: 34px;
+    font-size: 28px;
+    line-height: 1.4em;
     color: $darkerGrey;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 34px;
+    }
 }
 
-.party-program-body__content p {
+.party-manifesto-body__content p {
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 400;
@@ -36,14 +51,28 @@ section.party-program-body {
     color: $darkerGrey;
 }
 
-.party-program-sider {
-    display: none;
-    padding-top: 90px;
+.party-manifesto-sider {
+    padding: 90px 0 80px;
     background-color: transparent;
     border-right: 1px solid $darkGrey;
 
+    @media only screen and (max-width: 768px) {
+        flex: 1 0 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        padding: 0;
+    }
+
     @media only screen and (min-width: 768px) {
         display: inline-block;
+    }
+
+    .ant-layout-sider-children {
+        @media only screen and (max-width: 768px) {
+            border-top: 1px solid $darkGrey;
+            border-bottom: 1px solid $darkGrey;
+        }
     }
 
     .ant-menu-item,
@@ -51,6 +80,10 @@ section.party-program-body {
         padding-top: 5px;
         padding-bottom: 5px;
         height: auto;
+    }
+
+    .ant-layout-sider-children .ant-menu-item {
+        padding-right: 24px;
     }
 
     .ant-menu-item,
@@ -73,6 +106,9 @@ section.party-program-body {
         }
 
         a {
+            position: relative;
+            text-overflow: ellipsis;
+            overflow: hidden;
             color: $darkerGrey;
             font-weight: 400;
         }
@@ -116,7 +152,28 @@ section.party-program-body {
     .ant-menu-vertical-right>.ant-menu-submenu>.ant-menu-submenu-title,
     .ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title {
         height: auto;
-        padding: 5px 0;
+        padding: 5px 45px 5px 24px;
         margin: 0;
+    }
+}
+
+.party-manifesto__share-popover {
+    .party-manifesto__share-popover-inner {
+        position: relative;
+        overflow: hidden;
+        background-color: $darkerGrey;
+        border: 1px solid;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color .15s ease-in-out;
+
+        &:hover {
+            background-color: $darkGrey;
+        }
+
+        img {
+            width: 58px;
+            height: auto;
+        }
     }
 }

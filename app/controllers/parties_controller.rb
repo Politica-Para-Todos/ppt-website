@@ -3,7 +3,7 @@ class PartiesController < InheritedResources::Base
   # GET /parties/:acronym/manifesto.json
   def manifesto
     # currently we only have 1 manifesto per party
-    @manifesto = Party.find_by(acronym: params[:acronym].upcase).manifestos[1]
+    @manifesto = Party.find_by(acronym: params[:acronym].upcase).manifestos[0]
     # only first level sections
     @manifesto_sections = @manifesto.manifesto_sections.where(manifesto_section_id: nil).sort_by { |section| section.position }
   end

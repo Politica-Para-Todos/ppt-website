@@ -23,7 +23,7 @@ class HomeMission1 extends PureComponent {
         return (
             <section className="home-our-mission">
                 <Row type="flex" justify="space-between" align="middle">
-                    <Col span={24} md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 12 }} className="home-our-mission-text">
+                    <Col span={24} md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 10 }} className="home-our-mission-text">
                         <h2>A nossa missão</h2>
                         <p>Promover a participação activa dos cidadãos nos processos eleitorais em Portugal.</p>
                     </Col>
