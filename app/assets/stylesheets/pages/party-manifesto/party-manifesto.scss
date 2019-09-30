@@ -158,10 +158,22 @@ section.party-manifesto-body {
 }
 
 .party-manifesto__share-popover {
-    background-color: $darkerGrey;
-    color: white;
-    padding: 0px 20px;
-    text-align: center;
-    border: 1px solid;
-    border-radius: 2px;
+    .party-manifesto__share-popover-inner {
+        position: relative;
+        overflow: hidden;
+        background-color: $darkerGrey;
+        border: 1px solid;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color .15s ease-in-out;
+
+        &:hover {
+            background-color: $darkGrey;
+        }
+
+        img {
+            width: 58px;
+            height: auto;
+        }
+    }
 }

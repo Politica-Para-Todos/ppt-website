@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from "react";
 import { Tooltip } from "antd";
 import ReactHtmlParser from 'react-html-parser';
 import Popover from "react-text-selection-popover";
-import twitterImg from "../../../../assets/images/glyph_twitter.svg";
+import twitterImg from "../../../../assets/images/twitter_icon.svg";
 
 class ManifestoSection extends PureComponent {
     constructor(props) {
@@ -11,10 +11,11 @@ class ManifestoSection extends PureComponent {
         this.sectionContentRef = React.createRef();
     }
 
-    onClickTwitterShare() {
+    onClickTwitterShare(e) {
+        e.preventDefault();
         const text = window.getSelection().toString();
-
         window.open(`https://twitter.com/intent/tweet?text=${text}`, "Twitter", "height=285,width=550,resizable=1");
+        e.stopPropagation();
     }
 
     renderSectionItem(item) {
@@ -60,10 +61,10 @@ class ManifestoSection extends PureComponent {
                 <Popover
                     selectionRef={this.sectionContentRef}
                     className="party-manifesto__share-popover">
-                    <a
-                        onClick={this.onClickTwitterShare}>
+                    <div className="party-manifesto__share-popover-inner"
+                        onClick={(e) => this.onClickTwitterShare(e)}>
                         <img src={twitterImg} />
-                    </a>
+                    </div>
                 </Popover>
             </section>
         )
