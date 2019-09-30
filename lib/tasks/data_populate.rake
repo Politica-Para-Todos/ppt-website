@@ -40,7 +40,8 @@ namespace :data do
             c.biography_source = candidate.fetch('biography_source', nil)
             c.is_lead_candidate = candidate.fetch('is_lead_candidate')
             c.link_parlamento = candidate.fetch('link_parlamento', nil)
-            c.photo = candidate.fetch('photo', nil)
+            photo = candidate.fetch('photo', nil)
+            c.photo = photo.nil? ? "" : "/images/party_candidates/#{photo}"
             c.photo_source = candidate.fetch('photo_source', nil)
 
             puts "Candidate #{c.name} updated!" if c.save
