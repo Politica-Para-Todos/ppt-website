@@ -38,8 +38,7 @@ class LayoutFooter extends PureComponent {
                     </Col>
                     <Col span={24} md={{ offset: 4, span: 16 }} lg={{ offset: 0, span: 12 }} className="footer-info">
                         <h2>Quem Somos</h2>
-                        <p>Podes consultar <a target="_blank"
-                            rel="noopener" href="https://www.loomio.org/g/ZqT2uPv6/politica-para-todos">aqui</a> todo o histórico do projecto.</p>
+                        <p>Podes consultar <a rel="noopener" href="/about-us">aqui</a> a equipa por detrás do projecto e as suas motivações.</p>
                         <br />
                         <ContributorsList />
                     </Col>
