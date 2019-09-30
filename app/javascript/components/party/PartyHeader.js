@@ -25,9 +25,9 @@ class PartyHeader extends PureComponent {
     }
 
     render() {
-        const { party, subtitle, isManifestoPage } = this.props;
-        const hasManifesto = !isManifestoPage && party.hasManifesto;
-        const hasNoManifesto = !isManifestoPage && !party.hasManifesto;
+        const { party, subtitle } = this.props;
+        const hasManifesto = party.hasManifesto;
+        const hasNoManifesto = !party.hasManifesto;
 
         return (
             <section className="party-header">
@@ -76,12 +76,10 @@ class PartyHeader extends PureComponent {
 PartyHeader.propTypes = {
     party: PropTypes.object.isRequired,
     subtitle: PropTypes.string,
-    isManifestoPage: PropTypes.bool,
 }
 
 PartyHeader.defaultProps = {
     subtitle: null,
-    isManifestoPage: false,
 };
 
 export default PartyHeader;

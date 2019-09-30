@@ -4,6 +4,7 @@ json.acronym @party.acronym
 json.logo @party.logo
 json.name @party.name
 json.website @party.website
+json.hasManifesto @party.manifestos.length > 0
 
 json.socialMedia do
   json.array! [
