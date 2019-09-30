@@ -104,7 +104,16 @@ class HomePartiesList extends PureComponent {
                             <Col span={8}>
                                 <h2>Lista de Partidos</h2>
                             </Col>
-                            <Col lg={7} span={24} className="party-candidates__circles">
+                            <Col span={8} offset={8}>
+                                <div className="home-alphaetic-order"  >
+                                    <Switch className="home-alpha-order-switch"
+                                        size="small"
+                                        onChange={this.onChange}
+                                    />  Ordenar alfabeticamente</div>
+                            </Col>
+                        </Row>
+                        <Row>
+                        <Col lg={7} span={24} className="party-candidates__circles">
                                 <Select
                                     style={{ width: "100%" }}
                                     placeholder="Escolha o Círculo Eleitoral"
@@ -114,13 +123,6 @@ class HomePartiesList extends PureComponent {
                                         <Option key={circle.value} value={circle.value}>{circle.label}</Option>
                                     ))}
                                 </Select>
-                            </Col>
-                            <Col span={8} offset={8}>
-                                <div className="home-alphaetic-order"  >
-                                    <Switch className="home-alpha-order-switch"
-                                        size="small"
-                                        onChange={this.onChange}
-                                    />  Ordenar alfabeticamente</div>
                             </Col>
                         </Row>
                         <AvatarList items={parties} theme={"4x3"} />
