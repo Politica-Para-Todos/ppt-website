@@ -6,7 +6,7 @@ json.name @party.name
 json.description @party.description
 json.description_source @party.description_source
 json.website @party.website
-json.hasManifesto @party.manifestos.length > 0
+json.manifestos @manifestos
 
 json.socialMedia do
   json.array! [
