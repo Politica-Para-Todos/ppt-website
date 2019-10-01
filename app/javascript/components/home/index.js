@@ -24,6 +24,7 @@ import HomePartiesList from "./HomePartiesList";
 import HomeMotivation from "./HomeMotivation";
 import HomeVideos from "./HomeVideos";
 import { shuffleArray } from '../../utils';
+import SharingSection from "./SharingSection";
 
 class Home extends PureComponent {
     constructor() {
@@ -66,7 +67,7 @@ class Home extends PureComponent {
                     <HomeMission2 />
                     <HomeVideos />
                     <HomePartiesList parties={parties} />
-                    <div class="getsocial gs-inline-group"></div>
+                    <SharingSection />
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>
