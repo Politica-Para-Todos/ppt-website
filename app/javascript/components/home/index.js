@@ -66,7 +66,7 @@ class Home extends PureComponent {
                     <HomeMission2 />
                     <HomeVideos />
                     <HomePartiesList parties={parties} />
-                    <div class="getsocial gs-inline-group"></div>
+                    <div className="getsocial gs-inline-group"></div>
                 </Layout.Content>
                 <LayoutFooter />
             </Layout>
