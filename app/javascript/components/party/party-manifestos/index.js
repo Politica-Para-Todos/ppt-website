@@ -17,6 +17,7 @@ limitations under the License.
 import React, { PureComponent, Fragment } from "react";
 import Layout from 'antd/es/layout';
 const Sider = Layout.Sider;
+import MetaTags from "../../MetaTags";
 import LayoutHeader from "../../common/LayoutHeader";
 import LayoutFooter from "../../common/LayoutFooter";
 import ManifestoSider from "./ManifestoSider";
@@ -112,6 +113,15 @@ class PartyManifesto extends PureComponent {
 
         return (
             <Layout className="party-manifesto">
+                {party.name && (
+                    <MetaTags
+                        pageTitle={`Programa ${party.name}`}
+                        pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                        socialTitle={`Política para Todos - Programa ${party.name}`}
+                        socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                        socialImage="/images/meta-banner.png"
+                    />
+                )}
                 <LayoutHeader />
                 <Layout.Content>
                     <PartyHeader

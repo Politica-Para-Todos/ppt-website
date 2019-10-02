@@ -16,6 +16,7 @@ limitations under the License.
 
 import React from "react";
 import { Layout, Divider } from 'antd';
+import MetaTags from "../MetaTags";
 import LayoutHeader from "../common/LayoutHeader";
 import AboutUsContributors from "./AboutUsContributors";
 import AboutUsMotivation from "./AboutUsMotivation";
@@ -26,6 +27,13 @@ import rowsPeople from "../../../assets/images/rows-people.svg";
 export default function AboutUs() {
     return (
         <Layout>
+            <MetaTags
+                pageTitle="Quem somos"
+                pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                socialTitle="Quem somos"
+                socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                socialImage="/images/meta-banner.png"
+            />
             <LayoutHeader />
             <Layout.Content className="about-us-section">
                 <img src={rowsPeople} className="about-us__header-img" />

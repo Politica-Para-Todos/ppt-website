@@ -16,14 +16,13 @@ limitations under the License.
 
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
+import MetaTags from "../MetaTags";
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import { HomeMission1, HomeMission2 } from "./HomeMission";
 import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
-import HomeMotivation from "./HomeMotivation";
 import HomeVideos from "./HomeVideos";
-import { shuffleArray } from '../../utils';
 
 class Home extends PureComponent {
     constructor() {
@@ -59,6 +58,13 @@ class Home extends PureComponent {
 
         return (
             <Layout>
+                <MetaTags
+                    pageTitle="Política para Todos"
+                    pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                    socialTitle="Política para Todos"
+                    socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                    socialImage="/images/meta-banner.png"
+                />
                 <LayoutHeader />
                 <Layout.Content>
                     <HomeMission1 />

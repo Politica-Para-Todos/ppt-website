@@ -17,6 +17,7 @@ limitations under the License.
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
 import { Typography } from "antd";
+import MetaTags from "../MetaTags";
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import PartyHeader from "./PartyHeader";
@@ -57,6 +58,15 @@ export default class Party extends PureComponent {
 
         return (
             <Layout>
+                {party.name && (
+                    <MetaTags
+                        pageTitle={`Política para Todos - ${party.name}`}
+                        pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                        socialTitle={`Política para Todos - ${party.name}`}
+                        socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                        socialImage="/images/meta-banner.png"
+                    />
+                )}
                 <LayoutHeader />
                 <Layout.Content className="party-section">
                     <PartyHeader party={party} subtitle={party.acronym} />
