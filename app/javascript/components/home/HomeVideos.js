@@ -15,18 +15,51 @@ limitations under the License.
 */
 
 import React, { PureComponent } from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Button } from "antd";
 import YouTubePlayer from 'react-player/lib/players/YouTube'
+import AwesomeSlider from 'react-awesome-slider';
 import video_mask from "../../../assets/images/video_mask.jpg";
 
 class HomeVideos extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
+            currentEpisode: 0
         }
+
+        this.videos = [
+            {
+                url: "https://www.youtube.com/watch?v=up0Gfd5c0cM",
+                caption: "Mas afinal para que serve votar? Este é o primeiro de uma série de vídeos que explicam como funcionam as eleições legislativas e a nossa Assembleia da República."
+            },
+            {
+                url: "https://www.youtube.com/watch?v=2nBGppKe1z4",
+                caption: "Em semana de eleições continuamos a desconstruir o que está em causa no próximo dia 6 de Outubro, com este episódio a focar-se na Assembleia da República e os Círculos Eleitorais."
+            }
+        ]
     }
 
+    renderEpisodeButtons() {
+        return this.videos.map((video, index) => {
+            let classNames = "home-videos__episode-button";
+            
+            if (this.state.currentEpisode === index) {
+                classNames += " button--grey";
+            } else {
+                classNames += " button--white"
+            }
+            return (
+                <Button
+                    key={`episode-${index}`}
+                    className={classNames}
+                    onClick={() => this.setState({ currentEpisode: index })}>
+                    Ep. {index + 1}
+                </Button>
+            );
+        });
+    }
     render() {
+        const { url, caption } = this.videos[this.state.currentEpisode];
         return (
             <section className="home-videos">
                 <Row >
@@ -37,7 +70,7 @@ class HomeVideos extends PureComponent {
                         <div className='home-videos-player-wrapper'>
                             <YouTubePlayer
                                 className='home-videos-react-player'
-                                url="https://www.youtube.com/watch?v=up0Gfd5c0cM"
+                                url={url}
                                 poster={video_mask}
                                 width='100%'
                                 height='100%'
@@ -46,7 +79,10 @@ class HomeVideos extends PureComponent {
                         </div>
                     </Col>
                     <Col span={24} md={16}>
-                        <p>Mas afinal para que serve votar? Este é o primeiro de uma série de vídeos que explicam como funcionam as eleições legislativas e a nossa Assembleia da República.</p>
+                        <p>{caption}</p>
+                    </Col>
+                    <Col>
+                        {this.renderEpisodeButtons()}
                     </Col>
                 </Row>
             </section>
