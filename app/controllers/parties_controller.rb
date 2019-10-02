@@ -29,7 +29,11 @@ class PartiesController < InheritedResources::Base
     if acronym == "PCP-PEV"
       @manifestos = ["PCP", "PEV"]
     else
-      @manifestos = [@party.acronym]
+      if @party.manifestos.length > 0
+        @manifestos = [@party.acronym]
+      else
+        @manifestos = []
+      end
     end
   end
 
