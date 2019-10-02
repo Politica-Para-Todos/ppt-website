@@ -35,6 +35,10 @@ class HomeVideos extends PureComponent {
             {
                 url: "https://www.youtube.com/watch?v=2nBGppKe1z4",
                 caption: "Em semana de eleições continuamos a desconstruir o que está em causa no próximo dia 6 de Outubro, com este episódio a focar-se na Assembleia da República e os Círculos Eleitorais."
+            },
+            {
+                url: "https://www.youtube.com/watch?v=OERxKenLIo8",
+                caption: "Depois de no último vídeo nos termos debruçado sobre a Assembleia da República e os círculos eleitorais, neste episódio hoje ficarás a saber como se convertem os votos em mandatos."
             }
         ]
     }
@@ -42,7 +46,7 @@ class HomeVideos extends PureComponent {
     renderEpisodeButtons() {
         return this.videos.map((video, index) => {
             let classNames = "home-videos__episode-button";
-            
+
             if (this.state.currentEpisode === index) {
                 classNames += " button--grey";
             } else {
