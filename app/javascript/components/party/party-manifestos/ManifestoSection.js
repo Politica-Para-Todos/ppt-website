@@ -12,9 +12,10 @@ class ManifestoSection extends PureComponent {
     }
 
     onClickTwitterShare(e) {
+        const hashtags = '\n\n #politicaparatodos www.politicaparatodos.pt';
         e.preventDefault();
-        const text = window.getSelection().toString();
-        window.open(`https://twitter.com/intent/tweet?text=${text}`, "Twitter", "height=285,width=550,resizable=1");
+        const text = `${window.getSelection().toString()} ${hashtags}`;
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, "Twitter", "height=285,width=550,resizable=1");
         e.stopPropagation();
     }
 
