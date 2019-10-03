@@ -44,6 +44,6 @@ MetaTags.defaultProps = {
     pageDescription: 'Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal',
     socialTitle: 'Politica Para Todos',
     socialDescription: 'Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal',
-    socialImage: '/images/meta-banner.png',
+    socialImage: '/images/shareable-images/banner-PtP.jpg',
 };
 export default MetaTags

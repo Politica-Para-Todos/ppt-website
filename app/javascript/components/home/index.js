@@ -63,7 +63,7 @@ class Home extends PureComponent {
                     pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
                     socialTitle="Política para Todos"
                     socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
-                    socialImage="/images/meta-banner.png"
+                    socialImage="/images/shareable-images/banner-PtP.jpg"
                 />
                 <LayoutHeader />
                 <Layout.Content>

@@ -24,6 +24,7 @@ import PartyHeader from "./PartyHeader";
 import PartyIntro from "./PartyIntro";
 import PartyCandidatesList from "./PartyCandidatesList";
 import PartyMetrics from "./metrics";
+import { slugify } from "../../utils";
 
 const { Paragraph } = Typography;
 
@@ -55,16 +56,15 @@ export default class Party extends PureComponent {
 
     render() {
         const { party, spokesperson } = this.state;
-
         return (
             <Layout>
                 {party.name && (
                     <MetaTags
                         pageTitle={`Política para Todos - ${party.name}`}
-                        pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                        pageDescription={party.description}
                         socialTitle={`Política para Todos - ${party.name}`}
-                        socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
-                        socialImage="/images/meta-banner.png"
+                        socialDescription={party.description}
+                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />

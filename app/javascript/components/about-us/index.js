@@ -29,10 +29,10 @@ export default function AboutUs() {
         <Layout>
             <MetaTags
                 pageTitle="Quem somos"
-                pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
+                pageDescription="A comunidade Política Para Todos nasceu no verão de 2019 com o objetivo de promover a participação ativa dos cidadãos nos processos eleitorais em Portugal. É composta por voluntários de várias partes do país e diferentes áreas profissionais."
                 socialTitle="Quem somos"
-                socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
-                socialImage="/images/meta-banner.png"
+                socialDescription="A comunidade Política Para Todos nasceu no verão de 2019 com o objetivo de promover a participação ativa dos cidadãos nos processos eleitorais em Portugal. É composta por voluntários de várias partes do país e diferentes áreas profissionais."
+                socialImage="/images/shareable-images/banner-PtP.jpg"
             />
             <LayoutHeader />
             <Layout.Content className="about-us-section">

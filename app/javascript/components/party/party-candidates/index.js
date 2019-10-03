@@ -6,8 +6,8 @@ import LayoutFooter from "../../common/LayoutFooter";
 import PartyHeader from "../PartyHeader";
 import PartyIntro from "../PartyIntro";
 import PartyCandidatesTable from "./PartyCandidatesTable";
+import { slugify } from "../../../utils";
 import { Typography } from "antd";
-
 const { Paragraph } = Typography;
 
 class PartyCandidate extends PureComponent {
@@ -41,11 +41,11 @@ class PartyCandidate extends PureComponent {
             <Layout>
                 {party.name && (
                     <MetaTags
-                        pageTitle={`Candidatos ${party.name}`}
-                        pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
-                        socialTitle={`Política para Todos - Programa ${party.name}`}
-                        socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
-                        socialImage="/images/meta-banner.png"
+                        pageTitle={`${party.name} - Círculo eleitoral de ${this.props.match.params.district}`}
+                        pageDescription={party.description}
+                        socialTitle={`${party.name} - Círculo eleitoral de ${this.props.match.params.district}`}
+                        socialDescription={party.description}
+                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />

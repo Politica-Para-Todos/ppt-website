@@ -23,6 +23,7 @@ import LayoutFooter from "../../common/LayoutFooter";
 import ManifestoSider from "./ManifestoSider";
 import ManifestoSection from "./ManifestoSection";
 import PartyHeader from "../PartyHeader";
+import { slugify } from "../../../utils";
 
 class PartyManifesto extends PureComponent {
     constructor() {
@@ -115,11 +116,11 @@ class PartyManifesto extends PureComponent {
             <Layout className="party-manifesto">
                 {party.name && (
                     <MetaTags
-                        pageTitle={`Programa ${party.name}`}
-                        pageDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
-                        socialTitle={`Política para Todos - Programa ${party.name}`}
-                        socialDescription="Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal"
-                        socialImage="/images/meta-banner.png"
+                        pageTitle={`Programa Eleitoral - ${party.name}`}
+                        pageDescription={party.description}
+                        pageTitle={`Programa Eleitoral - ${party.name}`}
+                        socialDescription={party.description}
+                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />
