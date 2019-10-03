@@ -117,10 +117,10 @@ class PartyManifesto extends PureComponent {
                 {party.name && (
                     <MetaTags
                         pageTitle={`Programa Eleitoral - ${party.name}`}
-                        pageDescription={party.description}
+                        pageDescription={`Informações sobre o programa eleitoral do ${party.acronym}`}
                         pageTitle={`Programa Eleitoral - ${party.name}`}
-                        socialDescription={party.description}
-                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
+                        socialDescription={`Informações sobre o programa eleitoral do ${party.acronym}`}
+                        socialImage={`/images/share/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />

@@ -60,11 +60,11 @@ export default class Party extends PureComponent {
             <Layout>
                 {party.name && (
                     <MetaTags
-                        pageTitle={`Política para Todos - ${party.name}`}
-                        pageDescription={party.description}
-                        socialTitle={`Política para Todos - ${party.name}`}
-                        socialDescription={party.description}
-                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
+                        pageTitle={`Política Para Todos - Conhece o programa e os candidatos do ${party.acronym}`}
+                        pageDescription={`Nesta página encontrarás o programa e os candidatos, por círculo eleitoral, do ${party.name}`}
+                        socialTitle={`Política Para Todos - Conhece o programa e os candidatos do ${party.acronym}`}
+                        socialDescription={`Nesta página encontrarás o programa e os candidatos, por círculo eleitoral, do ${party.name}`}
+                        socialImage={`/images/share/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />

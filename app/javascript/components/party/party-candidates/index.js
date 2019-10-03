@@ -42,10 +42,10 @@ class PartyCandidate extends PureComponent {
                 {party.name && (
                     <MetaTags
                         pageTitle={`${party.name} - Círculo eleitoral de ${this.props.match.params.district}`}
-                        pageDescription={party.description}
+                        pageDescription={`Informações sobre o ${party.name} no círculo eleitoral de ${this.props.match.params.district}`}
                         socialTitle={`${party.name} - Círculo eleitoral de ${this.props.match.params.district}`}
-                        socialDescription={party.description}
-                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
+                        socialDescription={`Informações sobre o ${party.name} no círculo eleitoral de ${this.props.match.params.district}`}
+                        socialImage={`/images/share/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />
