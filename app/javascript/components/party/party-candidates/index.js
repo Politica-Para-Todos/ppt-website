@@ -45,7 +45,7 @@ class PartyCandidate extends PureComponent {
                         pageDescription={`Informações sobre o ${party.name} no círculo eleitoral de ${this.props.match.params.district}`}
                         socialTitle={`${party.name} - Círculo eleitoral de ${this.props.match.params.district}`}
                         socialDescription={`Informações sobre o ${party.name} no círculo eleitoral de ${this.props.match.params.district}`}
-                        socialImage={`/images/share/banner-${slugify(party.acronym)}.jpg`}
+                        socialImage={`../images/share/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />

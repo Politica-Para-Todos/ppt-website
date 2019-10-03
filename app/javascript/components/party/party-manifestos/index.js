@@ -120,7 +120,7 @@ class PartyManifesto extends PureComponent {
                         pageDescription={`Informações sobre o programa eleitoral do ${party.acronym}`}
                         pageTitle={`Programa Eleitoral - ${party.name}`}
                         socialDescription={`Informações sobre o programa eleitoral do ${party.acronym}`}
-                        socialImage={`/images/share/banner-${slugify(party.acronym)}.jpg`}
+                        socialImage={`../images/share/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />

@@ -64,7 +64,7 @@ export default class Party extends PureComponent {
                         pageDescription={`Nesta página encontrarás o programa e os candidatos, por círculo eleitoral, do ${party.name}`}
                         socialTitle={`Política Para Todos - Conhece o programa e os candidatos do ${party.acronym}`}
                         socialDescription={`Nesta página encontrarás o programa e os candidatos, por círculo eleitoral, do ${party.name}`}
-                        socialImage={`/images/share/banner-${slugify(party.acronym)}.jpg`}
+                        socialImage={`../images/share/banner-${slugify(party.acronym)}.jpg`}
                     />
                 )}
                 <LayoutHeader />
