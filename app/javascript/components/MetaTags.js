@@ -12,14 +12,13 @@ class MetaTags extends React.Component {
         return (
             <Helmet data-react-helmet="true">
                 <title>{pageTitle}</title>
-                <meta id="meta-title" name="title" content={pageTitle} />
                 <meta id="meta-description" name="description" content={pageDescription} />
 
-                <meta id="og-title" property="og:title" content={socialTitle} />
-                <meta id="og-description" property="og:description" content={socialDescription} />
-                <meta id="og-image" property="og:image" content={socialImage} />
-                <meta id="og-url" property="og:url" content="https://politicaparatodos.pt/" />
-                <meta id="og-type" property="og:type" content="website" />
+                <meta property="og:title" content={socialTitle} />
+                <meta property="og:description" content={socialDescription} />
+                <meta property="og:image" content={socialImage} />
+                <meta property="og:url" content="https://politicaparatodos.pt/" />
+                <meta property="og:type" content="website" />
 
                 <meta id="twitter-title" property="twitter:title" content={socialTitle} />
                 <meta id="twitter-description" property="twitter:description" content={socialDescription} />
@@ -42,8 +41,8 @@ MetaTags.propTypes = {
 MetaTags.defaultProps = {
     pageTitle: 'Política para Todos',
     pageDescription: 'Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal',
-    socialTitle: 'Politica Para Todos',
-    socialDescription: 'Missão: Promover a participação ativa dos cidadãos nos processos eleitorais em Portugal',
-    socialImage: '/images/shareable-images/banner-PtP.jpg',
+    socialTitle: 'Política Para Todos - Informação sobre eleições em Portugal',
+    socialDescription: 'Ajuda-nos a apelar ao voto informado e partilha este site!',
+    socialImage: '/images/share/banner-PPT.jpg',
 };
 export default MetaTags
