@@ -16,6 +16,7 @@ limitations under the License.
 
 import React from "react";
 import { Layout, Divider } from 'antd';
+import MetaTags from "../MetaTags";
 import LayoutHeader from "../common/LayoutHeader";
 import AboutUsContributors from "./AboutUsContributors";
 import AboutUsMotivation from "./AboutUsMotivation";
@@ -26,6 +27,13 @@ import rowsPeople from "../../../assets/images/rows-people.svg";
 export default function AboutUs() {
     return (
         <Layout>
+            <MetaTags
+                pageTitle="Quem somos"
+                pageDescription="A comunidade Política Para Todos nasceu no verão de 2019 com o objetivo de promover a participação ativa dos cidadãos nos processos eleitorais em Portugal. É composta por voluntários de várias partes do país e diferentes áreas profissionais."
+                socialTitle="Quem somos"
+                socialDescription="A comunidade Política Para Todos nasceu no verão de 2019 com o objetivo de promover a participação ativa dos cidadãos nos processos eleitorais em Portugal. É composta por voluntários de várias partes do país e diferentes áreas profissionais."
+                socialImage="/images/shareable-images/banner-PtP.jpg"
+            />
             <LayoutHeader />
             <Layout.Content className="about-us-section">
                 <img src={rowsPeople} className="about-us__header-img" />

@@ -17,11 +17,13 @@ limitations under the License.
 import React, { PureComponent, Fragment } from "react";
 import Layout from 'antd/es/layout';
 const Sider = Layout.Sider;
+import MetaTags from "../../MetaTags";
 import LayoutHeader from "../../common/LayoutHeader";
 import LayoutFooter from "../../common/LayoutFooter";
 import ManifestoSider from "./ManifestoSider";
 import ManifestoSection from "./ManifestoSection";
 import PartyHeader from "../PartyHeader";
+import { slugify } from "../../../utils";
 
 class PartyManifesto extends PureComponent {
     constructor() {
@@ -112,6 +114,15 @@ class PartyManifesto extends PureComponent {
 
         return (
             <Layout className="party-manifesto">
+                {party.name && (
+                    <MetaTags
+                        pageTitle={`Programa Eleitoral - ${party.name}`}
+                        pageDescription={party.description}
+                        pageTitle={`Programa Eleitoral - ${party.name}`}
+                        socialDescription={party.description}
+                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
+                    />
+                )}
                 <LayoutHeader />
                 <Layout.Content>
                     <PartyHeader

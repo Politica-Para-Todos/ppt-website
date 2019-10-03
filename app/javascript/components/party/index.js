@@ -17,12 +17,14 @@ limitations under the License.
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
 import { Typography } from "antd";
+import MetaTags from "../MetaTags";
 import LayoutHeader from "../common/LayoutHeader";
 import LayoutFooter from "../common/LayoutFooter";
 import PartyHeader from "./PartyHeader";
 import PartyIntro from "./PartyIntro";
 import PartyCandidatesList from "./PartyCandidatesList";
 import PartyMetrics from "./metrics";
+import { slugify } from "../../utils";
 
 const { Paragraph } = Typography;
 
@@ -54,9 +56,17 @@ export default class Party extends PureComponent {
 
     render() {
         const { party, spokesperson } = this.state;
-
         return (
             <Layout>
+                {party.name && (
+                    <MetaTags
+                        pageTitle={`Política para Todos - ${party.name}`}
+                        pageDescription={party.description}
+                        socialTitle={`Política para Todos - ${party.name}`}
+                        socialDescription={party.description}
+                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
+                    />
+                )}
                 <LayoutHeader />
                 <Layout.Content className="party-section">
                     <PartyHeader party={party} subtitle={party.acronym} />

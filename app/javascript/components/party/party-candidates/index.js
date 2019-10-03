@@ -1,12 +1,13 @@
 import React, { PureComponent } from "react";
 import Layout from 'antd/es/layout';
+import MetaTags from "../../MetaTags";
 import LayoutHeader from "../../common/LayoutHeader";
 import LayoutFooter from "../../common/LayoutFooter";
 import PartyHeader from "../PartyHeader";
 import PartyIntro from "../PartyIntro";
 import PartyCandidatesTable from "./PartyCandidatesTable";
+import { slugify } from "../../../utils";
 import { Typography } from "antd";
-
 const { Paragraph } = Typography;
 
 class PartyCandidate extends PureComponent {
@@ -38,6 +39,15 @@ class PartyCandidate extends PureComponent {
 
         return (
             <Layout>
+                {party.name && (
+                    <MetaTags
+                        pageTitle={`${party.name} - Círculo eleitoral de ${this.props.match.params.district}`}
+                        pageDescription={party.description}
+                        socialTitle={`${party.name} - Círculo eleitoral de ${this.props.match.params.district}`}
+                        socialDescription={party.description}
+                        socialImage={`/images/shareable-images/banner-${slugify(party.acronym)}.jpg`}
+                    />
+                )}
                 <LayoutHeader />
                 <Layout.Content>
                     <PartyHeader party={party} subtitle={`${party.acronym} - Círculo eleitoral de ${this.props.match.params.district}`} />
