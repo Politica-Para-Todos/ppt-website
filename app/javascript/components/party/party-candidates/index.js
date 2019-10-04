@@ -36,7 +36,8 @@ class PartyCandidate extends PureComponent {
 
     render() {
         const { party } = this.state;
-
+        const hasBiography = party.leadCandidate.biography_source;
+        const hasParliament = party.leadCandidate.link_parlamento;
         return (
             <Layout>
                 {party.name && (
@@ -53,8 +54,13 @@ class PartyCandidate extends PureComponent {
                     <PartyHeader party={party} subtitle={`${party.acronym} - Círculo eleitoral de ${this.props.match.params.district}`} />
                     <PartyIntro spokesperson={party.leadCandidate} title={party.leadCandidate.name}>
                         <Paragraph className="party-desc">{party.leadCandidate.biography}</Paragraph>
+                        {hasBiography && (
                         <Paragraph>Biografia: <a href={party.leadCandidate.biography_source} target="_blank" rel="noopener">aqui</a></Paragraph>
-                    </PartyIntro>
+                        )}
+                        {hasParliament && (
+                        <Paragraph>Página do Parlamento: <a href={party.leadCandidate.link_parlamento} target="_blank" rel="noopener">aqui</a></Paragraph>
+                        )}
+                        </PartyIntro>
                     {party.candidates && (
                         <PartyCandidatesTable candidates={party.candidates} />
                     )}
@@ -62,6 +68,7 @@ class PartyCandidate extends PureComponent {
                 <LayoutFooter />
             </Layout>
         );
+        
     }
 }
 
