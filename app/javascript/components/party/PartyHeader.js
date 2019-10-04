@@ -44,7 +44,7 @@ class PartyHeader extends PureComponent {
                 </Row>
                 <Row type="flex" justify="center">
                     <Col>
-                        <Avatar size={200} src={party.logo} icon="user" />
+                        <a href={`/party/${encodeURIComponent(party.acronym)}`}> <Avatar size={200} src={party.logo} icon="user" /> </a>
                         {party.manifestos && party.manifestos.length > 0 && (
                             <div className="party-header__program-cta">
                                 {party.manifestos.map((manifesto, index) => {
