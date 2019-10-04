@@ -26,5 +26,9 @@ export default [
     "Marta Costa",
     "Vanessa Vilela",
     "Renata Henriques",
-    "Domingos Ferreira"
+    "Domingos Ferreira",
+    "Fábio Cláudio",
+    "Diogo Correia",
+    "Tiago Paim",
+    "Catarina Tomé"
 ]
