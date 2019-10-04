@@ -39,6 +39,10 @@ class HomeVideos extends PureComponent {
             {
                 url: "https://www.youtube.com/watch?v=OERxKenLIo8",
                 caption: "Depois de no último vídeo nos termos debruçado sobre a Assembleia da República e os círculos eleitorais, neste episódio hoje ficarás a saber como se convertem os votos em mandatos."
+            },
+            {
+                url: "https://www.youtube.com/watch?v=v-Uj7kwfG5o",
+                caption: "No quarto e último episódio desta série, explicamos-te como é que, após as eleições legislativas, é formado o Executivo."
             }
         ]
     }
