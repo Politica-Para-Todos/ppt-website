@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/parties/:acronym/candidates/:district', to: 'parties#district'
   get '/parties/:acronym', to: 'parties#show'
 
+  get "/porquenaovotaste" => redirect("http://bit.ly/porquenaovotaste")
+
   resources :comments, only: [:create, :update, :delete]
   resources :annotations, only: [:create, :update, :delete]
 
