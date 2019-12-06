@@ -221,7 +221,7 @@ GEM
       pry (~> 0.11)
       yard (~> 0.9.11)
     public_suffix (4.0.1)
-    puma (3.12.1)
+    puma (3.12.2)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.7)
@@ -386,7 +386,7 @@ DEPENDENCIES
   pry
   pry-byebug
   pry-doc
-  puma (~> 3.11)
+  puma (~> 3.12)
   pundit
   rails (~> 6.0.0)
   redcarpet (~> 3.5.0)
