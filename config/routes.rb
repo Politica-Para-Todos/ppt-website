@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get '/parties/:acronym/candidates/:district', to: 'parties#district'
   get '/parties/:acronym', to: 'parties#show'
 
-  get "/porquenaovotaste" => redirect("http://bit.ly/porquenaovotaste")
+  get "/loomio" => redirect("https://www.loomio.org/g/ZqT2uPv6/politica-para-todos")
+  get "/git" => redirect("https://github.com/Politica-Para-Todos")
 
   resources :comments, only: [:create, :update, :delete]
   resources :annotations, only: [:create, :update, :delete]
