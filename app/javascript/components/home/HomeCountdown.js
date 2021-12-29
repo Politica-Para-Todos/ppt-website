@@ -13,7 +13,7 @@ class HomeCountdown extends PureComponent {
                 <Row>
                     <Col span={24} lg={24}>
                         <img src={voting} />
-                        <Countdown date="2019-10-06T09:00:00" renderer={CountdownRenderer} />
+                        <Countdown date="2022-01-30T09:00:00" renderer={CountdownRenderer} />
                         <Button className="button--grey" size="large">
                             <a
                                 href="https://www.portaldoeleitor.pt/Default.aspx"
