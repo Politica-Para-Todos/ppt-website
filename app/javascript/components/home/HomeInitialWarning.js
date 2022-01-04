@@ -36,7 +36,7 @@ export default function HomeInitialWarning() {
         >
             <h1>Atenção!</h1>
             <div className="home-warning-content-wrapper">
-                <p>Neste momento, esta plataforma ainda não se encontra 100% completa.</p>
+                <p>Neste momento, a plataforma PPT ainda se encontra com os dados das Legislativas 2019.</p>
                 <p>Estamos a processar alguns dos programas eleitorais e à espera que as restantes candidaturas disponibilizem a respectiva informação.</p>
             </div>
             <div className="home-warning-footer-wrapper">

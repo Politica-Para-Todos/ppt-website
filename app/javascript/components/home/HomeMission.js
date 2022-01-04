@@ -42,9 +42,11 @@ class HomeMission2 extends PureComponent {
             <section className="home-our-mission home-our-mission-border" >
                 <Row type="flex" justify="space-between" align="middle">
                     <Col span={24} lg={24} className="home-our-mission-text">
-                        <p>As eleições legislativas de 6 de Outubro de 2019 aproximam-se. Como um grupo de cidadãos independentes, decidimos criar esta página para agregar toda a informação relevante para estas eleições.</p>
+                        <p>Aproximam-se as <b>Eleições Legislativas de 30 de janeiro de 2022</b> e o Política Para Todos, enquanto grupo de cidadãos independentes, decidiu dar continuidade ao trabalho iniciado nas Eleições Legislativas de 2019.</p>
                         <br />
-                        <p>Para cada candidatura, e nos casos em que os programas eleitorais estejam disponíveis, é apresentada informação para ajudar a perceber as diferentes propostas, tais como: nomes dos cabeças de lista, contato de email da candidatura, programa eleitoral, e lista de candidatos.</p>
+                        <p>Estamos a trabalhar para reunir o máximo de informação relevante sobre as diferentes candidaturas: programa eleitoral, lista de candidatos em cada círculo eleitoral, dados relevantes sobre os cabeças de lista e contactos.</p>
+                        <br />
+                        <p>Esperamos que seja útil para promover decisões informadas e conscientes. Estamos disponíveis através das nossas redes sociais ou em contacto@politicaparatodos.pt.</p>
                     </Col>
                 </Row>
             </section>
