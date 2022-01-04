@@ -69,4 +69,7 @@ Rails.application.configure do
   config.web_console.permissions = '192.168.128.0/24'
 
   #config.force_ssl = true
+
+  # allow ngrok in dev
+  config.hosts << /[a-z0-9-]+\.ngrok\.io/
 end
