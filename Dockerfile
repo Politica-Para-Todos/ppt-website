@@ -16,7 +16,7 @@ ENV PATH=$APP_HOME/bin:$PATH
 WORKDIR $APP_HOME
 
 # install locked bundler version
-RUN gem install bundler -v 2.2.14
+RUN gem install bundler -v 2.2.33
 ENV BUNDLE_JOBS=4
 
 COPY . $APP_HOME
