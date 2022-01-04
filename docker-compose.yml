@@ -1,9 +1,10 @@
 ---
-version: "3"
+version: "3.8"
 
 services:
-  postgres:
-    image: postgres:11.4
+  db:
+    image: postgres:14.1
+    restart: always
     environment:
       POSTGRES_USER: comentar
       POSTGRES_PASSWORD: comentar
@@ -11,19 +12,33 @@ services:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ppt@ppt.pt
+      PGADMIN_DEFAULT_PASSWORD: ppt
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
 
   dev:
     image: politica-para-todos/comentar:latest
     build: .
     environment:
       - BINDING=0.0.0.0
-      - DATABASE_URL=postgres://comentar:comentar@postgres/
+      - POSTGRES_USER=comentar
+      - POSTGRES_PASSWORD=comentar
+      - POSTGRES_HOST=db
+      - RAILS_ENV=development
     ports:
       - 3000:3000
     volumes:
       - .:/usr/src/app:cached
     depends_on:
-      - postgres
+      - db
     command:
       - sleep
       - infinity

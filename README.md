@@ -14,17 +14,31 @@ After booting the environment with `docker-compose up -d` a container named `dev
 # Shell into the dev container
 docker-compose exec dev bash
 
-# Run database migrations
-rake db:create
-rake db:migrate
+# Install missing dependencies
+bundle install
 
-# Boot up a rails console
-rails console
+# Run database migrations
+bundle exec rake db:create
+bundle exec rake db:migrate
+
+# Populate database
+bundle exec rake data:populate
 
 # Boot up a rails server on port 3000
-rails server
+bundle exec rails server
+```
 
-# And so on..
+Others commands you can run inside the docker container: 
+
+```bash
+# Shell into the dev container
+docker-compose exec dev bash
+
+# Boot up a rails console
+bundle exec rails console
+
+# Create yarn.lock
+bundle exec rails webpacker:install -s
 ```
 
 The repository directory is mounted as a volume inside the container so changes you do are reflected inside.
@@ -38,9 +52,9 @@ The following instructions are for the mac OS, so translate to your own environm
 git clone git@github.com:Politica-Para-Todos/comentAR
 cd comentAR
 
-# Ruby 2.6
+# Ruby 2.7
 # Just use rbenv (https://github.com/rbenv/rbenv) or similar to install it
-rbenv local 2.6.4
+rbenv local 2.7.1
 
 # PostgreSQL
 brew install postgresql
