@@ -25,7 +25,7 @@ class HomeDisclaimer extends PureComponent {
                     <Col span={24} lg={24} className="home-our-mission-text">
                         <Alert
                             message="Atenção"
-                            description="Neste momento, a plataforma PPT ainda se encontra com os dados das Legislativas 2019. Iremos atualizar para das Legislativas 2022 durante o fim de semana 8-9 de Janeiro."
+                            description="Neste momento, a plataforma PPT ainda se encontra com os dados de 2019. Estamos a trabalhar para disponibilizar a informação sobre as Legislativas 2022 durante os próximos dias. Obrigado."
                             type="info"
                         />
                     </Col>
