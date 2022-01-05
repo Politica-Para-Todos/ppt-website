@@ -1,14 +1,14 @@
 ---
 default: &default
   adapter: postgresql
-  host: <%= ENV.fetch("POSTGRES_HOST") %>
-  username: <%= ENV.fetch("POSTGRES_USER") %>
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
+  host: <%= ENV.fetch("POSTGRES_HOST") %>
+  username: <%= ENV.fetch("POSTGRES_USER") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
   database: comentar_dev
 
 # Warning: The database defined as "test" will be erased and
@@ -16,6 +16,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  host: <%= ENV.fetch("POSTGRES_HOST") %>
+  username: <%= ENV.fetch("POSTGRES_USER") %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
   database: comentar_test
 
 production:

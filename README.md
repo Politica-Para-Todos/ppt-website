@@ -14,9 +14,6 @@ After booting the environment with `docker-compose up -d` a container named `dev
 # Shell into the dev container
 docker-compose exec dev bash
 
-# Install missing dependencies
-bundle install
-
 # Run database migrations
 bundle exec rake db:create
 bundle exec rake db:migrate
@@ -33,6 +30,9 @@ Others commands you can run inside the docker container:
 ```bash
 # Shell into the dev container
 docker-compose exec dev bash
+
+# Install missing dependencies
+bundle install
 
 # Boot up a rails console
 bundle exec rails console
