@@ -18,5 +18,9 @@ export default [
     {
         type: 'instagram',
         url: 'https://www.instagram.com/politica_para_todos/'
-    }
+    },
+    {
+        type: 'github',
+        url: 'https://github.com/Politica-Para-Todos/'
+    },
 ]
