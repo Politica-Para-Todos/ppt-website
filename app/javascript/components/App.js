@@ -22,6 +22,7 @@ import Party from "./party";
 import PartyCandidate from "./party/party-candidates";
 import PartyManifesto from "./party/party-manifestos";
 import AboutUs from './about-us';
+import Debates from './debates';
 
 class App extends React.Component {
     constructor() {
@@ -35,6 +36,7 @@ class App extends React.Component {
                 <Route exact path="/party/:party_acronym" component={withRouter(Party)} />
                 <Route exact path="/party/:party_acronym/candidates/:district" component={withRouter(PartyCandidate)} />
                 <Route exact path="/party/:party_acronym/manifesto/:section_id?" component={withRouter(PartyManifesto)} />
+                <Route exact path="/debates-2022" component={Debates} />
                 <Route exact path="/about-us" component={AboutUs} />
             </Switch >
         )
