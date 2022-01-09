@@ -15,7 +15,6 @@ limitations under the License.
 */
 
 import React from "react";
-import PropTypes from 'prop-types';
 import SocialIcon from "./SocialIcon";
 
 function getHrefFromUrl(type, url) {
