@@ -78,13 +78,16 @@ class LayoutHeader extends PureComponent {
                                 <img className="header_logo" src={burger_image} />
                             </Button>
 
-                            <div className="header__desktop-menu">
+                            <nav className="header__desktop-menu">
                                 <Menu mode="horizontal">
                                     <Menu.Item>
                                         <Link to="/" onClick={this.closeDrawer}>Home</Link>
                                     </Menu.Item>
                                     <Menu.Item onClick={this.closeDrawer}>
                                         <HashLink smooth to="/#parties-section" onClick={this.closeDrawer}>Partidos</HashLink>
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                        <Link to="/debates-2022" onClick={this.closeDrawer}>Debates 2022</Link>
                                     </Menu.Item>
                                     <Menu.Item>
                                         <Link to="/about-us" onClick={this.closeDrawer}>Quem Somos</Link>
@@ -99,7 +102,7 @@ class LayoutHeader extends PureComponent {
                                 <div className="header-social-media">
                                     <SocialSharing socialMediaList={socialSharing} />
                                 </div>
-                            </div>
+                            </nav>
                         </Col>
                     </Row>
                     <Drawer
