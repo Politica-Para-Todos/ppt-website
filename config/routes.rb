@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get '/parties/:acronym/manifesto', to: 'parties#manifesto'
   get '/parties/:acronym/candidates/:district', to: 'parties#district'
-  get '/parties/:acronym', to: 'parties#show'
+  get '/parties/:acronym', to: 'parties#show', :constraints => { :acronym => /([^\/]+?)(?=\.json|\.html|$|\/)/ }
 
   get "/loomio" => redirect("https://www.loomio.org/g/ZqT2uPv6/politica-para-todos")
   get "/git" => redirect("https://github.com/Politica-Para-Todos")
