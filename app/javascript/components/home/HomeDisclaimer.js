@@ -25,7 +25,7 @@ class HomeDisclaimer extends PureComponent {
                     <Col span={24} lg={24} className="home-our-mission-text">
                         <Alert
                             message="Atenção"
-                            description="Neste momento, a plataforma PPT ainda se encontra com os dados de 2019. Estamos a trabalhar para disponibilizar a informação sobre as Legislativas 2022 durante os próximos dias. Obrigado."
+                            description="Neste momento, a plataforma PPT ainda não se encontra 100% completa. Estamos a processar alguns dos programas eleitorais e à espera que as restantes candidaturas disponibilizem a respectiva informação. Obrigado."
                             type="info"
                         />
                     </Col>

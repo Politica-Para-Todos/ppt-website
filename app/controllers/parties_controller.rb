@@ -15,19 +15,17 @@ class PartiesController < InheritedResources::Base
 
   # GET /parties/:acronym.json
   def show
-    if ["PCP", "PEV"].include?(params[:acronym])
-      acronym = "PCP-PEV"
-    else
-      acronym = params[:acronym]
-    end
+    acronym = params[:acronym]
 
     @party = Party.find_by(acronym: acronym.upcase)
     # cand.district has downcase and unicode_normalize filters so that the sort is accent insensitive.
     # e.g. Évora was showing up as last
     @candidates = @party.candidates.where(is_lead_candidate: true).sort_by { |cand| cand.district.downcase.unicode_normalize(:nfd) }
 
-    if acronym == "PCP-PEV"
-      @manifestos = ["PCP", "PEV"]
+    if acronym == "PPD/PSD.CDS-PP.PPM"
+      @manifestos = ["PPD/PSD", "CDS-PP", "PPM"]
+    elsif acronym == "PPD/PSD.CDS-PP"
+      @manifestos = ["PPD/PSD", "CDS-PP"]
     else
       if @party.manifestos.length > 0
         @manifestos = [@party.acronym]

@@ -25,6 +25,8 @@ bundle exec rake data:populate
 bundle exec rails server
 ```
 
+If you have a webpacker error try to run this command `bundle exec rails webpacker:install -s`.
+
 Others commands you can run inside the docker container: 
 
 ```bash
@@ -142,7 +144,14 @@ Observe the single quotes around the rake task specification and the URL. You mu
 If you want to run it in the context of an environment, such as staging or production, you must have `heroku` tools installed and configured, and run it as such:
 
 ```bash
-heroku run bundle exec rake data:populate --app politica-para-todos-staging
+heroku run bundle exec rake data:populate --app politica-para-todos
+```
+
+If the database already has data run:
+
+```bash
+heroku run bundle exec rake db:reset --app politica-para-todos
+heroku run bundle exec rake data:populate --app politica-para-todos
 ```
 
 ### Idempotency

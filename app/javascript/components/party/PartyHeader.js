@@ -61,7 +61,7 @@ class PartyHeader extends PureComponent {
                         {party.manifestos && party.manifestos.length == 0 && (
                             <div className="party-header__program-cta">
                                 <p>
-                                    Este partido não apresentou programa eleitoral. <br />
+                                    Este partido ainda não apresentou programa eleitoral. <br />
                                     Para qualquer correção entra em contacto connosco via <a href="mailto:contacto@politicaparatodos.pt">e-mail.</a>
                                 </p>
                             </div>
