@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   resources :manifestos, only: [:show]
   resources :parties, only: [:index]
 
-  get '/parties/:acronym/manifesto', to: 'parties#manifesto'
-  get '/parties/:acronym/candidates/:district', to: 'parties#district'
+  get '/parties/:acronym/manifesto', to: 'parties#manifesto', :constraints => { :acronym => /[^\/]+/ }
+  get '/parties/:acronym/candidates/:district', to: 'parties#district', :constraints => { :acronym => /[^\/]+/ }
   get '/parties/:acronym', to: 'parties#show', :constraints => { :acronym => /([^\/]+?)(?=\.json|\.html|$|\/)/ }
 
   get "/loomio" => redirect("https://www.loomio.org/g/ZqT2uPv6/politica-para-todos")
