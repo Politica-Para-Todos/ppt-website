@@ -150,7 +150,7 @@ heroku run bundle exec rake data:populate --app politica-para-todos
 If the database already has data run:
 
 ```bash
-heroku run bundle exec rake db:reset --app politica-para-todos
+heroku run bundle exec rake db:migrate --app politica-para-todos
 heroku run bundle exec rake data:populate --app politica-para-todos
 ```
 
