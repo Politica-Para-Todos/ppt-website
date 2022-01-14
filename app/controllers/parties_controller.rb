@@ -23,11 +23,9 @@ class PartiesController < InheritedResources::Base
     @candidates = @party.candidates.where(is_lead_candidate: true).sort_by { |cand| cand.district.downcase.unicode_normalize(:nfd) }
 
     if acronym == "PPD/PSD.CDS-PP.PPM"
-      # @manifestos = ["PPD/PSD", "CDS-PP", "PPM"]
-      @manifestos = []
+      @manifestos = ["PPD/PSD", "CDS-PP", "PPM"]
     elsif acronym == "PPD/PSD.CDS-PP"
-      # @manifestos = ["PPD/PSD", "CDS-PP"]
-      @manifestos = []
+      @manifestos = ["PPD/PSD", "CDS-PP"]
     else
       if @party.manifestos.length > 0
         @manifestos = [@party.acronym]
