@@ -11,6 +11,18 @@ class PartiesController < InheritedResources::Base
   # GET /parties.json
   def index
     @parties = Party.all.where.not(name: nil)
+
+    parties_final = @parties.map do |party|
+      districs = Party.find_by(acronym: party.acronym).candidates.where(is_lead_candidate: true).map { |cand| cand.district }
+      {
+        "acronym": party.acronym, 
+        "logo": party.logo,
+        "title": party.name,
+        "districs": districs
+      }
+    end
+
+    render json: parties_final
   end
 
   # GET /parties/:acronym.json
