@@ -62,6 +62,9 @@ class PartyCandidatesList extends React.Component {
                             ))}
                         </Select>
                     </Col>
+                    <Col lg={24} span={24}>
+                        <Paragraph>Clica na imagem do cabeça de lista para acederes à lista completa de candidatos efetivos e suplentes desse círculo eleitoral.</Paragraph>
+                    </Col>
                 </Row>
                 <Row type="flex" className="party-candidates__list">
                     {candidates
