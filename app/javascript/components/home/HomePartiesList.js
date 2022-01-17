@@ -28,12 +28,6 @@ class HomePartiesList extends PureComponent {
         }
     }
 
-    componentDidUpdate() {
-        const { parties } = this.props;
-
-        this.setState({ ...this.state, parties })
-    }
-
     onChange = (checked) => {
         this.setState({ ordered: checked });
     }
