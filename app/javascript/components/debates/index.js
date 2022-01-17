@@ -26,7 +26,7 @@ export default function Debates() {
     return (
         <Layout>
             <MetaTags
-                pageTitle="Debates Legilativas 2022"
+                pageTitle="Debates Legislativas 2022"
                 pageDescription="A comunidade Política Para Todos nasceu no verão de 2019 com o objetivo de promover a participação ativa dos cidadãos nos processos eleitorais em Portugal. É composta por voluntários de várias partes do país e diferentes áreas profissionais."
                 socialTitle="Debates Legilativas 2022"
                 socialDescription="A comunidade Política Para Todos nasceu no verão de 2019 com o objetivo de promover a participação ativa dos cidadãos nos processos eleitorais em Portugal. É composta por voluntários de várias partes do país e diferentes áreas profissionais."

@@ -122,6 +122,9 @@ class LayoutHeader extends PureComponent {
                                 <HashLink to="/#parties-section" onClick={this.closeDrawer}>Partidos</HashLink>
                             </Menu.Item>
                             <Menu.Item>
+                                <Link to="/debates-2022" onClick={this.closeDrawer}>Debates 2022</Link>
+                            </Menu.Item>
+                            <Menu.Item>
                                 <Link to="/about-us" onClick={this.closeDrawer}>Quem Somos</Link>
                             </Menu.Item>
                         </Menu>
