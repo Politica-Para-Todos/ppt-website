@@ -15,31 +15,47 @@ limitations under the License.
 */
 
 import React, { PureComponent } from "react";
-import { Row, Col, Switch } from "antd";
+import { Row, Col, Switch, Select } from "antd";
 import AvatarList from "../common/AvatarList";
-import { shuffleArray, sortArrayByKey } from '../../utils';
+import { circles, shuffleArray, sortArrayByKey } from '../../utils';
 
 class HomePartiesList extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            ordered: false
+            ordered: false,
+            district: 'Todos'
         }
+    }
+
+    componentDidUpdate() {
+        const { parties } = this.props;
+
+        this.setState({ ...this.state, parties })
     }
 
     onChange = (checked) => {
         this.setState({ ordered: checked });
     }
 
+    filterDistrict = (district) => {
+        this.setState({ ...this.state, district });
+    }
+
     render() {
         let { parties } = this.props;
-        let { ordered } = this.state;
+        let { district, ordered } = this.state;
+
+        if (district !== "Todos") {
+            parties = parties.filter(party => party.districts.includes(district));
+        }
 
         if (ordered) {
             parties = sortArrayByKey(parties, 'title');
         } else {
             parties = shuffleArray(parties);
         };
+
         return (
             <section id="parties-section" className="section-home-parties-list section--grey">
                 <Row>
@@ -63,6 +79,19 @@ class HomePartiesList extends PureComponent {
                                 </div>
                             </Col>
                         </Row>
+                        <Row>
+                            <Col lg={7} span={24}>
+                                <Select
+                                    style={{ width: "100%" }}
+                                    placeholder="Escolha o Círculo Eleitoral"
+                                    onChange={this.filterDistrict}
+                                >
+                                    {circles.map((circle) => (
+                                        <Select.Option key={circle.value} value={circle.label}>{circle.label}</Select.Option>
+                                    ))}
+                                </Select>
+                            </Col>
+                        </Row> 
                         <AvatarList items={parties} theme={"4x3"} />
                     </Col>
                 </Row>

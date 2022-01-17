@@ -45,7 +45,8 @@ class Home extends PureComponent {
                             'imageUrl': x.logo,
                             'title': x.acronym,
                             'subtitle': x.title,
-                            'link': `party/${encodeURIComponent(x.acronym)}`
+                            'link': `party/${encodeURIComponent(x.acronym)}`,
+                            'districts': x.districs
                         }
                     })
                 })
