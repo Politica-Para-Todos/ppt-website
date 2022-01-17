@@ -141,14 +141,19 @@ bundle exec rake 'data:populate[https://gist.githubusercontent.com/punnie/a119b9
 
 Observe the single quotes around the rake task specification and the URL. You must use it or else your shell will complain.
 
+## Populating the database in production
+
 If you want to run it in the context of an environment, such as staging or production, you must have `heroku` tools installed and configured, and run it as such:
 
 ```bash
 heroku run bundle exec rake data:populate --app politica-para-todos
 ```
 
-If the database already has data run:
+If the database already has data do:
 
+1. Go to Heroku and `Resources -> Heroku Postgresql -> Settings -> Reset Database`
+
+2. Run:
 ```bash
 heroku run bundle exec rake db:migrate --app politica-para-todos
 heroku run bundle exec rake data:populate --app politica-para-todos
