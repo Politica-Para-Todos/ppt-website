@@ -23,8 +23,8 @@ import { HomeMission1, HomeMission2 } from "./HomeMission";
 import HomeCountdown from "./HomeCountdown";
 import HomePartiesList from "./HomePartiesList";
 import HomeVideos from "./HomeVideos";
-import HomeInitialWarning from "./HomeInitialWarning";
-import HomeDisclaimer from "./HomeDisclaimer";
+//import HomeInitialWarning from "./HomeInitialWarning";
+//import HomeDisclaimer from "./HomeDisclaimer";
 
 class Home extends PureComponent {
     constructor() {
@@ -69,8 +69,6 @@ class Home extends PureComponent {
                 />
                 <LayoutHeader />
                 <Layout.Content>
-                    <HomeInitialWarning />
-                    <HomeDisclaimer />
                     <HomeMission1 />
                     <HomeCountdown />
                     <HomeMission2 />
