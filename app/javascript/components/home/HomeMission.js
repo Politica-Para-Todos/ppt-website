@@ -44,8 +44,6 @@ class HomeMission2 extends PureComponent {
                     <Col span={24} lg={24} className="home-our-mission-text">
                         <p>Aproximam-se as <b>Eleições Legislativas de 30 de janeiro de 2022</b> e o Política Para Todos, enquanto grupo de cidadãos independentes, decidiu dar continuidade ao trabalho iniciado nas Eleições Legislativas de 2019.</p>
                         <br />
-                        <p>Estamos a trabalhar para reunir o máximo de informação relevante sobre as diferentes candidaturas: programa eleitoral, lista de candidatos em cada círculo eleitoral, dados relevantes sobre os cabeças de lista e contactos.</p>
-                        <br />
                         <p>Esperamos que seja útil para promover decisões informadas e conscientes. Estamos disponíveis através das nossas redes sociais ou em contacto@politicaparatodos.pt.</p>
                     </Col>
                 </Row>
