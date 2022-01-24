@@ -10,3 +10,13 @@
         margin-bottom: 20px;
     }
 }
+
+.home-parties__circle-filter {
+    margin-top: 16px;
+}
+
+@media screen and (min-width: 768px) {
+    .home-parties__circle-filter {
+        margin-top: 0;
+    }
+}
