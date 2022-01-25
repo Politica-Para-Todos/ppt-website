@@ -73,7 +73,7 @@ class HomePartiesList extends PureComponent {
                                 </div>
                             </Col>
                         </Row>
-                        <Row>
+                        <Row className="home-parties__circle-filter">
                             <Col lg={7} span={24}>
                                 <Select
                                     style={{ width: "100%" }}
